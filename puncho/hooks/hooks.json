@@ -2,11 +2,11 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__plugin_puncho_puncho__(render_spec|generate_specs|launch_specs|set_daily_budget|apply_site_brand|save_palette|remove_brand_asset)",
+        "matcher": "mcp__plugin_puncho_puncho__(render_spec|generate_specs|launch_specs|set_daily_budget|apply_site_brand|save_palette|set_brand_fonts|remove_brand_asset|link_meta_ad)",
         "hooks": [
           {
             "type": "command",
-            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"Puncho: this call spends money or sets the look of the brand. Allow it only if it is what the agent proposed and you agreed to.\"}}'"
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"Puncho: this call spends money, sets the look of the brand, or records which ad a concept is. Allow it only if it is what the agent proposed and you agreed to.\"}}'"
           }
         ]
       }
