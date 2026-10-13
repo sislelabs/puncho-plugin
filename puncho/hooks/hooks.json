@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__plugin_puncho_puncho__(render_spec|generate_specs|launch_specs|set_daily_budget|apply_site_brand|save_palette|remove_brand_asset)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"Puncho: this call spends money or sets the look of the brand. Allow it only if it is what the agent proposed and you agreed to.\"}}'"
+          }
+        ]
+      }
+    ]
+  }
+}

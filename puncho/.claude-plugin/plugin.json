@@ -1,0 +1,25 @@
+{
+  "name": "puncho",
+  "displayName": "Puncho",
+  "version": "0.1.0",
+  "description": "The Puncho operator: writes ad concepts, builds designs, launches paused campaigns and reads results on your Puncho board.",
+  "author": { "name": "Puncho", "url": "https://puncho.app" },
+  "homepage": "https://puncho.app",
+  "repository": "https://github.com/sislelabs/puncho-plugin",
+  "keywords": ["ads", "meta", "marketing"],
+  "userConfig": {
+    "token": {
+      "type": "string",
+      "title": "Puncho token",
+      "description": "Your personal token, made at app.puncho.app/settings/tokens. It starts with pk_.",
+      "required": true,
+      "sensitive": true
+    },
+    "address": {
+      "type": "string",
+      "title": "Puncho address",
+      "description": "Where your Puncho runs. Leave it as it is unless you were told otherwise.",
+      "default": "https://app.puncho.app/api/mcp"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "puncho",
+  "description": "Puncho: your own agent runs your Meta ads loop.",
+  "owner": { "name": "Puncho", "url": "https://puncho.app" },
+  "plugins": [
+    {
+      "name": "puncho",
+      "source": "./puncho",
+      "description": "The Puncho operator: writes ad concepts, builds designs, launches paused campaigns and reads results on your Puncho board."
+    }
+  ]
+}

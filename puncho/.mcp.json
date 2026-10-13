@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "puncho": {
+      "type": "http",
+      "url": "${user_config.address}",
+      "headers": { "Authorization": "Bearer ${user_config.token}" }
+    }
+  }
+}
