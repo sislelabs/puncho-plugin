@@ -1,11 +1,13 @@
 {
   "name": "puncho-ads",
   "displayName": "Puncho",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Run your Meta ads loop on your Puncho board from a chat: references, ad concepts in your brand's voice, designs, and what is working. You approve and switch ads on yourself.",
   "author": { "name": "Puncho", "url": "https://puncho.app" },
   "homepage": "https://puncho.app",
   "repository": "https://github.com/sislelabs/puncho-plugin",
   "license": "MIT",
+  "icon": ".claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://puncho.app/privacy",
   "keywords": ["ads", "meta", "marketing", "advertising", "creative"]
 }
