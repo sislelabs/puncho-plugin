@@ -13,18 +13,20 @@ what you would do next.
 
 ## Before anything else
 
-Call `get_playbook` with no topic. It is how this work is done well: the rules,
-and a list of topics. Follow it over anything you assume. Then, before each
-stage of the work, read that stage's topic, once in a conversation:
+Read `references/start.md`. It is how Puncho's own operator is told to run
+this work: the rules, and a list of topics, each a file in `references/`.
+Follow it over anything you assume. Then, before each stage of the work, read
+that stage's files, once in a conversation:
 
-- before writing or rewriting any ad: `concepts`, `ad-copy` and
-  `ad-copy/references/anti-examples`
+- before writing or rewriting any ad: `references/concepts.md`,
+  `references/ad-copy.md` and `references/ad-copy/references/anti-examples.md`
 - before choosing a format, writing a visual idea or building a design:
-  `designs`, `ad-design` and its references
-- before reading performance: `results`
-- for anything else, the topic the list names for it
+  `references/designs.md`, `references/ad-design.md` and the files in
+  `references/ad-design/references/`
+- before reading performance: `references/results.md`
+- for anything else, the file `references/start.md` names for it
 
-The playbook is the bar. An ad written without reading it is written from the
+They are the bar. An ad written without reading them is written from the
 category average, which is what Puncho exists to avoid.
 
 ## Starting
@@ -50,7 +52,7 @@ person pressed Stop means stop: say what was left unfinished and wait.
 
 ## When the tools are missing
 
-If you have no `get_playbook` or `list_projects` tool, the Puncho connector is
-not connected. Tell the person to open Customize, then Plugins, open Puncho,
-and connect it on its Connectors tab, signing in with their Puncho account.
-Do not try to do the work without the tools.
+If you have no `list_projects` tool, the Puncho connector is not connected.
+Tell the person to open Customize, then Plugins, open Puncho, and connect it
+on its Connectors tab, signing in with their Puncho account. Do not try to do
+the work without the tools.

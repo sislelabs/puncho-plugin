@@ -1,0 +1,510 @@
+# Designing ads that stop the thumb
+
+The copy gets an ad read; the picture gets it seen. Most AI-made ads fail in
+the same few ways — a product pasted into a room it was never in, a headline
+floating in a band over a photo, five things of equal weight, colours from
+nowhere — and every one of them is a choice, not a limit of the tools.
+
+Read `references/formats.md` before choosing a format,
+`references/examples.md` before the first design of a batch (it shows the
+level to reach, never a layout), and `references/prompting.md` before writing
+any part prompt.
+
+## Rules are defaults; the idea decides
+
+Everything below describes what has worked in strong statics. Almost none of
+it is a law. Rules written one failure at a time add up to a checklist, and an
+ad built to tick a checklist gets a footer, a second level and a third part it
+never needed. So, as in `ad-copy`: a default may be broken when the ad's idea
+needs it, and the note you hand over says which one and why. The human reads
+that note before approving.
+
+**Hard limits, for every design:** the product is the real one, placed, never
+drawn; no words in a generated picture; no invented claim, number, rating or
+customer; every word on the image is a text layer the human approves; the
+words and the logo can be read (contrast, size, the 9:16 safe area); one light
+across a photograph; no generated photorealistic person, and no generated
+child at all. Findings about these are fixed, never explained away.
+Everything else is a default.
+
+## The three decisions, in this order
+
+1. **The format** (`adFormat`). Pick from `references/formats.md` by what the
+   idea needs to prove. Meta asks advertisers to diversify their creative and
+   publishes no threshold for when two ads count as one. That ads of one
+   format and setting are delivered as one creative is a claim agencies make,
+   not one Meta has made. Our own rule stands on its own reason: a batch
+   spreads across at least three formats, because a new headline on the same
+   layout is not a new ad and tests nothing new. Meta's other half: keep one
+   brand look (colours, logo, type) across concepts that differ.
+2. **The product mode** (`productMode`). How the real pack appears. No mode
+   is the default: pick the one the idea needs and say why in the rationale.
+   When the brand has products, a batch uses at least three, because the
+   product shown the same way in every ad is one picture with different words
+   on it. A brand with nothing to place (a school, a service, an event) uses
+   `NO_PACK` and needs no spread. The product shots are
+   usually the store's own catalogue photos, all from one angle, so the variety
+   has to come from the mode, the scale (tiny, or cropped so close it becomes
+   texture) and the ground, not from the photo.
+   - `GRAPHIC_FIELD` — front-on, on a field in its own colours
+     (`product_colours`), with only a contact shadow. Nothing to match, so
+     nothing can look pasted. The safest mode, and the one that makes every
+     ad in a batch look the same when it is used for all of them.
+   - `CORNER_PACK` — the appetite is a photograph (food, a hand, a moment) and
+     the pack sits flat in a corner over it, like a sticker. Nobody expects it
+     to be lit by the room, because it is not pretending to be in it.
+   - `IN_SCENE` — the pack physically in the moment. Built with
+     `build_scene`: the real pack placed first, the photograph made around
+     it. See *Build the photograph around the product* below. One way to do
+     it is the **brand selfie**: the product held in a hand, seen from the
+     holder's own eyes, the reader's view, with no face in the picture, in a
+     real place (a bus seat, a desk, a kitchen). It is the one static pattern
+     with published evidence of higher purchase intent, and a face in it
+     lowered that. The real pack is placed where the grip will be, and the
+     hand and the place are made round it; never a hand and a pack on white.
+   - `NO_PACK` — the food, the words or the moment carry it; the logo signs it.
+3. **Where the words live.** Never "headline in a band, photo underneath",
+   and never a header strip across the top with the picture below it, on a
+   photo or a flat field.
+   Words go on their own colour plane, on an object made for them, or behind
+   the product. See *Type* below.
+
+## Colour comes from the pack
+
+The best food ads are extensions of their packs: the field is the box's own
+pink, the wall and table are the pouch's brown and cream. Run
+`product_colours` on the product shot first. Ground = the signature colour (or
+two planes: signature and paper); type = paper or ink, whichever reads; one
+accent at most. Previews flag flat colours from neither the pack nor the
+palette. A different colour is a decision you can defend, not a default.
+
+## People are real, always
+
+No generated photorealistic person in an ad, and never a generated child or
+teenager, in any style that could pass for a photo. People in an ad are real
+photographs the brand has (its customers, its team, past editions of its
+event), asked of the human; BLOCKED when the idea needs them and there are
+none. A generated hand, or an object in use, is fine. Two reasons: Meta
+detects pictures made with third-party AI tools and labels the ad "AI info",
+and people rate AI-made ads lower and remember them less. A real photograph also does what Meta asks
+better: show people benefiting from the thing, not only the thing.
+
+## The product is real, always
+
+- Placed from its photo (`add_design_image`), never drawn. A drawn pack is a
+  pack the store does not sell, and its label will be wrong.
+- What an image model may draw freely is the **contents**: the spread, the
+  crackers, the chocolate, crumbs, drips, the hand holding them. Food has no
+  label to misspell. Generate it in the product's own light.
+- Check the product shot at the size you will use it. A soft, oversharpened or
+  haloed shot shows at full screen; use it smaller, on a field, or say plainly
+  that a better photo is needed (verdict BLOCKED). No composite hides a bad
+  source.
+- A product standing in a photograph gets `build_scene` (below). Every other
+  placed product and cut-out gets `integrate_image` (tone, contact and cast
+  shadow): on a field, flat in a corner, a part placed after the scene.
+  `relight_product` is for a scene that was built the old way, scene first.
+
+## Build the photograph around the product
+
+The pasted look has one cause: a scene generated first, then a packshot
+dropped on it. The scene's floor, camera height and light were invented
+before anyone knew what would stand there, so a pack shot from the side
+stands on a floor seen from above, in a light that falls the other way. No
+shadow or tone fixes that. So the order is reversed:
+
+1. **Place the real product first**: the cut-out, straight, where it should
+   stand and a little larger than you want it, because it comes back up to a
+   quarter smaller or larger. Anything stuck to it (a blank sticky note, a
+   tag, a ribbon) is its own layer on it, and goes in `layerIds` after the
+   product so the scene is made around both.
+2. **`build_scene`, method `around`**: an image model makes the whole
+   photograph round the product, agreeing with its view and its light.
+   Describe the place, the surface it stands on, what else is in the scene
+   (the food, the props, the hand), the light, and that the top area is clean
+   where the headline goes. Add `settle: true` when the light is hard or
+   directional and should fall on the product (sun through leaves, a lamp).
+   **Method `settle`** instead when the scene is already in the design (a
+   generated backdrop, a real photo) and the product stands on its surface:
+   the model adds the contact shadow, cast shadow, reflection and light.
+3. The model redraws the product while it works: bigger or smaller, a little
+   squashed, its small print garbled, sometimes its colour changed. That
+   drawing is found and thrown away; the real layers are moved to where it
+   stood and take its light. Look at the preview at full size for anything
+   left of it: a second edge behind the real one.
+4. Then the rest of the ad on top: foreground parts, the carrier's words, the
+   headline (tucked behind the product if the idea wants depth), the logo.
+
+Text layers under the product stay where they are. Words that belong on the
+product (on the note) do not move with it: set them back on it after.
+
+- **Place it at its final size, whole inside the frame.** The model often
+  draws it smaller; place it a little large. Never move or enlarge it after
+  the scene is built, and never `integrate_image` it: the shadows, the
+  reflection and the light were made for that size and place, and a moved
+  product floats. Too small: place it larger and build again.
+- **A pair is placed as a pair before the build** (see *Say enough*), and
+  both layers go in `layerIds`.
+- **The 9:16 keeps the feed's scene.** `derive_story_version` covers the
+  taller frame with the feed's photograph and takes everything standing in it
+  along, at its place and size in it; only the words and the logo go into the
+  safe band. Never build a second scene or generate a second backdrop for the
+  9:16: it is another photograph, paid for twice, and the product no longer
+  matches it. Build at 9:16 only when the derived one cuts the product off at
+  a side.
+
+## When there is nothing to place
+
+A school, a service, an event, software: no pack, and often no photograph of
+its own. The usual way out is a small flat illustration of the subject in the
+middle of an empty field with the headline under it, and it is the weakest ad
+there is. It reads as a slide, and any brand's logo could sign it.
+
+- **The picture is the thing the headline is about, as a real object.** The
+  page with the mistake circled, the exam sheet, the ticket, the notebook, the
+  chalkboard, a hand mid-gesture, the tool the work is done with. Generated as
+  a photograph or a made thing with material and light, filling the frame or
+  cropped by it. A subject can also be the word itself: see *Type as a picture*.
+- **Fill the frame.** The hero covers at least half of it, bleeds off an edge
+  or sits behind the type. Something small centred in a field of paper, with
+  the same empty margin all round, is not a composition.
+- **Nearly every ad carries a photograph.** "No stock photography" rules out
+  stock, not pictures, and a flat brand look decides how a photo is treated
+  (black and white, cropped, pixel blocks over its edge), never whether
+  there is one. Use photographs of the brand's own people, place or moment
+  (asked of the human; verdict BLOCKED when there are none and the idea
+  needs them), or a generated scene or object in the brand's photo style.
+  A design of rectangles and type with no picture is the weak ad this
+  section describes, whatever the notes say: it is built only when a person
+  asked for no picture, and the finish note says so.
+- **The photograph is a moment, not an object.** It shows the thing the
+  headline promises happening: the screen lit up in a dark room, hands on
+  the keyboard at 2 a.m., the one lamp on in an empty lab. A switched-off
+  monitor on grey is a product listing with nothing for sale. Light is what
+  makes it a moment: one source, named in the prompt, and the subject large
+  enough to read at a thumb's width.
+- **The subject stays whole, or is cropped on purpose.** Generate the
+  photograph at the shape of the area it fills, with room around the
+  subject, and place it so no edge of the frame or of a panel slices it: a
+  monitor with its top cut off, a head under the frame's edge, read as an
+  accident. A tight crop into a detail (the keys, a hand, one corner of the
+  screen) is a choice, and it is made in the prompt, not by where the
+  picture happens to land.
+- **A graphic device is one built shape, placed with intent.** The brand's
+  blocks, rings or stickers make one cluster on one edge (where the photo
+  meets the field, or a corner), sized to the grid. Never scattered like
+  confetti, and never touching the words: a block that meets a letter reads
+  as part of it. The preview flags it.
+- **Illustration only when the brand's own material is illustrated** (its
+  site, its posts, its key visuals), and then in that style, described from
+  what you looked at: line, texture, how colour is laid. Never generic flat
+  vector shapes, which is what an image model draws when it is told nothing.
+- **A part never shows its own edges.** A generated picture that is not cut
+  out carries its background with it. Placed on a field it becomes a
+  rectangle on a rectangle, or disappears into paper of the same colour and
+  leaves a small drawing in a void. Either it is the ground (full bleed), or
+  it is cut out and integrated, or it sits in a shape made for it.
+- **No frame for the sake of one.** A coloured border round a white panel is
+  decoration added because the middle was empty. Fix the middle.
+
+## Say enough, and use the frame
+
+The default is the headline and **one** supporting level, over a picture the
+eye goes to first. Meta's own guidance says the same thing four ways: images
+with little text perform better, most of the words belong in the primary text
+and not on the image, don't spread text over the picture, and ask people to
+"look at one thing". So dates, an address, the details and the second and
+third facts go in the primary text, two or three lines read right under the
+picture. Dense layouts (`CALLOUTS`, `US_VS_THEM`, a stat bar) are formats
+chosen because the idea is the facts, not a baseline for every ad.
+
+Saying too little fails too. One line over a product on an empty wall often
+reads as a mood board, and a stranger scrolling past learns nothing: not what
+the thing is, not why it is better. The one supporting level is what fixes
+that: the product's name and its one reason, or the offer as a badge. Quiet
+can also be the idea (one object, a calm field), and then the note says so.
+
+- **Empty space is there on purpose, or it goes.** A wall of nothing left
+  between the headline and the product is dead space: make the product
+  bigger or higher, bring the camera closer, set the headline larger or into
+  the scene, or put the supporting words there. `preview_design` points out
+  a band over a sixth of the height with nothing in it (`CONTENT`) and asks
+  whether it is doing something. Quiet around one thing is a choice; leftover
+  space is not.
+- **The second level follows what the ad sells on** (the concept's `lead`). A
+  feeling: the product's name and one line, and the picture carries the rest.
+  Proof: a real review as its card, the rating. The product: three or four
+  facts as callouts or a stat bar. An offer: the deal as a badge or sticker,
+  the price when it is the argument. A problem: the problem in the reader's
+  words, the fix in one line. Something new: what is new, and since when.
+- **A second level, on a designed frame.** By default a designed frame (a
+  field, a split, a product on a ground) carries one level of the concept's
+  words beyond the headline: a KICKER or a BADGE. A format whose idea is one
+  thing (a phone screen, a note, a person's words, one huge number) does not:
+  its words are inside the object, and the preview does not ask for more.
+  When a designed frame has only a headline, add what the evidence gives: the product's name, its one
+  reason, a detail from `productShots` or the product page (a price only when
+  the concept is about price or an offer), and
+  say in your note what you added. Never invent a claim, a rating, a discount
+  or a number. Words you add go to the concept with the design and a human
+  approves them with the ad.
+- **An object in a real moment carries its own words.** When the ad is a
+  phone screen, a note, a letter, a receipt or a label in a photographed
+  moment, its second level lives inside that object (the alarm's label, the
+  last line of the note), and nothing is set on the scene around it: words
+  printed on a table or floating over a bedroom cannot exist in that photo,
+  and they turn the moment back into an ad. Dates, an address and the
+  website go in the primary text, which is read right under the picture
+  beside Meta's own link and button. An alarm on a bedside table had a
+  footer of dates, address and URL set on the wood below it.
+- **A container is a real thing or a zone, never a plate.** Strong statics
+  use boxes all the time, and every one of them is something: a review card
+  with its avatar, name, stars and "verified"; a comment, a notification, a
+  notes page, a news headline; a stat bar split by thin rules with each number
+  big over its small label; a full-width band the headline sits in, edge to
+  edge, when the idea is a label (a news ticker, a ticket stub), in one ad of
+  a batch at most; a round seal, a starburst, a price sticker, a button. A rounded or
+  see-through rectangle floating on a photo with a caption in it is none of
+  these, and reads as a template. Either set the words straight on a clean
+  plane of the picture (sky, sand, wall, the pack's field, planned when the
+  scene is built), or build the real thing with its parts. `preview_design`
+  reports a plain plate round words.
+- **The second level is a size of its own.** Under the headline, the product's
+  name and its reason at about a third of the headline's size; facts smaller
+  again. Two lines of one size stacked together are not two
+  levels.
+- **Show the product as it is sold.** A pair of shoes is a pair. From a
+  side-on shot: the same shot twice facing the same way, the second slightly
+  behind, higher and offset, a little smaller, overlapping the first. Mirror
+  (`flipX`) only a shot taken from above or straight on: a mirrored side view
+  points its toes away from its partner. As the hero it
+  is at least 45% of the frame's width; the preview measures it.
+- **One thing to look at.** One focal point, at most three type levels, the
+  headline at least 1.6x the next size. Forty words of equal weight is a
+  leaflet.
+
+## Where the words go
+
+How the strongest statics place their words. Pick one arrangement per ad, by
+what the words are, and build it whole.
+
+- **The frame is planned in zones, by share.** "Top 15%: the headline. Middle
+  55%: the photo. Bottom 25%: three benefits." Decide the zones before the
+  first part is generated. Set the text layers where they go before
+  `build_scene`: it tells the scene model to keep those places calm (open sky,
+  a plain wall, nothing important) and says what it kept clear in
+  `keptClear`. For a part generated on its own, say the clean zone in its
+  prompt.
+- **The headline fills its zone.** Across 85-95% of the width, two or three
+  lines, tight leading, the frame's margin on both sides (about 5% of the
+  width; the same margin for everything). Centred over a symmetric layout,
+  left-aligned in a split one.
+- **The subhead hangs from the headline.** Directly under it, one sentence, a
+  third to a half of its size. Never floating halfway down the frame.
+- **Numbers are units.** A number big (two or three times its label) over a
+  short label, as one block. Three or four of them: around the product with
+  arrows pointing in, or in one bar divided by thin rules. Never a sentence
+  with a number in it.
+- **Lists stand beside the product.** In a split frame (product 40-55%, words
+  the rest), four or five short lines, each with the same mark (a tick in a
+  filled circle, a cross for the rival), the same gap between every line.
+- **Proof is an object.** A quote is set as the platform shows it: the card,
+  the avatar, the name with a flag or tick, the stars, "Read more", the
+  helpful count. The card overlaps the product's edge or the product overlaps
+  it; never both floating apart. A real review only (`PERSON_NOTE` rules).
+- **Things overlap on purpose.** A seal or burst over the product's corner, the
+  product breaking the headline, a hand entering the frame toward the words.
+  Elements that float with gaps between them all read as separate stickers.
+- **Small things live at the edges.** The logo in a bottom corner, and the
+  disclaimer and fine print along the bottom edge, smallest of all. The
+  website goes on the image only when the idea needs it as the call to
+  action: Meta shows the link and its button under every ad, and the address
+  is already in the primary text. An object in a real moment keeps only the
+  logo.
+- **Words on a photo sit on its calmest part**, or on a band that runs edge to
+  edge (a solid bar, a gradient from transparent to dark over the bottom half),
+  never on a box that stops short of the edges.
+
+## The visual idea is a brief, not a blueprint
+
+The concept's `visualIdea` says what the ad should do. It was written before
+anything was drawn, often quickly, and it can describe one of the defaults
+below. When it does, building it faithfully produces a weak ad on purpose.
+Keep its subject and its point, and compose it properly: change the scale,
+the ground, the crop, how many parts. Say what you changed, and why, in the
+note you hand over. The concept's words (`texts`) are never rewritten this way;
+adding a supporting level from the evidence is the one exception (*Say enough*).
+
+Spend what the idea needs, and nothing to look busy. A type-only ad that
+spends no credits is a real ad; a photograph that needs its hero generated
+twice is worth the second try. Stop when the picture is right, not when the
+first preview has no findings: the findings measure contrast and spacing, not
+whether anyone would stop for it.
+
+## One scene, one light
+
+A collage of parts each lit differently reads as a collage. The rule is one
+**light**, not one picture. For a photographic ad, the hero scene (the bowl,
+the hand, the surface) is one picture, built around the pack when the pack is
+in it (`build_scene`), with the empty area for type described in the prompt. Everything else that would
+look better drawn than built is its own part, briefed in the same light:
+
+- the carrier the words sit on (a sticky note, a tag, a receipt), cut out;
+- foreground pieces that give depth: a cut-out cracker, crumbs, a drip, a
+  splash, a leaf, placed at different sizes and some slightly blurred. One to
+  three pieces, each its own part, shaped like the real product as its shot
+  shows it; a whole trail or spill belongs in the scene, not in one cut-out
+  (`references/prompting.md`, Cut-outs);
+- a backdrop or surface, when the hero part is a cut-out rather than a scene.
+
+The 9:16 version is cut from the feed's backdrop, so it never needs one of
+its own.
+
+Use as many parts as the idea needs: one is often enough, and a part added
+because the design "should have more" is clutter. A part that would look
+better generated is not faked with rectangles and gradients to save money.
+Vector devices (arrows, ticks, stars) are the exception; they stay `icon` layers.
+
+Open every photographic prompt with the brand's `photoDirection`, word for
+word. When it is not set, do not stop for it: write one yourself from the
+brand's own pictures (its key visuals, its product photos, what its website
+shows), one or two sentences of light, surface and colour, and open every
+photographic prompt of the batch with the same words. Say in your report that
+you did, quote it, and suggest the human saves it to the brand kit on the
+board so the next batch matches. Repeat the light in every part's prompt ("soft window light from the
+left, warm") so the pieces match, and the scene's colours in words ("a soft
+milky brown, like the spread on the toast"): a colour code in a prompt
+overshoots, and a part briefed in no colour comes back in its own. Lay `add_grain` over a photographic
+composite last.
+
+## Type
+
+- **Three levels.** One clearly biggest (the headline, at least 1.6x the
+  next), one second, the rest small. Headline at least 90px on the 1080 frame;
+  in the strongest ads it fills half the width or more. Five or six words.
+- **Words on a plane, not on texture.** A flat colour area, a plain wall, a
+  dark slate, sky: generate the photo with that area empty ("the upper third
+  is clean empty wall"). Never over wood grain, crumbs or a busy shelf without
+  a carrier.
+- **Words on objects.** Generate the blank carrier — a sticky note, a gift
+  tag, a price sticker, a torn label, a receipt, a chalkboard, a notification —
+  and set the real words on it as a layer, turned and slanted (`rotation`,
+  `skewX`) with the object. The sticky note on a bowl is a whole ad.
+- **Depth.** The headline behind the product: the cut-out sits above the
+  letters in the stack and breaks through them.
+- **Devices** (`icon` layers): hand-drawn arrows and rings from a fact to the
+  product, ticks and crosses for a comparison, a starburst under a short word,
+  stars for a rating. Crisp vectors; never generate these as pictures.
+  **At most one ad in a batch uses devices**, and it is the one whose idea is
+  about pointing (CALLOUTS, a comparison, a rating). Elsewhere they are the
+  cheapest way to make words "belong" to a picture, which is why they turn up
+  on every ad when nothing stops them. Make the link with scale, placement,
+  depth or a carrier instead. Ask of every device: would the ad still work
+  with it removed? If yes, remove it. `preview_design` reports a second ad in
+  the batch that uses them.
+  Arrows keep their proportions whatever their box: give one a square box at
+  the size you want and aim it with `rotation`. A stretched box only leaves
+  empty space around it.
+- **Emphasis** with `marks`: one word in the accent colour, or a marker
+  highlight. One per ad.
+- No glow, no outline, no gradient on type unless the idea is about it. No
+  emoji in the image. An outline reaches the preview as a finding: it is
+  contrast bought on the letters, and the picture should give it instead.
+- **The logo reads too.** The preview measures its contrast like words. A
+  dark wordmark on a dark seat or a wooden table is not there: move it to a
+  quieter, lighter or darker area, or use the brand's other version of it.
+
+### Setting it
+
+The same face looks twice as good set the way a designer sets it:
+
+- **Tight leading on big type.** Line height 0.9-1.0 at headline size; 1.2-1.35
+  only for small lines. Default leading on a 120px headline reads as a gap.
+- **Tracking by size.** At 100px and up, tighten: about -20 to -40
+  (`charSpacing`, thousandths of an em). Small caps labels open up: +60 to +120.
+  Condensed faces need less.
+- **Break lines on meaning.** Put the break in the text ("Не ги изяждай /
+  преди гостите."), never wherever the width runs out. No headline ends on one
+  stranded word under a full line; a deliberate stack of one word per line is
+  fine.
+- **Scale contrast.** The biggest level at least 1.6x the next. Three levels.
+  If everything is medium, nothing is read.
+- **Even rhythm.** A list or a recipe is spaced like one: every group the same
+  distance from the next, label tight to its own number.
+- **Type as a picture.** A word so big the frame crops it; one word per line
+  stacked into a block the width of the frame; a number a quarter of the frame.
+- **Weight contrast within a line** only through `marks`, once.
+- **Faces.** Display face for the headline, body face for the rest, handwriting
+  only for something a hand wrote (a note, a tag). Never a third face. Use the
+  brand's (`brandFonts`); suggest a better one to the human with `list_fonts`,
+  never install or switch on your own.
+
+Previews measure what can be measured here: collisions and lines that almost
+touch (by the drawn letters, not the boxes), uneven spacing in a stack, loose
+leading on a big headline, a stranded last word, two biggest sizes too close.
+- At 9:16 every word stays between y 270 and 1250, 65px from the sides:
+  Reels lays its caption and buttons over the bottom third. The derived 9:16
+  keeps the photograph and what stands in it, and sets the words about a
+  quarter smaller: rework the words so the headline is at least as big as in
+  the feed and each line sits against the taller picture. On a flat ground the
+  whole ad comes out shrunk: there, make the hero fill the taller frame too. A
+  9:16 that is the feed ad in miniature is not done.
+
+## Appetite
+
+Side or back light, never flat front light: it shows texture, gloss, steam.
+Close enough to see the snap, the swirl, the crumb. Imperfection reads real: a
+drip down the jar, a bitten piece, crumbs. Hands and motion: a hand reaching
+in, a spoon lifting, a piece mid-dip. The product in use next to the pack, not
+the pack alone. Overhead for spreads and bowls, 45 degrees for most food,
+straight on for stacks.
+
+## Defaults to break (they read as AI)
+
+The headline band across the top, over a photo or a flat field: the header
+strip. It is the first layout a model reaches for, it makes the ad a
+letterhead, and a reference that has one is no reason to use one: three of
+one brief's four designs opened with it. A product line in small grey at the
+foot as an afterthought ("Product, 250 g"): the product's name and its reason
+belong in the design, set as a level of their own. One line and a product on
+an empty field. Everything medium-sized. A small flat illustration floating in a white
+field with the headline under it. A coloured border round a white panel. A
+generated picture dropped in as a square. A warm cream background with a serif and a
+terracotta accent. A generic hand-holding-product on white. Stock window
+light on a desk. A centred product with text above and below in every ad of a
+batch. Five elements of equal weight. Spend boldness in one place and keep
+everything around it quiet.
+
+## The brief, before anything is generated
+
+Write it out for yourself before the first paid call:
+
+- **Goal**: the one thing the reader must get in half a second.
+- **Locks**: the product shot (as is), the exact words (`texts`), the logo.
+- **Freedom**: everything else — and say what you will use it for.
+- **References and their jobs**: which board reference gives the layout,
+  which the light, which the material.
+- **Composition**: focal point, reading order, where the empty areas are.
+- **Light**: the photography direction plus the direction of the key light.
+- **Pass criteria**: what the preview must show to be done.
+- **Example**: which principle from `references/examples.md` this ad takes,
+  and how it differs from that example. Both go in the finish note.
+
+## Judging the preview
+
+`preview_design` returns findings and the critique questions. A finding about
+a hard limit is fixed. One about a default is fixed, or, when the ad breaks
+that default on purpose, answered in your note in one line.
+Answer each against the picture, not against your intention. Then one
+verdict, in your report to the human:
+
+- **PASS** — you would put your name to it.
+- **TARGETED FIX** — one named change, made, then preview again.
+- **REGENERATE** — a part is wrong; say which and the new prompt.
+- **BLOCKED** — what only the human can supply (a better product photo, a
+  font, more budget).
+
+Make every change a preview calls for in one `edit_design` call (it takes a
+list of operations), then preview once: each call is a step, and every step
+re-reads the whole conversation. Two or three rounds is normal. Reporting PASS on something you would not run
+is the one unforgivable result.

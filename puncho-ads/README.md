@@ -33,7 +33,7 @@ token instead, as https://app.puncho.app/settings/tokens shows.
 ## Use it
 
 Start a chat and say "Let's work on my ads in Puncho". Claude reads how Puncho's
-own operator works from your Puncho, looks at your brand, tells you what it has
+own operator works from the skill, looks at your brand, tells you what it has
 and lacks, and suggests what to do first. Ask it to write concepts, design what
 is waiting, or tell you what is working.
 
@@ -51,7 +51,9 @@ is waiting, or tell you what is working.
 ## Data
 
 The plugin holds no code and no credentials. It adds one skill, which tells
-Claude how to work in Puncho, and one connector to `https://app.puncho.app/api/mcp`.
+Claude how to work in Puncho (its instructions are all in the skill's
+`references/` folder; nothing is fetched to instruct Claude), and one
+connector to `https://app.puncho.app/api/mcp`.
 You sign in to the connector with OAuth; Claude never sees your password.
 Through it, Claude reads and writes your Puncho workspace only, as you, and
 sends what you work on with it (brand material, ad copy, images) to Puncho.
