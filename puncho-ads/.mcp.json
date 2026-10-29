@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "puncho": {
+      "type": "http",
+      "url": "https://app.puncho.app/api/mcp"
+    }
+  }
+}

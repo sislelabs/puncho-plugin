@@ -7,6 +7,11 @@
       "name": "puncho",
       "source": "./puncho",
       "description": "The Puncho operator: writes ad concepts, builds designs, launches paused campaigns and reads results on your Puncho board."
+    },
+    {
+      "name": "puncho-ads",
+      "source": "./puncho-ads",
+      "description": "Puncho in Claude chat, the desktop app and Cowork: sign in, then write ad concepts, build designs and read results on your Puncho board."
     }
   ]
 }

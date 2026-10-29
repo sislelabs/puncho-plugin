@@ -1,11 +1,23 @@
-# Puncho for Claude Code
+# Puncho for Claude
+
+Two plugins that put [Puncho](https://puncho.app) to work for you, on your own
+Claude plan:
+
+- **`puncho-ads`**, for Claude on the web, the desktop app, the phone and
+  Cowork. Add this repository as a marketplace under Customize, Plugins, add
+  Puncho, and sign in on its Connectors tab. See
+  [puncho-ads/README.md](puncho-ads/README.md).
+- **`puncho`**, for Claude Code in a terminal, with a token. It can also launch
+  paused campaigns and change budgets, asking you before each. The rest of this
+  page is about it.
+
+## Puncho for Claude Code
 
 The Puncho operator as a Claude Code plugin: an agent that writes ad concepts,
 builds designs, launches approved ads paused and reads results on your
-[Puncho](https://puncho.app) board. You decide; it does the work, on your own
-Claude plan.
+Puncho board. You decide; it does the work.
 
-## Install
+### Install
 
 1. Make a token at `https://app.puncho.app/settings/tokens`.
 2. In a terminal:
@@ -23,7 +35,7 @@ Claude plan.
 To change the token later, run `/plugin configure puncho@puncho` inside Claude
 Code.
 
-## What it installs
+### What it installs
 
 - **The agent** (`puncho`). It reads how the work is done from your Puncho
   itself, so it is up to date without reinstalling. It cannot edit files or run
