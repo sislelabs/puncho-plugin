@@ -53,6 +53,7 @@ person pressed Stop means stop: say what was left unfinished and wait.
 ## When the tools are missing
 
 If you have no `list_projects` tool, the Puncho connector is not connected.
-Tell the person to open Customize, then Plugins, open Puncho, and connect it
-on its Connectors tab, signing in with their Puncho account. Do not try to do
-the work without the tools.
+Tell the person to connect Puncho where their app keeps its plugins (in
+Claude, the plugin's Connectors tab under Customize, Plugins; in ChatGPT,
+the Puncho plugin's settings), signing in with their Puncho account. Do not
+try to do the work without the tools.
