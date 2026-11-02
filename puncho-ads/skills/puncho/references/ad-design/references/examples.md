@@ -40,12 +40,13 @@ secondary), because the colours themselves are always the brand's.
 - **Do not take:** the knife and toast, the warm wall, the top-fifth headline,
   the lower-right pack.
 
-## 2. One number on a field — `DATA_HERO`, `GRAPHIC_FIELD`
+## 2. One number beside the product — `DATA_HERO`, `IN_SCENE`
 
 - **Picture:** the real bottle of a face serum, front-on, a little under half
-  the frame's height, standing on a field of its own pale label colour with
-  only a contact shadow. Beside it, one generated drop of the serum, cut out,
-  catching the light.
+  the frame's height, standing on a bathroom shelf of pale stone in its own
+  label colour, morning light from a window on the left, one drop of the
+  serum on the stone beside it. Built with `build_scene` round the placed
+  bottle, so the shelf, the drop and the light are one photograph.
 - **Layout:** a split. The number fills the left half, cropped slightly by
   the frame's left edge; the bottle and the drop stand in the right half,
   their base on the same line as the number's foot.
@@ -56,7 +57,7 @@ secondary), because the colours themselves are always the brand's.
 - **Palette roles:** paper is the label colour, ink the number, accent one
   small mark on the line under it. Secondary unused.
 - **Why it works:** a single checkable fact, so specific that it argues by
-  itself, and nothing on the frame competes with it. The field is the
+  itself, and nothing on the frame competes with it. The scene is the
   pack's own colour, so the ad reads as the product before a word is read.
 - **What to take:** one true fact made into the picture, with the product
   close enough to be the proof.

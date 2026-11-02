@@ -39,17 +39,20 @@ Everything else is a default.
    brand look (colours, logo, type) across concepts that differ.
 2. **The product mode** (`productMode`). How the real pack appears. No mode
    is the default: pick the one the idea needs and say why in the rationale.
-   When the brand has products, a batch uses at least three, because the
+   Every mode carries a photograph. When the brand has products, a batch uses
+   all three, because the
    product shown the same way in every ad is one picture with different words
    on it. A brand with nothing to place (a school, a service, an event) uses
    `NO_PACK` and needs no spread. The product shots are
    usually the store's own catalogue photos, all from one angle, so the variety
    has to come from the mode, the scale (tiny, or cropped so close it becomes
    texture) and the ground, not from the photo.
-   - `GRAPHIC_FIELD` — front-on, on a field in its own colours
-     (`product_colours`), with only a contact shadow. Nothing to match, so
-     nothing can look pasted. The safest mode, and the one that makes every
-     ad in a batch look the same when it is used for all of them.
+   - `GRAPHIC_FIELD` — the pack cut out onto a flat field of its own
+     colours. **Retired: never written for a new concept.** It was nearly
+     half of every brand's ads, and a packshot on a colour reads as a
+     catalogue page however good the type is: there is nothing to look at
+     but the pack. The pack's colours now go into the photograph instead (the
+     surface, the wall, the light), and the modes below are the three.
    - `CORNER_PACK` — the appetite is a photograph (food, a hand, a moment) and
      the pack sits flat in a corner over it, like a sticker. Nobody expects it
      to be lit by the room, because it is not pretending to be in it.
@@ -97,12 +100,12 @@ better: show people benefiting from the thing, not only the thing.
   crackers, the chocolate, crumbs, drips, the hand holding them. Food has no
   label to misspell. Generate it in the product's own light.
 - Check the product shot at the size you will use it. A soft, oversharpened or
-  haloed shot shows at full screen; use it smaller, on a field, or say plainly
+  haloed shot shows at full screen; use it smaller, flat in a corner, or say plainly
   that a better photo is needed (verdict BLOCKED). No composite hides a bad
   source.
 - A product standing in a photograph gets `build_scene` (below). Every other
   placed product and cut-out gets `integrate_image` (tone, contact and cast
-  shadow): on a field, flat in a corner, a part placed after the scene.
+  shadow): flat in a corner over a photo, a part placed after the scene.
   `relight_product` is for a scene that was built the old way, scene first.
 
 ## Build the photograph around the product
@@ -168,7 +171,13 @@ there is. It reads as a slide, and any brand's logo could sign it.
 - **Fill the frame.** The hero covers at least half of it, bleeds off an edge
   or sits behind the type. Something small centred in a field of paper, with
   the same empty margin all round, is not a composition.
-- **Nearly every ad carries a photograph.** "No stock photography" rules out
+- **Every ad carries a photograph, and it fills the frame.** The product cut
+  out onto a flat colour is not one, and neither is a pile of cut-out props
+  around it: that is a catalogue page. The photograph is a scene built round
+  the real product (`build_scene`), or a generated photo of the food, the
+  hands or the moment that the pack sits over in a corner, covering at least
+  half the frame. Finish is held while nothing does.
+  "No stock photography" rules out
   stock, not pictures, and a flat brand look decides how a photo is treated
   (black and white, cropped, pixel blocks over its edge), never whether
   there is one. Use photographs of the brand's own people, place or moment

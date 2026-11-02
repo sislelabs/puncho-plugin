@@ -9,14 +9,16 @@ ruins it.
 
 - **Proves:** one specific claim, said with confidence, and what the product is.
 - **Choose when:** the hook is strong alone and the pack is good-looking.
-- **Build:** field in the pack's signature colour (or two planes, signature and
-  paper). Headline huge, top third, paper or ink. Pack front-on, centre or
-  lower third, `integrate_image` for a contact shadow. Optionally contents
-  spilled at its foot (generated, cut out, `integrate_image`). Under the
-  headline, a second level: the product's name and its one reason, and two or
-  three short facts or a price sticker, set on the field or a carrier. In a
-  scene (`IN_SCENE`), the product is big: half the frame's width or more, no
-  wall of nothing between it and the headline.
+- **Build:** the photograph first, in the pack's signature colour: the real
+  pack placed big, then `build_scene` makes the surface, the wall and the
+  light round it in that colour (a pink box on a pink tiled counter, a dark
+  pouch on dark slate), with its contents spilled at its foot as part of the
+  same photograph. Headline huge, top third, on the scene's quietest plane.
+  Under the headline, a second level: the product's name and its one reason,
+  and two or three short facts or a price sticker, set on the scene or a
+  carrier. The product is big: half the frame's width or more, no wall of
+  nothing between it and the headline. Never the pack cut out onto a flat
+  colour with props pasted round it: that is a catalogue page.
 - **Ruins it:** a second claim competing with the first; the pack small; the
   headline alone over an empty field, which says nothing to a stranger.
 
