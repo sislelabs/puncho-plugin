@@ -39,8 +39,8 @@ set by hand. Work the same way:
    subject, angle, light, materials, colours. Use `cutout` for anything that
    stands on the design rather than filling it. Pick the model for the part:
    Recraft for illustration and clean backdrops, Nano Banana Pro or GPT Image 2
-   for people, hands and photographic scenes, and when a part should match a
-   reference. **No words, logos or product packs in a part.** Open every part
+   for people, hands and photographic scenes, and those or Muse Image (about a
+   credit, no seed) when a part should match a reference. **No words, logos or product packs in a part.** Open every part
    with `view_image` before using it; regenerate or drop one that is wrong.
    Use as many parts as the idea needs, often one: the hero scene, and only
    where the idea calls for them the carrier the words sit on, foreground

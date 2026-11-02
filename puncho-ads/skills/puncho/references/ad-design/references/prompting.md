@@ -75,6 +75,9 @@ prompt anyway.
 - **Nano Banana Pro** in `build_scene`'s `settle`: the best light and
   shadow on a product, and the least respect for it (it resizes and recolours
   it), which is why only its light is kept.
+- **Muse Image** (Meta's): follows edit instructions and takes references as
+  pictures, like the edit models. No seed, so a variant cannot be reproduced
+  from one. Cheap, about 1 credit a picture.
 
 Keep one model across ads that test hooks against each other, or the rollup
 credits the hook with what the model changed.
