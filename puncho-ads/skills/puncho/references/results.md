@@ -30,6 +30,35 @@ To learn one thing per batch, give the brief a `testVariable` in
 `store_specs` warns when it doesn't. `get_test_verdict` reads the result and
 the spend still needed; `get_batch_lift` says whether each batch beat the last.
 
+### 6b. Debriefs: what a finished campaign taught
+
+A person marks a campaign finished on the board when it is over; you never
+do, and there is no tool for it. Its result then sits in the Finished frame,
+waiting for a debrief. `list_finished_campaigns` lists them with each
+campaign's and each ad's numbers and the concept's attributes; one with
+`debrief: null` is waiting. Offer to debrief it, and write it with
+`record_debrief`:
+
+- **A verdict from the numbers.** `WORKED`, `MIXED`, `DID_NOT_WORK`, or
+  `TOO_LITTLE_DATA` when the campaign is `thin`. A thin campaign proves
+  nothing: its lessons are `TRY`, never `KEEP` or `STOP`.
+- **A summary in a few sentences**: where the spend went, which ads carried
+  the results and which did not, and why you think so.
+- **Lessons, each one specific thing with its number**: "SOCIAL_PROOF hooks
+  cost 40% less per sign-up than CURIOSITY_GAP ones (31 vs 52 results)", not
+  "proof works". `KEEP` to repeat, `STOP` never to repeat, `TRY` to test next.
+  Tag what each is about (the angle, hook type, shape, tension, format,
+  product mode, lead, or the one ad's `specId`) so it joins to the concepts
+  it speaks of.
+
+Your lessons reach every later batch at once, through
+`get_generation_context` `lessons`, labelled as your reading; a person's are
+decisions. A person can edit or mute any of them on the debrief. Calling
+again replaces the verdict and summary and only adds lessons, so never call
+it to "clean up" what a person wrote. When you write concepts, repeat a
+`KEEP`, never a `STOP`, give a `TRY` a concept to test it, and name the
+lesson a concept answers in its rationale.
+
 ### 7. The calendar
 
 Read `get_calendar` at the start of a session. Its `days` are what happened

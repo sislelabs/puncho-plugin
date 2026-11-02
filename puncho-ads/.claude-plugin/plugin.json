@@ -1,7 +1,7 @@
 {
   "name": "puncho-ads",
   "displayName": "Puncho",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Run your Meta ads loop on your Puncho board from a chat: references, ad concepts in your brand's voice, designs, and what is working. You approve and switch ads on yourself.",
   "author": { "name": "Puncho", "url": "https://puncho.app" },
   "homepage": "https://puncho.app",

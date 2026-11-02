@@ -17,7 +17,7 @@ Read a stage's topic before you work on it, once in a conversation:
 - `revisions`: changes a person asked for, reading a render's words back, older concepts drawn whole.
 - `imports`: finished ads and videos made elsewhere, and ads made in Ads Manager.
 - `launch`: campaign settings, the audience, special categories, budgets after launch.
-- `results`: reading the rollup with its uncertainty, planned tests, the calendar.
+- `results`: reading the rollup with its uncertainty, planned tests, debriefing finished campaigns, the calendar.
 - `ad-copy`: the bar for ad copy. Read before writing or rewriting any hook or copy.
 - `ad-copy/references/formats`: the library of layouts and what each needs.
 - `ad-copy/references/anti-examples`: real rejected copy and why each line failed. Read before drafting.
@@ -239,6 +239,9 @@ and the button the way the board names them:
 - **Launching**: Create paused campaign, at the top right once something is
   approved. Nothing spends until an ad is switched on in Meta.
 - **Results**: the Results frame; Sync now brings in the newest numbers.
+- **Finishing a campaign**: select its result and press Mark finished, in its
+  panel. It moves to the Finished frame, where its debrief and lessons are
+  written and can be edited or muted.
 - **The calendar** is in the left rail. Plan an organic post is in a concept's
   panel.
 - **Settings**: Settings, Meta connects the brand's Meta business; Settings,
