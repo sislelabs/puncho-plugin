@@ -147,11 +147,15 @@ product (on the note) do not move with it: set them back on it after.
   both layers go in `layerIds`.
 - **The 9:16 keeps the feed's scene.** `derive_story_version` covers the
   taller frame with the feed's photograph and takes everything standing in it
-  along, at its place and size in it; only the words and the logo go into the
-  safe band. Never build a second scene or generate a second backdrop for the
-  9:16: it is another photograph, paid for twice, and the product no longer
-  matches it. Build at 9:16 only when the derived one cuts the product off at
-  a side.
+  along, at its place and size in it, enlarging and raising the photograph a
+  little to lift the product out from under Reels' caption; only the words
+  and the logo go into the safe band. Never build a second scene or generate
+  a second backdrop for the 9:16: it is another photograph, paid for twice,
+  and the product no longer matches it. Build at 9:16 only when the derived
+  one cuts the product off at a side, or the preview says the product stands
+  under Reels' caption and the feed ad cannot place it higher. A product
+  standing low in the feed is the usual cause: where the idea allows, stand
+  it in the middle of the feed frame, not on its bottom edge.
 
 ## When there is nothing to place
 
@@ -442,13 +446,19 @@ The same face looks twice as good set the way a designer sets it:
 Previews measure what can be measured here: collisions and lines that almost
 touch (by the drawn letters, not the boxes), uneven spacing in a stack, loose
 leading on a big headline, a stranded last word, two biggest sizes too close.
-- At 9:16 every word stays between y 270 and 1250, 65px from the sides:
-  Reels lays its caption and buttons over the bottom third. The derived 9:16
-  keeps the photograph and what stands in it, and sets the words about a
-  quarter smaller: rework the words so the headline is at least as big as in
-  the feed and each line sits against the taller picture. On a flat ground the
-  whole ad comes out shrunk: there, make the hero fill the taller frame too. A
-  9:16 that is the feed ad in miniature is not done.
+- At 9:16 every word and the logo stay between y 270 and 1250, 65px from the
+  sides, and out of the band's lower-right corner (right of x 920, below
+  y 1000), where Reels' like, comment, share and save buttons run up the
+  edge; the product's middle stays above y 1250. Stories puts its profile
+  line over the top, and Reels its caption and Shop-now bar over the bottom
+  35%. A picture may run to the edges; the thing the ad sells
+  may not sit under the caption. The derived 9:16 keeps the words at the
+  feed's size (smaller only when they cannot fit), the top lines pinned under
+  the top of the safe area and the foot lines above its foot; on a flat
+  ground the product fills the room between them, larger than in the feed
+  where there is room. It is a starting point: look at it, place each line
+  against the taller picture, and fix what the preview reports. A 9:16 that
+  is the feed ad in miniature is not done.
 
 ## Appetite
 
