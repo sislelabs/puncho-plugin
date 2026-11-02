@@ -106,6 +106,10 @@ better: show people benefiting from the thing, not only the thing.
 - A product standing in a photograph gets `build_scene` (below). Every other
   placed product and cut-out gets `integrate_image` (tone, contact and cast
   shadow): flat in a corner over a photo, a part placed after the scene.
+- Never a plain box drawn behind the product: a "white card", a plate, a
+  panel it stands on. It frames the cut-out as a cut-out, and the ad reads as
+  a catalogue page. The product stands in the photograph or lies flat over
+  it. Previews flag the box, and finish is held for it.
   `relight_product` is for a scene that was built the old way, scene first.
 
 ## Build the photograph around the product
