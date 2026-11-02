@@ -328,8 +328,11 @@ what the words are, and build it whole.
 - **Things overlap on purpose.** A seal or burst over the product's corner, the
   product breaking the headline, a hand entering the frame toward the words.
   Elements that float with gaps between them all read as separate stickers.
-- **Small things live at the edges.** The logo in a bottom corner, and the
-  disclaimer and fine print along the bottom edge, smallest of all. The
+- **Small things live at the edges.** The logo in a bottom corner, on the
+  margin the words keep (its outer edges as far from the frame's edges as the
+  words are), set straight on a calm part of the picture: never in a box or
+  tab of its own, and never pushed into the corner. The disclaimer and fine
+  print go along the bottom edge, smallest of all. The
   website goes on the image only when the idea needs it as the call to
   action: Meta shows the link and its button under every ad, and the address
   is already in the primary text. An object in a real moment keeps only the
