@@ -122,8 +122,8 @@ shadow or tone fixes that. So the order is reversed:
 
 1. **Place the real product first**: the cut-out, straight, where it should
    stand and a little larger than you want it, because it comes back up to a
-   quarter smaller or larger. Anything stuck to it (a blank sticky note, a
-   tag, a ribbon) is its own layer on it, and goes in `layerIds` after the
+   quarter smaller or larger. Anything stuck to it (a tag, a ribbon, a
+   label) is its own layer on it, and goes in `layerIds` after the
    product so the scene is made around both.
 2. **`build_scene`, method `around`**: an image model makes the whole
    photograph round the product, agreeing with its view and its light.
@@ -365,7 +365,8 @@ the hand, the surface) is one picture, built around the pack when the pack is
 in it (`build_scene`), with the empty area for type described in the prompt. Everything else that would
 look better drawn than built is its own part, briefed in the same light:
 
-- the carrier the words sit on (a sticky note, a tag, a receipt), cut out;
+- the carrier the words sit on, cut out: an object from the product's own
+  world (see Words on objects);
 - foreground pieces that give depth: a cut-out cracker, crumbs, a drip, a
   splash, a leaf, placed at different sizes and some slightly blurred. One to
   three pieces, each its own part, shaped like the real product as its shot
@@ -402,10 +403,16 @@ composite last.
   dark slate, sky: generate the photo with that area empty ("the upper third
   is clean empty wall"). Never over wood grain, crumbs or a busy shelf without
   a carrier.
-- **Words on objects.** Generate the blank carrier — a sticky note, a gift
-  tag, a price sticker, a torn label, a receipt, a chalkboard, a notification —
-  and set the real words on it as a layer, turned and slanted (`rotation`,
-  `skewX`) with the object. The sticky note on a bowl is a whole ad.
+- **Words on objects.** Generate the blank carrier and set the real words on
+  it as a layer, turned and slanted (`rotation`, `skewX`) with the object.
+  Choose the carrier from where the product lives: a recipe card or the pack's
+  own cooking instructions for food, a till receipt or price tag for a shop, a
+  chalk menu board for a café, a gift tag for a present, a phone notification
+  for an app, a label on a jar, a luggage tag, a ticket stub. A sticky note is
+  the `STICKY_NOTE` format's carrier, not a default: on an ad of another
+  format it reads as the same trick again. Each ad in a batch gets its own
+  carrier, or none; the preview flags a second ad with the one another
+  already uses.
 - **Depth.** The headline behind the product: the cut-out sits above the
   letters in the stack and breaks through them.
 - **Devices** (`icon` layers): hand-drawn arrows and rings from a fact to the

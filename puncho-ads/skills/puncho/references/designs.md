@@ -63,11 +63,14 @@ set by hand. Work the same way:
 5. **Make the type belong to the picture.** A headline in a band across the top
    with a photo under it is a slide, not an ad. Words go *on* things or *into*
    the scene:
-   - **Carriers.** Generate the object a line is written on, blank: a sticky
-     note, a gift tag, a price sticker, a torn label, a receipt, a chalkboard, a
-     phone notification, a ribbon, a speech bubble. Set the real words on it as
-     a text layer, turned and slanted (`rotation`, `skewX`) to sit on it. The
-     note on the gift bag and the tag on the pack are the best moments so far.
+   - **Carriers.** Generate the object a line is written on, blank, chosen
+     from the product's own world: a recipe card for food, a till receipt or
+     price tag for a shop, a gift tag on a present, a label on a jar, a phone
+     notification for an app, a chalk board for a café, a ticket stub for an
+     event. Set the real words on it as a text layer, turned and slanted
+     (`rotation`, `skewX`) to sit on it. A sticky note belongs to the
+     `STICKY_NOTE` format; on any other ad it is a habit, not an idea. No two
+     ads in a batch share a carrier, and the preview says when one does.
    - **Depth.** Tuck the headline behind the product: the cut-out sits above
      the letters in the stack, so the product breaks through the type.
    - **Devices, rarely.** Arrows, rings and stars are `icon` layers, never
