@@ -37,25 +37,27 @@ Everything else is a default.
    spreads across at least three formats, because a new headline on the same
    layout is not a new ad and tests nothing new. Meta's other half: keep one
    brand look (colours, logo, type) across concepts that differ.
-2. **The product mode** (`productMode`). How the real pack appears. No mode
-   is the default: pick the one the idea needs and say why in the rationale.
-   Every mode carries a photograph. When the brand has products, a batch uses
-   all three, because the
-   product shown the same way in every ad is one picture with different words
-   on it. A brand with nothing to place (a school, a service, an event) uses
-   `NO_PACK` and needs no spread. The product shots are
-   usually the store's own catalogue photos, all from one angle, so the variety
-   has to come from the mode, the scale (tiny, or cropped so close it becomes
-   texture) and the ground, not from the photo.
+2. **The product mode** (`productMode`). How the real pack appears. **A
+   product that is shown stands in its scene**: on the surface, in the hand,
+   worn, beside the food it goes with, in the scene's own light. Every mode
+   carries a photograph. A brand with nothing to place (a school, a service,
+   an event) uses `NO_PACK`. The product shots are usually the store's own
+   catalogue photos, all from one angle, so the variety has to come from the
+   format, the place, the scale (small in a wide scene, or cropped so close it
+   becomes texture), a pair or one, and the light, not from the photo or from
+   how the product is laid on.
    - `GRAPHIC_FIELD` — the pack cut out onto a flat field of its own
      colours. **Retired: never written for a new concept.** It was nearly
      half of every brand's ads, and a packshot on a colour reads as a
      catalogue page however good the type is: there is nothing to look at
      but the pack. The pack's colours now go into the photograph instead (the
-     surface, the wall, the light), and the modes below are the three.
-   - `CORNER_PACK` — the appetite is a photograph (food, a hand, a moment) and
-     the pack sits flat in a corner over it, like a sticker. Nobody expects it
-     to be lit by the room, because it is not pretending to be in it.
+     surface, the wall, the light).
+   - `CORNER_PACK` — the pack laid flat in a corner over a photograph, like a
+     sticker. **Retired: never written for a new concept.** It was the cheap
+     way round building a scene, and it read as pasted: a shoe dropped on a
+     generated street at dusk, lit by daylight, standing on a floor seen from
+     another height, with two drawn ellipses for its shadow. Even the jar
+     beside the toast is better on the same table, in the same light.
    - `IN_SCENE` — the pack physically in the moment. Built with
      `build_scene`: the real pack placed first, the photograph made around
      it. See *Build the photograph around the product* below. One way to do
@@ -100,16 +102,18 @@ better: show people benefiting from the thing, not only the thing.
   crackers, the chocolate, crumbs, drips, the hand holding them. Food has no
   label to misspell. Generate it in the product's own light.
 - Check the product shot at the size you will use it. A soft, oversharpened or
-  haloed shot shows at full screen; use it smaller, flat in a corner, or say plainly
+  haloed shot shows at full screen; use it smaller in a wider scene, or say plainly
   that a better photo is needed (verdict BLOCKED). No composite hides a bad
   source.
-- A product standing in a photograph gets `build_scene` (below). Every other
-  placed product and cut-out gets `integrate_image` (tone, contact and cast
-  shadow): flat in a corner over a photo, a part placed after the scene.
+- The product gets `build_scene` (below), always. Never a photograph made
+  first with the product dropped on it: previews flag a cut-out laid over a
+  photograph no `build_scene` made, and finish is held for it. A part placed
+  after the scene (a crumb, a leaf in the foreground) gets `integrate_image`
+  (tone, contact and cast shadow).
 - Never a plain box drawn behind the product: a "white card", a plate, a
   panel it stands on. It frames the cut-out as a cut-out, and the ad reads as
-  a catalogue page. The product stands in the photograph or lies flat over
-  it. Previews flag the box, and finish is held for it.
+  a catalogue page. The product stands in the photograph. Previews flag the
+  box, and finish is held for it.
   `relight_product` is for a scene that was built the old way, scene first.
 
 ## Build the photograph around the product
@@ -178,8 +182,8 @@ there is. It reads as a slide, and any brand's logo could sign it.
 - **Every ad carries a photograph, and it fills the frame.** The product cut
   out onto a flat colour is not one, and neither is a pile of cut-out props
   around it: that is a catalogue page. The photograph is a scene built round
-  the real product (`build_scene`), or a generated photo of the food, the
-  hands or the moment that the pack sits over in a corner, covering at least
+  the real product (`build_scene`), or, with no product in the ad, a
+  generated photo of the food, the hands or the moment, covering at least
   half the frame. Finish is held while nothing does.
   "No stock photography" rules out
   stock, not pictures, and a flat brand look decides how a photo is treated

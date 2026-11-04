@@ -128,9 +128,10 @@ file only says how the tools fit together.
 
 Every idea carries an `adFormat` and a `productMode` (typed; the rollup
 compares them). Spread a batch across at least three formats: Meta treats ads
-of one format and setting as one creative. Spread it across at least three
-product modes too, and say in each rationale why its mode fits; none is the
-default, and `store_specs` makes you choose one for every idea.
+of one format and setting as one creative. A product that is shown stands in
+its scene (`IN_SCENE`, built with `build_scene`), never laid over a photo;
+`NO_PACK` is for an idea better without it. `store_specs` makes you choose one
+for every idea.
 
 A concept you store is an **idea**, not an ad yet. Nothing is drawn. It carries
 the hook and copy, **every word that will appear on the image** in `texts`, and

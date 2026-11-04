@@ -15,28 +15,28 @@ The words are described by their job, never quoted: an example's lines would
 be borrowed otherwise. The palette is given by role (accent, ink, paper,
 secondary), because the colours themselves are always the brand's.
 
-## 1. A spread, mid-scoop — `FOOD_IN_HAND`, `CORNER_PACK`
+## 1. A spread, mid-scoop — `FOOD_IN_HAND`, `IN_SCENE`
 
-- **Picture:** a photograph, three quarters of the frame. A knife lifting a
-  thick curl of the spread off an open jar, a slice of toast under it with one
-  corner bitten. Side light from the left, so the swirl in the spread shows
+- **Picture:** a photograph, three quarters of the frame, built round the
+  real jar with `build_scene`. A knife lifting a thick curl of the spread off
+  the open jar, a slice of toast beside it with one corner bitten. Side light from the left, so the swirl in the spread shows
   its ridges and gloss. The wall behind is the pack's warm signature colour,
   the counter a darker shade of it.
 - **Layout:** the headline across the top fifth, on the clean wall the
-  photograph was made with. The real jar, flat and front-on, in the lower
-  right corner at about a fifth of the width, with a soft drop shadow, like a
-  sticker. The logo is on the jar; nothing else signs it.
+  photograph was made with. The real jar stands on the counter in the lower
+  right, at about a third of the width, slightly behind the toast, in the
+  same side light. The logo is on the jar; nothing else signs it.
 - **Type:** a heavy display face, three short lines, tight leading, ink on the
   signature colour. One supporting line under it at a third of its size: the
   product's name and what is in it. Nothing else on the image.
 - **Palette roles:** paper is the wall (the pack's signature), ink the type,
   accent unused: the food is the colour.
 - **Why it works:** one thing to look at, and it is the food doing what the
-  reader wants it to do. The pack is not pretending to be in the room, so
-  nothing looks pasted. The headline is a confession, and the bitten toast is
+  reader wants it to do. The jar is in the room, on the same counter in the
+  same light, so nothing looks pasted. The headline is a confession, and the bitten toast is
   its proof.
-- **What to take:** the appetite is in motion, and the pack signs it from a
-  corner instead of competing with it.
+- **What to take:** the appetite is in motion, and the pack stands just
+  behind it, signing it without competing with it.
 - **Do not take:** the knife and toast, the warm wall, the top-fifth headline,
   the lower-right pack.
 
