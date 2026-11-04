@@ -66,8 +66,8 @@ prompt anyway.
   say how it is drawn (line, how colour is laid, grain), or it comes back as
   flat vector.
 - **Nano Banana Pro**: photographs with hands, food in use, scenes that must
-  follow a reference, edits. Never a photorealistic person's face or body,
-  and never a child (SKILL.md, *People are real, always*).
+  follow a reference, edits. A person only with no face, and never a child
+  (SKILL.md, *People: real, or generated without a face*).
 - **GPT Image 2**: photographic scenes with complex arrangement; precise edits.
   It is the model `build_scene` uses for `around`: of the edit models it
   holds a product's shape and place best, which is what lets the real one go

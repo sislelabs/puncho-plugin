@@ -23,8 +23,7 @@ that note before approving.
 drawn; no words in a generated picture; no invented claim, number, rating or
 customer; every word on the image is a text layer the human approves; the
 words and the logo can be read (contrast, size, the 9:16 safe area); one light
-across a photograph; no generated photorealistic person, and no generated
-child at all. Findings about these are fixed, never explained away.
+across a photograph; no generated face, and no generated child at all. Findings about these are fixed, never explained away.
 Everything else is a default.
 
 ## The three decisions, in this order
@@ -83,16 +82,29 @@ two planes: signature and paper); type = paper or ink, whichever reads; one
 accent at most. Previews flag flat colours from neither the pack nor the
 palette. A different colour is a decision you can defend, not a default.
 
-## People are real, always
+## People: real, or generated without a face
 
-No generated photorealistic person in an ad, and never a generated child or
-teenager, in any style that could pass for a photo. People in an ad are real
-photographs the brand has (its customers, its team, past editions of its
-event), asked of the human; BLOCKED when the idea needs them and there are
-none. A generated hand, or an object in use, is fine. Two reasons: Meta
-detects pictures made with third-party AI tools and labels the ad "AI info",
-and people rate AI-made ads lower and remember them less. A real photograph also does what Meta asks
-better: show people benefiting from the thing, not only the thing.
+A product worn or used by someone sells better than one standing alone, and
+most brands' own photographs show it on a body. So a generated adult may be in
+an ad, **with no face**: seen from behind or walking away, turned away, cropped
+at the shoulders or the neck, or the face out of the frame. Never a generated
+face, even small or out of focus, and never a generated child or teenager, in
+any style that could pass for a photo. A face is where a generated picture
+fails first (eyes, teeth, skin), it reads as a customer who does not exist, and
+it can look like a real person who never agreed to be in an ad.
+
+- **The product stays the hero.** Frame it waist down, or low and close at the
+  feet or hands: the product at least as large as the hero rule asks. A whole
+  figure in a wide street is a lifestyle picture with the product lost in it.
+- **Worn, from the side.** The product shots are one angle. A shoe is worn
+  side-on: the pair placed first, twice, facing the same way, the second a
+  little behind and higher (a person standing or mid-step), and `build_scene`
+  with `around` draws the legs and the person into them. Ask for what the
+  brand's photographs show: cropped trousers, bare ankles or socks. Look at the
+  preview at full size for the ankle sitting in the shoe's opening; if the leg
+  misses it, build again.
+- **The brand's own photographs of people come first** when they show the
+  product; a generated person is for when they do not.
 
 ## The product is real, always
 
