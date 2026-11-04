@@ -124,6 +124,15 @@ before anyone knew what would stand there, so a pack shot from the side
 stands on a floor seen from above, in a light that falls the other way. No
 shadow or tone fixes that. So the order is reversed:
 
+0. **Look at the brand's own photographs first.** `list_design_requests`
+   gives them under `brand.photographs`: its key visuals and its organic
+   posts. Open three with `view_image` and name what they share: the kind
+   of place, the light and time of day, the lens and the distance, whether
+   the product is worn or placed, any marks drawn over the photo. The ad's
+   photograph is shot that way, in the brand's world. A brand whose feed is
+   sunlit grass and moss does not get a dusk street or a studio grey, however
+   well the headline fits it. Pass two or three of them as `lookFrom` to
+   `build_scene`, so the model shoots the scene the way the brand does.
 1. **Place the real product first**: the cut-out, straight, where it should
    stand and a little larger than you want it, because it comes back up to a
    quarter smaller or larger. Anything stuck to it (a tag, a ribbon, a
@@ -135,9 +144,12 @@ shadow or tone fixes that. So the order is reversed:
    (the food, the props, the hand), the light, and that the top area is clean
    where the headline goes. Add `settle: true` when the light is hard or
    directional and should fall on the product (sun through leaves, a lamp).
-   **Method `settle`** instead when the scene is already in the design (a
-   generated backdrop, a real photo) and the product stands on its surface:
-   the model adds the contact shadow, cast shadow, reflection and light.
+   **Method `settle`** only when the photograph under the product is real:
+   one of the brand's own (a key visual, an organic post) or a scene
+   `build_scene` already made. It adds the contact shadow, cast shadow,
+   reflection and light. Over a backdrop generated for this ad it is
+   refused: that backdrop was made without the product, and lighting the
+   product on it leaves it pasted. Never generate a backdrop first.
 3. The model redraws the product while it works: bigger or smaller, a little
    squashed, its small print garbled, sometimes its colour changed. That
    drawing is found and thrown away; the real layers are moved to where it
