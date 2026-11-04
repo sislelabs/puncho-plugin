@@ -96,13 +96,18 @@ it can look like a real person who never agreed to be in an ad.
 - **The product stays the hero.** Frame it waist down, or low and close at the
   feet or hands: the product at least as large as the hero rule asks. A whole
   figure in a wide street is a lifestyle picture with the product lost in it.
-- **Worn, from the side.** The product shots are one angle. A shoe is worn
-  side-on: the pair placed first, twice, facing the same way, the second a
-  little behind and higher (a person standing or mid-step), and `build_scene`
-  with `around` draws the legs and the person into them. Ask for what the
-  brand's photographs show: cropped trousers, bare ankles or socks. Look at the
-  preview at full size for the ankle sitting in the shoe's opening; if the leg
-  misses it, build again.
+- **Worn or held: the person decides.** A photo of an empty product cannot
+  be worn: asked to keep the real shoe and draw a leg into it, a model draws
+  its own shoe on the leg, and the real one never lines up. So the product is
+  drawn only where a person ticked "Let the model draw the product" on the
+  concept. Then place the product where and as big as it should be worn, and
+  call `build_scene` with method `worn`, `wornBy` (who, what they wear, how
+  they stand, cropped with no face) and `productPhotos` (other angles of the
+  same product, when the store has them). Its colour is corrected toward the
+  photo and the drift reported: compare it with the product shot at full size,
+  material, laces and sole, and build again when it does not read as the same
+  product. Without the tick, `worn` is refused: say in your finish note that
+  the idea wants it, and the person can tick it.
 - **The brand's own photographs of people come first** when they show the
   product; a generated person is for when they do not.
 
