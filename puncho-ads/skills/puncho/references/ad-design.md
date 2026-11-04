@@ -155,6 +155,11 @@ shadow or tone fixes that. So the order is reversed:
    drawing is found and thrown away; the real layers are moved to where it
    stood and take its light. Look at the preview at full size for anything
    left of it: a second edge behind the real one.
+   **The weather on the product** (`dress_product`): when the scene has snow,
+   rain, sand or dust, the product should carry a little of it, or it reads
+   as placed. Ask for a little and say where ("a light dusting of fresh snow
+   on the toe and along the laces"). Only what the model added is kept, as a
+   layer over the untouched product; delete that layer to undo.
 4. Then the rest of the ad on top: foreground parts, the carrier's words, the
    headline (tucked behind the product if the idea wants depth), the logo.
 
