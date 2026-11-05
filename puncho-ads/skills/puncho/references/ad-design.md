@@ -106,8 +106,13 @@ it can look like a real person who never agreed to be in an ad.
   same product, when the store has them). Its colour is corrected toward the
   photo and the drift reported: compare it with the product shot at full size,
   material, laces and sole, and build again when it does not read as the same
-  product. Without the tick, `worn` is refused: say in your finish note that
-  the idea wants it, and the person can tick it.
+  product. Left out, `productPhotos` is the product's own angles (its file and
+  `angles` in `productShots`).
+- **Without the tick, suggest it.** When the idea needs the product worn or
+  held, call `suggest_product_draw` with why, and how many photos of the
+  product there are. One photo is enough to suggest it: say what may differ
+  (the toe, the back) and let the person decide. Then finish the design with
+  the product placed from its photo; once they allow it, they ask again.
 - **The brand's own photographs of people come first** when they show the
   product; a generated person is for when they do not.
 
