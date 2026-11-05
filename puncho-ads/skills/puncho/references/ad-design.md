@@ -23,8 +23,7 @@ that note before approving.
 drawn; no words in a generated picture; no invented claim, number, rating or
 customer; every word on the image is a text layer the human approves; the
 words and the logo can be read (contrast, size, the 9:16 safe area); one light
-across a photograph; no generated photorealistic person, and no generated
-child at all. Findings about these are fixed, never explained away.
+across a photograph; no generated face, and no generated child at all. Findings about these are fixed, never explained away.
 Everything else is a default.
 
 ## The three decisions, in this order
@@ -37,22 +36,27 @@ Everything else is a default.
    spreads across at least three formats, because a new headline on the same
    layout is not a new ad and tests nothing new. Meta's other half: keep one
    brand look (colours, logo, type) across concepts that differ.
-2. **The product mode** (`productMode`). How the real pack appears. No mode
-   is the default: pick the one the idea needs and say why in the rationale.
-   When the brand has products, a batch uses at least three, because the
-   product shown the same way in every ad is one picture with different words
-   on it. A brand with nothing to place (a school, a service, an event) uses
-   `NO_PACK` and needs no spread. The product shots are
-   usually the store's own catalogue photos, all from one angle, so the variety
-   has to come from the mode, the scale (tiny, or cropped so close it becomes
-   texture) and the ground, not from the photo.
-   - `GRAPHIC_FIELD` — front-on, on a field in its own colours
-     (`product_colours`), with only a contact shadow. Nothing to match, so
-     nothing can look pasted. The safest mode, and the one that makes every
-     ad in a batch look the same when it is used for all of them.
-   - `CORNER_PACK` — the appetite is a photograph (food, a hand, a moment) and
-     the pack sits flat in a corner over it, like a sticker. Nobody expects it
-     to be lit by the room, because it is not pretending to be in it.
+2. **The product mode** (`productMode`). How the real pack appears. **A
+   product that is shown stands in its scene**: on the surface, in the hand,
+   worn, beside the food it goes with, in the scene's own light. Every mode
+   carries a photograph. A brand with nothing to place (a school, a service,
+   an event) uses `NO_PACK`. The product shots are usually the store's own
+   catalogue photos, all from one angle, so the variety has to come from the
+   format, the place, the scale (small in a wide scene, or cropped so close it
+   becomes texture), a pair or one, and the light, not from the photo or from
+   how the product is laid on.
+   - `GRAPHIC_FIELD` — the pack cut out onto a flat field of its own
+     colours. **Retired: never written for a new concept.** It was nearly
+     half of every brand's ads, and a packshot on a colour reads as a
+     catalogue page however good the type is: there is nothing to look at
+     but the pack. The pack's colours now go into the photograph instead (the
+     surface, the wall, the light).
+   - `CORNER_PACK` — the pack laid flat in a corner over a photograph, like a
+     sticker. **Retired: never written for a new concept.** It was the cheap
+     way round building a scene, and it read as pasted: a shoe dropped on a
+     generated street at dusk, lit by daylight, standing on a floor seen from
+     another height, with two drawn ellipses for its shadow. Even the jar
+     beside the toast is better on the same table, in the same light.
    - `IN_SCENE` — the pack physically in the moment. Built with
      `build_scene`: the real pack placed first, the photograph made around
      it. See *Build the photograph around the product* below. One way to do
@@ -78,16 +82,39 @@ two planes: signature and paper); type = paper or ink, whichever reads; one
 accent at most. Previews flag flat colours from neither the pack nor the
 palette. A different colour is a decision you can defend, not a default.
 
-## People are real, always
+## People: real, or generated without a face
 
-No generated photorealistic person in an ad, and never a generated child or
-teenager, in any style that could pass for a photo. People in an ad are real
-photographs the brand has (its customers, its team, past editions of its
-event), asked of the human; BLOCKED when the idea needs them and there are
-none. A generated hand, or an object in use, is fine. Two reasons: Meta
-detects pictures made with third-party AI tools and labels the ad "AI info",
-and people rate AI-made ads lower and remember them less. A real photograph also does what Meta asks
-better: show people benefiting from the thing, not only the thing.
+A product worn or used by someone sells better than one standing alone, and
+most brands' own photographs show it on a body. So a generated adult may be in
+an ad, **with no face**: seen from behind or walking away, turned away, cropped
+at the shoulders or the neck, or the face out of the frame. Never a generated
+face, even small or out of focus, and never a generated child or teenager, in
+any style that could pass for a photo. A face is where a generated picture
+fails first (eyes, teeth, skin), it reads as a customer who does not exist, and
+it can look like a real person who never agreed to be in an ad.
+
+- **The product stays the hero.** Frame it waist down, or low and close at the
+  feet or hands: the product at least as large as the hero rule asks. A whole
+  figure in a wide street is a lifestyle picture with the product lost in it.
+- **Worn or held: the person decides.** A photo of an empty product cannot
+  be worn: asked to keep the real shoe and draw a leg into it, a model draws
+  its own shoe on the leg, and the real one never lines up. So the product is
+  drawn only where a person ticked "Let the model draw the product" on the
+  concept. Then place the product where and as big as it should be worn, and
+  call `build_scene` with method `worn`, `wornBy` (who, what they wear, how
+  they stand, cropped with no face) and `productPhotos` (other angles of the
+  same product, when the store has them). Its colour is corrected toward the
+  photo and the drift reported: compare it with the product shot at full size,
+  material, laces and sole, and build again when it does not read as the same
+  product. Left out, `productPhotos` is the product's own angles (its file and
+  `angles` in `productShots`).
+- **Without the tick, suggest it.** When the idea needs the product worn or
+  held, call `suggest_product_draw` with why, and how many photos of the
+  product there are. One photo is enough to suggest it: say what may differ
+  (the toe, the back) and let the person decide. Then finish the design with
+  the product placed from its photo; once they allow it, they ask again.
+- **The brand's own photographs of people come first** when they show the
+  product; a generated person is for when they do not.
 
 ## The product is real, always
 
@@ -97,12 +124,18 @@ better: show people benefiting from the thing, not only the thing.
   crackers, the chocolate, crumbs, drips, the hand holding them. Food has no
   label to misspell. Generate it in the product's own light.
 - Check the product shot at the size you will use it. A soft, oversharpened or
-  haloed shot shows at full screen; use it smaller, on a field, or say plainly
+  haloed shot shows at full screen; use it smaller in a wider scene, or say plainly
   that a better photo is needed (verdict BLOCKED). No composite hides a bad
   source.
-- A product standing in a photograph gets `build_scene` (below). Every other
-  placed product and cut-out gets `integrate_image` (tone, contact and cast
-  shadow): on a field, flat in a corner, a part placed after the scene.
+- The product gets `build_scene` (below), always. Never a photograph made
+  first with the product dropped on it: previews flag a cut-out laid over a
+  photograph no `build_scene` made, and finish is held for it. A part placed
+  after the scene (a crumb, a leaf in the foreground) gets `integrate_image`
+  (tone, contact and cast shadow).
+- Never a plain box drawn behind the product: a "white card", a plate, a
+  panel it stands on. It frames the cut-out as a cut-out, and the ad reads as
+  a catalogue page. The product stands in the photograph. Previews flag the
+  box, and finish is held for it.
   `relight_product` is for a scene that was built the old way, scene first.
 
 ## Build the photograph around the product
@@ -113,10 +146,19 @@ before anyone knew what would stand there, so a pack shot from the side
 stands on a floor seen from above, in a light that falls the other way. No
 shadow or tone fixes that. So the order is reversed:
 
+0. **Look at the brand's own photographs first.** `list_design_requests`
+   gives them under `brand.photographs`: its key visuals and its organic
+   posts. Open three with `view_image` and name what they share: the kind
+   of place, the light and time of day, the lens and the distance, whether
+   the product is worn or placed, any marks drawn over the photo. The ad's
+   photograph is shot that way, in the brand's world. A brand whose feed is
+   sunlit grass and moss does not get a dusk street or a studio grey, however
+   well the headline fits it. Pass two or three of them as `lookFrom` to
+   `build_scene`, so the model shoots the scene the way the brand does.
 1. **Place the real product first**: the cut-out, straight, where it should
    stand and a little larger than you want it, because it comes back up to a
-   quarter smaller or larger. Anything stuck to it (a blank sticky note, a
-   tag, a ribbon) is its own layer on it, and goes in `layerIds` after the
+   quarter smaller or larger. Anything stuck to it (a tag, a ribbon, a
+   label) is its own layer on it, and goes in `layerIds` after the
    product so the scene is made around both.
 2. **`build_scene`, method `around`**: an image model makes the whole
    photograph round the product, agreeing with its view and its light.
@@ -124,14 +166,22 @@ shadow or tone fixes that. So the order is reversed:
    (the food, the props, the hand), the light, and that the top area is clean
    where the headline goes. Add `settle: true` when the light is hard or
    directional and should fall on the product (sun through leaves, a lamp).
-   **Method `settle`** instead when the scene is already in the design (a
-   generated backdrop, a real photo) and the product stands on its surface:
-   the model adds the contact shadow, cast shadow, reflection and light.
+   **Method `settle`** only when the photograph under the product is real:
+   one of the brand's own (a key visual, an organic post) or a scene
+   `build_scene` already made. It adds the contact shadow, cast shadow,
+   reflection and light. Over a backdrop generated for this ad it is
+   refused: that backdrop was made without the product, and lighting the
+   product on it leaves it pasted. Never generate a backdrop first.
 3. The model redraws the product while it works: bigger or smaller, a little
    squashed, its small print garbled, sometimes its colour changed. That
    drawing is found and thrown away; the real layers are moved to where it
    stood and take its light. Look at the preview at full size for anything
    left of it: a second edge behind the real one.
+   **The weather on the product** (`dress_product`): when the scene has snow,
+   rain, sand or dust, the product should carry a little of it, or it reads
+   as placed. Ask for a little and say where ("a light dusting of fresh snow
+   on the toe and along the laces"). Only what the model added is kept, as a
+   layer over the untouched product; delete that layer to undo.
 4. Then the rest of the ad on top: foreground parts, the carrier's words, the
    headline (tucked behind the product if the idea wants depth), the logo.
 
@@ -172,7 +222,13 @@ there is. It reads as a slide, and any brand's logo could sign it.
 - **Fill the frame.** The hero covers at least half of it, bleeds off an edge
   or sits behind the type. Something small centred in a field of paper, with
   the same empty margin all round, is not a composition.
-- **Nearly every ad carries a photograph.** "No stock photography" rules out
+- **Every ad carries a photograph, and it fills the frame.** The product cut
+  out onto a flat colour is not one, and neither is a pile of cut-out props
+  around it: that is a catalogue page. The photograph is a scene built round
+  the real product (`build_scene`), or, with no product in the ad, a
+  generated photo of the food, the hands or the moment, covering at least
+  half the frame. Finish is held while nothing does.
+  "No stock photography" rules out
   stock, not pictures, and a flat brand look decides how a photo is treated
   (black and white, cropped, pixel blocks over its edge), never whether
   there is one. Use photographs of the brand's own people, place or moment
@@ -319,8 +375,11 @@ what the words are, and build it whole.
 - **Things overlap on purpose.** A seal or burst over the product's corner, the
   product breaking the headline, a hand entering the frame toward the words.
   Elements that float with gaps between them all read as separate stickers.
-- **Small things live at the edges.** The logo in a bottom corner, and the
-  disclaimer and fine print along the bottom edge, smallest of all. The
+- **Small things live at the edges.** The logo in a bottom corner, on the
+  margin the words keep (its outer edges as far from the frame's edges as the
+  words are), set straight on a calm part of the picture: never in a box or
+  tab of its own, and never pushed into the corner. The disclaimer and fine
+  print go along the bottom edge, smallest of all. The
   website goes on the image only when the idea needs it as the call to
   action: Meta shows the link and its button under every ad, and the address
   is already in the primary text. An object in a real moment keeps only the
@@ -353,7 +412,8 @@ the hand, the surface) is one picture, built around the pack when the pack is
 in it (`build_scene`), with the empty area for type described in the prompt. Everything else that would
 look better drawn than built is its own part, briefed in the same light:
 
-- the carrier the words sit on (a sticky note, a tag, a receipt), cut out;
+- the carrier the words sit on, cut out: an object from the product's own
+  world (see Words on objects);
 - foreground pieces that give depth: a cut-out cracker, crumbs, a drip, a
   splash, a leaf, placed at different sizes and some slightly blurred. One to
   three pieces, each its own part, shaped like the real product as its shot
@@ -390,10 +450,16 @@ composite last.
   dark slate, sky: generate the photo with that area empty ("the upper third
   is clean empty wall"). Never over wood grain, crumbs or a busy shelf without
   a carrier.
-- **Words on objects.** Generate the blank carrier — a sticky note, a gift
-  tag, a price sticker, a torn label, a receipt, a chalkboard, a notification —
-  and set the real words on it as a layer, turned and slanted (`rotation`,
-  `skewX`) with the object. The sticky note on a bowl is a whole ad.
+- **Words on objects.** Generate the blank carrier and set the real words on
+  it as a layer, turned and slanted (`rotation`, `skewX`) with the object.
+  Choose the carrier from where the product lives: a recipe card or the pack's
+  own cooking instructions for food, a till receipt or price tag for a shop, a
+  chalk menu board for a café, a gift tag for a present, a phone notification
+  for an app, a label on a jar, a luggage tag, a ticket stub. A sticky note is
+  the `STICKY_NOTE` format's carrier, not a default: on an ad of another
+  format it reads as the same trick again. Each ad in a batch gets its own
+  carrier, or none; the preview flags a second ad with the one another
+  already uses.
 - **Depth.** The headline behind the product: the cut-out sits above the
   letters in the stack and breaks through them.
 - **Devices** (`icon` layers): hand-drawn arrows and rings from a fact to the

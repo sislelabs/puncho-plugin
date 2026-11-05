@@ -9,14 +9,16 @@ ruins it.
 
 - **Proves:** one specific claim, said with confidence, and what the product is.
 - **Choose when:** the hook is strong alone and the pack is good-looking.
-- **Build:** field in the pack's signature colour (or two planes, signature and
-  paper). Headline huge, top third, paper or ink. Pack front-on, centre or
-  lower third, `integrate_image` for a contact shadow. Optionally contents
-  spilled at its foot (generated, cut out, `integrate_image`). Under the
-  headline, a second level: the product's name and its one reason, and two or
-  three short facts or a price sticker, set on the field or a carrier. In a
-  scene (`IN_SCENE`), the product is big: half the frame's width or more, no
-  wall of nothing between it and the headline.
+- **Build:** the photograph first, in the pack's signature colour: the real
+  pack placed big, then `build_scene` makes the surface, the wall and the
+  light round it in that colour (a pink box on a pink tiled counter, a dark
+  pouch on dark slate), with its contents spilled at its foot as part of the
+  same photograph. Headline huge, top third, on the scene's quietest plane.
+  Under the headline, a second level: the product's name and its one reason,
+  and two or three short facts or a price sticker, set on the scene or a
+  carrier. The product is big: half the frame's width or more, no wall of
+  nothing between it and the headline. Never the pack cut out onto a flat
+  colour with props pasted round it: that is a catalogue page.
 - **Ruins it:** a second claim competing with the first; the pack small; the
   headline alone over an empty field, which says nothing to a stranger.
 
@@ -69,29 +71,30 @@ ruins it.
   Generate the blank note as its own part (cut out, same light), place it on the
   object, turn and slant it to sit on the surface, and set the words on it in
   the handwriting face. A crumb or a piece of the food in the foreground, as
-  another cut-out part, adds depth. Pack:
-  `CORNER_PACK` small, or `NO_PACK` with the food recognisable.
-  When the note is stuck on the product itself (`IN_SCENE`): place the real
-  product, generate the blank note (cut out, flat, straight on) and lay it on
+  another cut-out part, adds depth. Pack: `IN_SCENE`, the real product on
+  the counter beside the food and built into the scene with `build_scene`, or
+  `NO_PACK` with the food recognisable. When the note is stuck on the
+  product itself: place the real product, generate the blank note (cut out, flat, straight on) and lay it on
   the product's face, then `build_scene` with both in `layerIds`, so the
   photograph is made round the product with the note already on it. Set the
   words on the note after.
 - **Ruins it:** typed-looking words on the note; a note floating off the
   surface; a polished studio scene.
 
-## FOOD_IN_HAND — appetite in motion, the pack in the corner
+## FOOD_IN_HAND — appetite in motion, the pack in the scene
 
 - **Proves:** that it is irresistible, by showing someone unable to resist.
 - **Choose when:** the hook is an exclamation or a confession.
-- **Build:** a generated photograph as the hero: a hand reaching into a bowl or
-  lifting a spoon, the food close, two-plane background (wall and surface) in
-  the pack's colours, side light, the top third clean wall for the headline.
-  Add foreground food (a crumb, a drip, a piece mid-fall) as cut-out parts in
-  the same light. The real pack flat in a lower corner (`CORNER_PACK`), soft
-  drop shadow. Headline huge, chunky, top-left, the hand reaching into it if
-  possible.
-- **Ruins it:** the hand's anatomy (check the fingers); the pack too big; the
-  headline on the busy part of the photo.
+- **Build:** the real pack placed first, standing on the surface in a lower
+  third, then `build_scene` around it: a hand reaching into the bowl or lifting
+  a spoon beside it, the food close, two-plane background (wall and surface)
+  in the pack's colours, side light, the top third clean wall for the
+  headline. Add foreground food (a crumb, a drip, a piece mid-fall) as cut-out
+  parts in the same light, with `integrate_image`. Headline huge, chunky,
+  top-left, the hand reaching into it if possible.
+- **Ruins it:** the hand's anatomy (check the fingers); the pack so big the
+  food is lost, or laid over the photo instead of standing in it; the headline
+  on the busy part of the photo.
 
 ## DATA_HERO — one number
 
