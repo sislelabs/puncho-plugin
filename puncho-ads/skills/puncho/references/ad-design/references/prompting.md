@@ -66,8 +66,8 @@ prompt anyway.
   say how it is drawn (line, how colour is laid, grain), or it comes back as
   flat vector.
 - **Nano Banana Pro**: photographs with hands, food in use, scenes that must
-  follow a reference, edits. Never a photorealistic person's face or body,
-  and never a child (SKILL.md, *People are real, always*).
+  follow a reference, edits. A person only with no face, and never a child
+  (SKILL.md, *People: real, or generated without a face*).
 - **GPT Image 2**: photographic scenes with complex arrangement; precise edits.
   It is the model `build_scene` uses for `around`: of the edit models it
   holds a product's shape and place best, which is what lets the real one go
@@ -75,6 +75,9 @@ prompt anyway.
 - **Nano Banana Pro** in `build_scene`'s `settle`: the best light and
   shadow on a product, and the least respect for it (it resizes and recolours
   it), which is why only its light is kept.
+- **Muse Image** (Meta's): follows edit instructions and takes references as
+  pictures, like the edit models. No seed, so a variant cannot be reproduced
+  from one. Cheap, about 1 credit a picture.
 
 Keep one model across ads that test hooks against each other, or the rollup
 credits the hook with what the model changed.

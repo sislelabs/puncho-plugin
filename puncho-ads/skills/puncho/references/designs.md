@@ -39,8 +39,8 @@ set by hand. Work the same way:
    subject, angle, light, materials, colours. Use `cutout` for anything that
    stands on the design rather than filling it. Pick the model for the part:
    Recraft for illustration and clean backdrops, Nano Banana Pro or GPT Image 2
-   for people, hands and photographic scenes, and when a part should match a
-   reference. **No words, logos or product packs in a part.** Open every part
+   for people, hands and photographic scenes, and those or Muse Image (about a
+   credit, no seed) when a part should match a reference. **No words, logos or product packs in a part.** Open every part
    with `view_image` before using it; regenerate or drop one that is wrong.
    Use as many parts as the idea needs, often one: the hero scene, and only
    where the idea calls for them the carrier the words sit on, foreground
@@ -63,11 +63,14 @@ set by hand. Work the same way:
 5. **Make the type belong to the picture.** A headline in a band across the top
    with a photo under it is a slide, not an ad. Words go *on* things or *into*
    the scene:
-   - **Carriers.** Generate the object a line is written on, blank: a sticky
-     note, a gift tag, a price sticker, a torn label, a receipt, a chalkboard, a
-     phone notification, a ribbon, a speech bubble. Set the real words on it as
-     a text layer, turned and slanted (`rotation`, `skewX`) to sit on it. The
-     note on the gift bag and the tag on the pack are the best moments so far.
+   - **Carriers.** Generate the object a line is written on, blank, chosen
+     from the product's own world: a recipe card for food, a till receipt or
+     price tag for a shop, a gift tag on a present, a label on a jar, a phone
+     notification for an app, a chalk board for a café, a ticket stub for an
+     event. Set the real words on it as a text layer, turned and slanted
+     (`rotation`, `skewX`) to sit on it. A sticky note belongs to the
+     `STICKY_NOTE` format; on any other ad it is a habit, not an idea. No two
+     ads in a batch share a carrier, and the preview says when one does.
    - **Depth.** Tuck the headline behind the product: the cut-out sits above
      the letters in the stack, so the product breaks through the type.
    - **Devices, rarely.** Arrows, rings and stars are `icon` layers, never
@@ -98,19 +101,23 @@ set by hand. Work the same way:
 7. **Do the 9:16 version** once the feed ad is finished: `derive_story_version`
    remakes it from the feed ad, then adjust it with `edit_design`
    (`size: "9:16"`). Words and the logo stay inside the safe band (y 270 to
-   1250, and 65px in from each side — Reels covers the bottom third); a picture
-   may run to the edges. A photograph that fills the feed frame covers the
-   taller one, and what stands in it (the product, a hand, crumbs, their
-   shadows) goes along at its place and size in it: never build a second scene
-   or generate a second backdrop for the 9:16, and never move or resize what
-   stands in the photograph there.
-   **The derived version is never finished as it comes.** Its words come out
-   about a quarter smaller than the feed's. Rework them as their own layout:
-   the headline back to at least the feed size (the safe area is 950px wide),
-   each line placed against the taller picture. On a flat ground the whole ad
-   comes out shrunk: make the product as large as the taller frame allows.
-   Preview it and judge it with the same critique; a 9:16 that is the feed ad
-   in miniature fails it.
+   1250, and 65px in from each side) and out of its lower-right corner (right
+   of x 920, below y 1000: Reels' like, comment and share buttons), and the
+   product's middle stays above y 1250: Stories and Reels lay their profile line over the top and their
+   caption, Shop-now bar and buttons over the bottom 35%. A picture may run to
+   the edges. A photograph that fills the feed frame covers the taller one,
+   raised a little to lift the product, and what stands in it (the product, a
+   hand, crumbs, their shadows) goes along at its place and size in it: never
+   build a second scene or generate a second backdrop for the 9:16, and never
+   move or resize what stands in the photograph there. If the preview says the
+   product is under Reels' caption, place it higher in the feed ad and build
+   that scene again; build at 9:16 only when the feed ad cannot change.
+   **The derived version is a starting point.** Its words keep the feed's
+   size, the top lines under the top of the safe band and the foot lines above
+   its foot; on a flat ground the product fills the room between them. Look
+   at it before keeping it: each line placed against the taller picture,
+   nothing laid across the product. Preview it and judge it with the same
+   critique; a 9:16 that is the feed ad in miniature fails it.
 8. **`finish_design`** exports both sizes as the concept's render and takes it
    off the queue. Tell the human what you built, what the parts cost, and give
    them the link to adjust it (`boardUrl` in `get_design`).
