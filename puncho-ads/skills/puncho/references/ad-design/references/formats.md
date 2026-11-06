@@ -73,7 +73,8 @@ ruins it.
   the handwriting face. A crumb or a piece of the food in the foreground, as
   another cut-out part, adds depth. Pack: `IN_SCENE`, the real product on
   the counter beside the food and built into the scene with `build_scene`, or
-  `NO_PACK` with the food recognisable. When the note is stuck on the
+  `NO_PACK` with the food recognisable (drawn with `foodFrom`, so it is the
+  brand's own food). When the note is stuck on the
   product itself: place the real product, generate the blank note (cut out, flat, straight on) and lay it on
   the product's face, then `build_scene` with both in `layerIds`, so the
   photograph is made round the product with the note already on it. Set the

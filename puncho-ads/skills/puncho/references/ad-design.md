@@ -67,6 +67,10 @@ Everything else is a default.
      lowered that. The real pack is placed where the grip will be, and the
      hand and the place are made round it; never a hand and a pack on white.
    - `NO_PACK` — the food, the words or the moment carry it; the logo signs it.
+     When the brand sells that food, it must be its food: generate it with
+     `foodFrom` set to the product shot, so the model sees the real colour,
+     shape and coating (and draws no pack). Drawn from words alone, a pink
+     raspberry ball came back white.
 3. **Where the words live.** Never "headline in a band, photo underneath",
    and never a header strip across the top with the picture below it, on a
    photo or a flat field.
