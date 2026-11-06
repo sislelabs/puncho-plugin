@@ -145,7 +145,9 @@ the counter beside the product, with our chat on its screen:
    lit pure #00FF00 with nothing on it; the hand, the counter and the light
    in the brand's photo style. Big in the frame: the screen is where the
    words are, so it takes at least half the frame's height.
-2. Place it as the backdrop. The real product stands in the scene in front
+2. Place it as the backdrop, filling the frame (`cover`). Never cut the phone
+   out: a phone cut from its photo floats over the scene, and the preview
+   holds it. The real product stands in the scene in front
    (placed, then build_scene round it with the phone photo as the scene, or
    cut out and grounded with integrate_image), or is sent in the chat as a
    photo.
