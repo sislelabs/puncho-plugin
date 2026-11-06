@@ -135,25 +135,43 @@ ruins it.
 
 ### Building a chat that reads as real
 
-The way that works is **the conversation as the whole picture**: a screenshot
-cropped to the conversation, zoomed so it fills the frame. Not a whole phone
-shrunk into the ad.
+Two ways, both real-looking. The chat itself, its header, bubbles and words,
+is built the same way in both.
 
-- **The ground is the chat's own:** a plain light background, or the soft
-  pattern messengers use. No scene behind it, and no phone outline.
+**A phone in a real moment.** A photograph of a phone in a hand, or lying on
+the counter beside the product, with our chat on its screen:
+1. generate_design_part the photograph: the phone whole in the picture,
+   straight to the camera (screen square to the lens, not turned), its screen
+   lit pure #00FF00 with nothing on it; the hand, the counter and the light
+   in the brand's photo style. Big in the frame: the screen is where the
+   words are, so it takes at least half the frame's height.
+2. Place it as the backdrop. The real product stands in the scene in front
+   (placed, then build_scene round it with the phone photo as the scene, or
+   cut out and grounded with integrate_image), or is sent in the chat as a
+   photo.
+3. fit_screen on the phone's layer. It paints the screen and adds a "Phone
+   screen" layer exactly over it, and says the size to set messages at.
+4. Build the chat inside that box, above it in the stack.
+
+**The conversation as the whole picture.** A screenshot cropped to the
+conversation, zoomed to fill the frame, on the chat's own plain light ground.
+No scene behind it, and no phone outline.
+
+The chat, in both:
 - **A header across the top**, as the app draws it: a small round avatar (an
   ellipse with an initial, or a cropped photo with `radius`), the contact's
   first name, and "на линия" or a last-seen line in small grey type. No real
   app's name or logo: the look of a messenger, never a brand's.
-- **Bubbles are rounded rects** (`radius` about 40 at this scale) with the
-  text set inside with real padding (about 32 across, 22 down):
+- **Bubbles are rounded rects that hug their words**: as wide as the text
+  plus an even padding of about half the type size each side, `radius` about
+  the type size, never one bubble width for all:
   - the other person's on the left, in light grey or white;
   - the reader's own on the right, in one colour, from the brand's palette
     when it reads as a messenger colour, otherwise a plain messenger blue or
     violet.
   - **Every message is one size and one weight**, as a messenger sets them:
-    56–72 px at this zoom, one plain face (the brand's body face) at
-    regular or medium weight. The hook is the HEADLINE layer only because it
+    fit_screen's size on a phone, 56–72 px for a whole-picture chat, one
+    plain face (the brand's body face) at regular or medium weight. The hook is the HEADLINE layer only because it
     is the message that matters. It is never set bigger or bolder than the
     others: a chat with one huge message reads as a poster in bubbles.
   - **A conversation, not a line.** Three to five short messages. Often the
@@ -187,15 +205,17 @@ shrunk into the ad.
   The ad-copy skill's language reference has the rest (for Bulgarian,
   `ad-copy/references/languages/bg`).
 
-Never draw a phone, or put the chat over a photograph: a phone built from
-shapes in front of a kitchen reads as a mock-up, and the preview holds it
-("Reads as real"). The product's moment goes inside the chat, as a photo
-someone sent.
+Never draw a phone from shapes, and never lay bubbles straight on a
+photograph: both read as a mock-up, and the preview holds it twice ("Reads as
+real"). The chat always stands on a screen: the fitted "Phone screen", or the
+chat's own ground filling the frame.
 
 **Never:**
-- a generated phone cut out and laid over a scene;
-- a phone bigger than the frame;
+- a phone cut out and laid over a scene;
+- a phone drawn from shapes;
+- a phone bigger than the frame, or turned away from the camera;
 - a product floating over the screen;
+- a model asked to draw the chat or its words;
 - message boxes with headline-size type and no chat around them.
 
 The preview reports a cut-out running off the frame and a large one laid over
@@ -203,5 +223,6 @@ a built scene. On a NATIVE_SCREEN design, its "Reads as real" check holds the
 finish on any of these:
 - messages of different sizes, in display weight, too few or too small;
 - a closing full stop or a written form in a typed message;
-- a contact named for a role;
-- a chat over a photograph.
+- a contact named for a role, or an avatar whose letter is not theirs;
+- a bubble that does not hug its words;
+- a chat over a photograph with no screen under it.
