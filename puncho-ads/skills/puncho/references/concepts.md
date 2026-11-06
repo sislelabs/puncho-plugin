@@ -91,10 +91,14 @@ Then, specifically:
   and the rejection is of the *mechanism*, not the wording — coming back with a
   reworded near-miss is the same concept. They are judgements made about real
   creative rather than intentions written down in advance.
-- **Read `voice` before you draft, and run the voice pass before you store.**
-  `setup.answers` shows how the human rewrites standard copy, trait by trait;
-  treat every line you draft as standard copy and rework it the same way. The
-  `ad-copy` skill has the details.
+- **Read `voice` before you draft, and run the voice pass and the read-aloud
+  pass before you store.** `voice.edits` are a person's own rewrites of your
+  lines, the strongest evidence of how the brand talks: turn them into rules
+  and apply them to every line. `setup.answers` shows how the human rewrites
+  standard copy, trait by trait. Then read every line out loud as a person in
+  that market would say it, and rewrite what nobody would say. Writing in
+  Bulgarian, read `ad-copy/references/languages/bg` first. The `ad-copy` skill
+  has the details.
 - **Spread the batch.** Across angles and across shapes. Five variations on one
   angle is one test; five POSTERs is one visual test. `store_specs` warns you
   when a batch collapses — take the warning seriously rather than explaining it.

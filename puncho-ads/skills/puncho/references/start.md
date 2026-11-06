@@ -23,6 +23,7 @@ Read a stage's topic before you work on it, once in a conversation:
 - `ad-copy/references/anti-examples`: real rejected copy and why each line failed. Read before drafting.
 - `ad-copy/references/categories/food`: food, drink and everyday products: what to push against, formats, EU claim rules, a worked example.
 - `ad-copy/references/categories/events`: events, courses and programmes people sign up for: the copy tests, worked on real lines.
+- `ad-copy/references/languages/bg`: writing in Bulgarian: native sentence shapes, the translated ones to avoid, the read-aloud checklist. Read before drafting Bulgarian copy.
 - `ad-design`: the bar for ad visuals. Read before choosing a format, writing a visual idea or building a design.
 - `ad-design/references/formats`: the playbook for each ad format.
 - `ad-design/references/prompting`: how to prompt for a design's parts.

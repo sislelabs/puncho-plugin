@@ -201,12 +201,17 @@ responds to" in the abstract — the actual register, the actual slang level, th
 actual amount of cheek. `get_generation_context` returns them in `voice`, and in
 order of how far to trust them:
 
-1. **`setup.answers`** — the voice setup: twelve lines of standard ad copy, each
+1. **`edits`** — a human's changes to lines you wrote on earlier concepts. The
+   strongest evidence there is: your own habits, corrected by the person who
+   knows the brand. Each edit is a decision: if it breaks a rule here or in
+   the brief, the edit wins (see "Who decides"). Before drafting, write down
+   what the edits change, as rules in your notes ("turned a fragment into a
+   question", "finished a half-sentence", "cut a word nobody says"), and apply
+   every rule to every line you write. A batch that repeats a habit a person
+   already corrected has ignored them.
+2. **`setup.answers`** — the voice setup: twelve lines of standard ad copy, each
    breaking one habit of voice (`trait`), and what a human did to each. It is
    the checklist for the voice pass below.
-2. **`edits`** — a human's changes to lines you wrote on earlier concepts. Your
-   own habits, corrected; do not make them again. Each edit is a decision: if
-   it breaks a rule here or in the brief, the edit wins (see "Who decides").
 3. **`samplesByAudience`** — what the brand wrote to real readers, grouped by
    who they were. Match the group your concept's `audienceSegment` points at.
    Never quote an email in an ad: it shows how the brand talks, not what it may
@@ -232,6 +237,22 @@ primary text and on-image text against `setup.answers`, trait by trait:
 
 Then check each line against `edits`. The point of the setup is that a human
 never has to rewrite your copy again, so do this yourself and never ask them to.
+
+### The read-aloud pass
+
+Last, every hook, headline, on-image line and primary text is read out loud in
+the language it is written in, as a person in that market would say it to a
+friend. A line nobody would say is rewritten the way they would say it; a line
+that needs a second reading to make sense is rewritten until it does not. Clever
+and cryptic is a fail: "the fat is one" means nothing to anyone.
+
+Writing in a language other than English, the danger is a translated line: an
+English template with local words (see "the sentence shapes" below). **Writing
+in Bulgarian, read `references/languages/bg.md` before drafting** (the playbook
+topic `ad-copy/references/languages/bg`) and use its checklist in this pass.
+store_specs refuses the mechanical tells of a translated line (fragments in a
+row, a verb standing alone, "is one") before anything is stored; the rest is
+yours to hear.
 
 **If `voiceWarning` is set, the setup is unfinished** and the pass has gaps.
 Tell the human before drafting: it takes about five minutes on the canvas.
@@ -374,7 +395,8 @@ words in it?
 
 Sentence shapes come from the brand's own writing (organic captions, blog,
 voice samples, the human's edits) or from how people in the market actually
-talk. A brand whose organic asks questions and runs guessing games has told
+talk; for Bulgarian, `references/languages/bg.md` lists the native shapes and
+the translated ones. A brand whose organic asks questions and runs guessing games has told
 you its sentence shapes.
 
 See `references/formats.md` for the library of layouts, what each requires,
