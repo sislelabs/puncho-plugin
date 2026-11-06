@@ -157,9 +157,12 @@ the counter beside the product, with our chat on its screen:
    (placed, then build_scene round it with the phone photo as the scene, or
    cut out and grounded with integrate_image), or is sent in the chat as a
    photo.
-3. fit_screen on the phone's layer. It paints the screen and adds a "Phone
+3. fit_screen on the phone's layer (the scene's, when the phone is in the photograph). It paints the screen and adds a "Phone
    screen" layer exactly over it, and says the size to set messages at.
 4. Build the chat inside that box, above it in the stack.
+   A later build_scene and derive_story_version fit the screen again by
+   themselves and carry the chat onto it; when a preview says screen green
+   shows, run fit_screen again.
 
 **The conversation as the whole picture.** A screenshot cropped to the
 conversation, zoomed to fill the frame, on the chat's own plain light ground.
