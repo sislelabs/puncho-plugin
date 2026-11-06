@@ -514,9 +514,60 @@ The same face looks twice as good set the way a designer sets it:
   brand's (`brandFonts`); suggest a better one to the human with `list_fonts`,
   never install or switch on your own.
 
+### Treatments: choose one per ad
+
+Setting the words well is the floor. A treatment is what makes the type part
+of the idea. Choose the one the headline asks for, build it with `edit_design`,
+and use a different one from the other ads in the batch.
+
+- **Block.** The headline in short lines of one or two words, stacked into a
+  block as wide as its space: leading 0.85-0.95, `charSpacing` -30 to -50,
+  weight 800-900. Each line's break carries meaning ("Кафето / ти / изстина."). *When:* a short, punchy hook with a product beside it. *Ruins
+  it:* lines that do not fill the block; a stranded short word.
+- **One giant word.** The word that carries the hook set so big the frame
+  crops it at one edge (a third of the frame tall or more), the rest of the
+  headline small beside it. *When:* the hook turns on one word ("Хрупка.",
+  "Неделя."). *Ruins it:* cropping that loses the word; two giant words.
+- **Through the product.** The headline set big behind the product, the
+  product above it in the stack, so it breaks through the letters. Every word
+  stays readable around it. *When:* a product-hero ad. *Ruins it:* the product
+  covering a word whole; the type so pale it reads as wallpaper.
+- **Pack colour on one word.** One word of the headline in the pack's own
+  strongest colour (`marks` with `fill`, from product_colours), the rest
+  in ink. *When:* the hook names the thing the pack is about ("ягоди").
+  *Ruins it:* two coloured words; a colour from neither the pack nor the
+  palette.
+- **Marker.** One word or phrase under a highlight (`marks` with
+  `highlight` in a pack or palette colour at about 60% strength behind ink
+  type). *When:* the line answers a question or makes a promise. *Ruins it:*
+  a highlight on the whole line.
+- **Weight contrast in one line.** The headline's key words at 900 and the
+  rest of the line at 400 in the same face (`marks` with `fontWeight`).
+  *When:* a two-part hook where one part is the point ("Без захар. **Само мед**."). *Ruins it:* more than one switch.
+- **A hand's aside.** A short handwritten line (Caveat, Pangolin) beside the
+  display headline, slightly turned (`rotation` -4 to -8), with a drawn
+  arrow when it points at something. It is what a person scribbled on the ad:
+  "опитай го топло". *When:* a warm, personal brand voice. *Ruins it:* a long
+  aside; handwriting as the headline itself; on the same ad as devices.
+- **Quiet type, big picture.** The headline at its minimum size, one line, in
+  a corner with generous margin, the photograph carrying the ad. *When:* the
+  picture is the hook. Say so in the finish note, since the preview reports a
+  narrow headline.
+
+A chat, a note or a review card keeps the type of its object (NATIVE_SCREEN,
+STICKY_NOTE, PERSON_NOTE): no treatment on its words.
+
 Previews measure what can be measured here: collisions and lines that almost
 touch (by the drawn letters, not the boxes), uneven spacing in a stack, loose
 leading on a big headline, a stranded last word, two biggest sizes too close.
+They also report flat type, as craft findings a finish does not wait on:
+- a headline in a system face;
+- default letter spacing at 100 px and up;
+- a headline under 40% of the frame's width;
+- a headline no heavier than the lines beside it;
+- a third face.
+
+Fix them, or say in the finish note why the setting is the idea.
 - At 9:16 every word and the logo stay between y 270 and 1250, 65px from the
   sides, and out of the band's lower-right corner (right of x 920, below
   y 1000), where Reels' like, comment, share and save buttons run up the
