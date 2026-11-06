@@ -70,7 +70,8 @@ Everything else is a default.
      When the brand sells that food, it must be its food: generate it with
      `foodFrom` set to the product shot, so the model sees the real colour,
      shape and coating (and draws no pack). Drawn from words alone, a pink
-     raspberry ball came back white.
+     raspberry ball came back white. The same holds for the food beside the
+     pack in `IN_SCENE`: crumbs, a bitten piece, a bowl of it.
 3. **Where the words live.** Never "headline in a band, photo underneath",
    and never a header strip across the top with the picture below it, on a
    photo or a flat field.
