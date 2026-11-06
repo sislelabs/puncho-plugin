@@ -145,6 +145,12 @@ the counter beside the product, with our chat on its screen:
    lit pure #00FF00 with nothing on it; the hand, the counter and the light
    in the brand's photo style. Big in the frame: the screen is where the
    words are, so it takes at least half the frame's height.
+   **Match the product's camera.** A store's packshot is shot from the front,
+   at the product's height, so the phone is too: held upright in a hand at
+   eye level, or propped up on the counter, facing the camera. A phone lying
+   flat seen from above cannot share a scene with a jar seen from the side:
+   the jar floats. With a phone lying flat, the product goes inside the chat,
+   as a photo someone sent.
 2. Place it as the backdrop, filling the frame (`cover`). Never cut the phone
    out: a phone cut from its photo floats over the scene, and the preview
    holds it. The real product stands in the scene in front
