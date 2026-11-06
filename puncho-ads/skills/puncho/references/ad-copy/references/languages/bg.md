@@ -57,6 +57,41 @@ scrolls on before decoding it.
 | "Ние вярваме, че…" | A company speaking about itself | Say what the reader gets. |
 | "Вкусово изживяване", "перфектният избор", "незабравимо" | Words of a press release | The taste itself: "солено, после сладко". |
 
+## Messages on a screen: written the way people text
+
+When the idea is a chat, a comment or a notification, the words are what a
+Bulgarian types into a phone, not ad copy in bubbles. A reader knows a real
+message at a glance, and a written one looks staged.
+
+- **Lowercase at the start is normal**, and a message often has no full stop.
+  A full stop at the end of a short message reads cold, even annoyed: "добре."
+  is not "добре". A question mark stays.
+- **Spoken forms**: "оня", "тоя", "къде си", "ма", "бе", "ще дойдеш ли", "мини
+  довечера", "че" for "защото" where people say it. "онзи" and "този" are
+  written forms; in a chat they read stiff. Use slang only as far as the
+  brand's own posts do.
+- **Short and broken across bubbles.** A real reply is often two messages:
+  "има" / "ела довечера". One long, perfect sentence is a press release in a
+  bubble.
+- **An emoji where a person would put one**, at most one or two in the whole
+  exchange, and only if the brand's posts use them. 😄 and 🙈 are how people
+  type here; 🚀 and ✨ are how ads type.
+- **Names are first names, often shortened**: "Мими", "Ники", "мамо". Never a
+  full name. Never a customer: the conversation is a moment, not a review.
+- **The other person sounds like a friend or family**: they tease, they ask
+  for more, they answer late. The product comes up the way it would: "оня
+  мед", "от шоколадовите", not its full name and weight.
+
+| Written | Texted |
+|---|---|
+| "Имаш ли още от онзи хляб?" | "имаш ли още от оня хляб" |
+| "Има. Ела." | "има" / "ела довечера 😄" |
+| "Кафето е готово." | "кафето е готово, слизай" |
+| "Благодаря за подаръка!" | "мерси ма, страшно е" |
+
+The product's name and weight belong outside the conversation: in the primary
+text, or small on the frame. The chat says only what a person would.
+
 ## The spoken word, not the label's
 
 The label, the website and the regulation use the formal word; the ad uses
@@ -68,7 +103,7 @@ the formal word only where it is the fact being sold.
 ## Small rules that show
 
 - Sentence case: only the first word and names take a capital. Never Title
-  Case a headline.
+  Case a headline. In a chat message, lowercase is normal (see above).
 - Quotes are „…“.
 - A dash between clauses is " – " with spaces, and it is rare. An em dash
   joining two abstractions is banned in every language here.

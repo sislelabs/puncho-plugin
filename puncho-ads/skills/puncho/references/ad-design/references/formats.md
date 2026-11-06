@@ -132,3 +132,62 @@ ruins it.
   words laid outside the screen, such as a footer of dates, an address or a
   URL printed on the scene round the phone. What the screen does not say goes
   in the primary text.
+
+### Building a chat that reads as real
+
+The way that works is **the conversation as the whole picture**: a screenshot
+cropped to the conversation, zoomed so it fills the frame. Not a whole phone
+shrunk into the ad.
+
+- **The ground is the chat's own:** a plain light background, or the soft
+  pattern messengers use. No scene behind it, and no phone outline.
+- **A header across the top**, as the app draws it: a small round avatar (an
+  ellipse with an initial, or a cropped photo with `radius`), the contact's
+  first name, and "на линия" or a last-seen line in small grey type. No real
+  app's name or logo: the look of a messenger, never a brand's.
+- **Bubbles are rounded rects** (`radius` about 40 at this scale) with the
+  text set inside with real padding (about 32 across, 22 down):
+  - the other person's on the left, in light grey or white;
+  - the reader's own on the right, in one colour, from the brand's palette
+    when it reads as a messenger colour, otherwise a plain messenger blue or
+    violet.
+  - Type at chat scale for the zoom: 56–72 px for the messages, the system
+    face (the brand's body face if it has none). The first message is the
+    HEADLINE. A chat does not set it in display type.
+- **The small things that make it real:** a time under or beside each bubble
+  (24–28 px, grey, like "21:14"), and "Видяно" or ticks under the last one
+  sent. A typing indicator (three dots in a bubble) where the reply is coming.
+- **The product is in the conversation:** the real product shot sent as a
+  photo, an image layer inside a bubble with `radius`, on its own clean ground.
+  Or a photo of the real moment sent, built with build_scene round the real
+  product and placed as that photo.
+- **The logo** is small, outside the conversation: a corner of the frame, as
+  a signature. Never inside a bubble.
+- **The words in the bubbles are typed, not written.** The concept's lines
+  are set the way people text in that language. Set them that way with
+  edit_design, even where the concept wrote them as ad copy; the meaning stays.
+  - Lowercase at the start is normal.
+  - No full stop at the end of a short message: it reads cold. A question
+    mark stays.
+  - Spoken forms (Bulgarian "оня", not "онзи").
+  - A reply often split into two short bubbles.
+  - An emoji only where the brand's own posts use them.
+  - The product named the way a person would ("оня мед"), never with its
+    weight.
+
+  The ad-copy skill's language reference has the rest (for Bulgarian,
+  `ad-copy/references/languages/bg`).
+
+The other way, **a phone in a real moment**, is harder and usually weaker. The
+phone is photographed with the scene (built with build_scene round the real
+product, the phone in the prompt), screen straight to the camera so a flat
+screen layer fits it exactly, and whole inside the frame.
+
+**Never:**
+- a generated phone cut out and laid over a scene;
+- a phone bigger than the frame;
+- a product floating over the screen;
+- message boxes with headline-size type and no chat around them.
+
+The preview reports a cut-out running off the frame and a large one laid over
+a built scene.
