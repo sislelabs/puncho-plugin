@@ -151,9 +151,18 @@ shrunk into the ad.
   - the reader's own on the right, in one colour, from the brand's palette
     when it reads as a messenger colour, otherwise a plain messenger blue or
     violet.
-  - Type at chat scale for the zoom: 56–72 px for the messages, the system
-    face (the brand's body face if it has none). The first message is the
-    HEADLINE. A chat does not set it in display type.
+  - **Every message is one size and one weight**, as a messenger sets them:
+    56–72 px at this zoom, one plain face (the brand's body face) at
+    regular or medium weight. The hook is the HEADLINE layer only because it
+    is the message that matters. It is never set bigger or bolder than the
+    others: a chat with one huge message reads as a poster in bubbles.
+  - **A conversation, not a line.** Three to five short messages. Often the
+    reply comes split in two ("има" / "ела довечера"). Add them as UI_CONTENT
+    lines with edit_design when the concept gave fewer.
+  - **The contact has a first name**, often shortened ("Мими", "Ники",
+    "мамо"), never a role like "Friend".
+  - **No empty input bar** or keyboard taking a third of the frame: crop to
+    the conversation.
 - **The small things that make it real:** a time under or beside each bubble
   (24–28 px, grey, like "21:14"), and "Видяно" or ticks under the last one
   sent. A typing indicator (three dots in a bubble) where the reply is coming.
@@ -178,10 +187,10 @@ shrunk into the ad.
   The ad-copy skill's language reference has the rest (for Bulgarian,
   `ad-copy/references/languages/bg`).
 
-The other way, **a phone in a real moment**, is harder and usually weaker. The
-phone is photographed with the scene (built with build_scene round the real
-product, the phone in the prompt), screen straight to the camera so a flat
-screen layer fits it exactly, and whole inside the frame.
+Never draw a phone, or put the chat over a photograph: a phone built from
+shapes in front of a kitchen reads as a mock-up, and the preview holds it
+("Reads as real"). The product's moment goes inside the chat, as a photo
+someone sent.
 
 **Never:**
 - a generated phone cut out and laid over a scene;
@@ -190,4 +199,9 @@ screen layer fits it exactly, and whole inside the frame.
 - message boxes with headline-size type and no chat around them.
 
 The preview reports a cut-out running off the frame and a large one laid over
-a built scene.
+a built scene. On a NATIVE_SCREEN design, its "Reads as real" check holds the
+finish on any of these:
+- messages of different sizes, in display weight, too few or too small;
+- a closing full stop or a written form in a typed message;
+- a contact named for a role;
+- a chat over a photograph.

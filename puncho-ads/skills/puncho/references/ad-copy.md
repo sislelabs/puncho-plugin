@@ -561,7 +561,12 @@ fields that are routinely got wrong:
   think"): a bare price is a catalogue line, not a reason. How many words go
   beside the headline is the idea's call: a few for most designed frames,
   none outside the object for a phone screen, a note, a person's words or one
-  huge number, whose words live inside the thing. Dates, an address and the
+  huge number, whose words live inside the thing. A chat idea (NATIVE_SCREEN) writes the
+  conversation itself: three to five short messages, typed the way people
+  text in that language (for Bulgarian, the language reference's "Messages on
+  a screen"). The hook is one of them, the HEADLINE, and the others are
+  UI_CONTENT. The contact's first name is a text too. The product's name and
+  weight stay out of the bubbles. Dates, an address and the
   website belong in `primaryText` unless the idea needs them on the image. Every one of them passes the same bar as the hook:
   concrete, checkable, from the evidence. A fact the brief cannot back is not
   written to fill the space.
