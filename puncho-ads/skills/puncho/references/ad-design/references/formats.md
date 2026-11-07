@@ -156,6 +156,9 @@ short way, in this order:
    laid on a scene made without it: the preview holds it.
 4. Set the chat inside the "Phone screen" box, above it in the stack.
 5. derive_story_version fits the screen again at 9:16 and carries the chat.
+   Never build_scene again at 9:16 for a phone ad: each build draws a new
+   phone and jar at new sizes. Move and resize the words and the logo there,
+   nothing else.
    When a preview says screen green shows, run fit_screen again.
 
 **With a phone, the ad can carry a headline beside it.** The phone holds the
