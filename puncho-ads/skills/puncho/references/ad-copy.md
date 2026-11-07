@@ -566,7 +566,10 @@ fields that are routinely got wrong:
   text in that language (for Bulgarian, the language reference's "Messages on
   a screen"). The hook is one of them, the HEADLINE, and the others are
   UI_CONTENT. The contact's first name is a text too. The product's name and
-  weight stay out of the bubbles. Dates, an address and the
+  weight stay out of the bubbles. With a phone in the picture, the hook may instead be
+  the ad's headline beside the phone, in display type, and the conversation on
+  the screen acts out the moment in UI_CONTENT lines; never the same words in
+  both. Dates, an address and the
   website belong in `primaryText` unless the idea needs them on the image. Every one of them passes the same bar as the hook:
   concrete, checkable, from the evidence. A fact the brief cannot back is not
   written to fill the space.

@@ -138,31 +138,34 @@ ruins it.
 Two ways, both real-looking. The chat itself, its header, bubbles and words,
 is built the same way in both.
 
-**A phone in a real moment.** A photograph of a phone in a hand, or lying on
-the counter beside the product, with our chat on its screen:
-1. generate_design_part the photograph: the phone whole in the picture,
-   straight to the camera (screen square to the lens, not turned), its screen
-   lit pure #00FF00 with nothing on it; the hand, the counter and the light
-   in the brand's photo style. Big in the frame: the screen is where the
-   words are, so it takes at least half the frame's height.
-   **Match the product's camera.** A store's packshot is shot from the front,
-   at the product's height, so the phone is too: held upright in a hand at
-   eye level, or propped up on the counter, facing the camera. A phone lying
-   flat seen from above cannot share a scene with a jar seen from the side:
-   the jar floats. With a phone lying flat, the product goes inside the chat,
-   as a photo someone sent.
-2. Place it as the backdrop, filling the frame (`cover`). Never cut the phone
-   out: a phone cut from its photo floats over the scene, and the preview
-   holds it. The real product stands in the scene in front
-   (placed, then build_scene round it with the phone photo as the scene, or
-   cut out and grounded with integrate_image), or is sent in the chat as a
-   photo.
-3. fit_screen on the phone's layer (the scene's, when the phone is in the photograph). It paints the screen and adds a "Phone
-   screen" layer exactly over it, and says the size to set messages at.
-4. Build the chat inside that box, above it in the stack.
-   A later build_scene and derive_story_version fit the screen again by
-   themselves and carry the chat onto it; when a preview says screen green
-   shows, run fit_screen again.
+**A phone in a real moment.** A photograph of a phone propped up on the
+counter or held in a hand beside the product, with our chat on its screen. The
+short way, in this order:
+1. generate_design_part the phone, cut out: whole, upright, straight to the
+   camera (screen square to the lens, not turned), its screen lit pure
+   #00FF00 with nothing on it. **Match the product's camera:** a store's
+   packshot is shot from the front at the product's height, so the phone
+   faces the camera at the same height. Never lying flat seen from above
+   beside a jar seen from the side: the jar floats.
+2. Place the phone and the real product (cut_out_image) at their final sizes,
+   side by side or overlapping a little. The phone is big: its screen at least
+   half the frame's height.
+3. build_scene with **both** in `layerIds`: the photograph is made round the
+   two, and the green screen is fitted by itself (its "Phone screen" layer and
+   the message size come back in the build's note). Never a phone cut out and
+   laid on a scene made without it: the preview holds it.
+4. Set the chat inside the "Phone screen" box, above it in the stack.
+5. derive_story_version fits the screen again at 9:16 and carries the chat.
+   When a preview says screen green shows, run fit_screen again.
+
+**With a phone, the ad can carry a headline beside it.** The phone holds the
+conversation; the ad round it can say the hook in the brand's display face,
+above or beside the phone, at headline size, set like any headline (a
+treatment from the skill's Type section). Then the chat on the screen carries
+the moment in UI_CONTENT lines typed the way people text, and the headline is
+never repeated inside it. The preview judges only the lines on the screen as
+messages, and a headline outside it as a headline. Without a headline outside,
+the hook is the message that matters, inside the chat, at the chat's size.
 
 **The conversation as the whole picture.** A screenshot cropped to the
 conversation, zoomed to fill the frame, on the chat's own plain light ground.
