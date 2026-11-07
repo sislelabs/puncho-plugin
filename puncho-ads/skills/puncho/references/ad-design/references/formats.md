@@ -169,6 +169,12 @@ conversation, zoomed to fill the frame, on the chat's own plain light ground.
 No scene behind it, and no phone outline.
 
 The chat, in both:
+- **A status bar at the very top** of the screen: the time on the left
+  ("21:14"), signal and battery on the right, small and grey or black.
+- **The newest message at the bottom.** A messenger fills from the bottom
+  up: the last message sits just above the field you type in, and earlier
+  ones above it. Never a short chat floating mid-screen with empty white
+  under it.
 - **A header across the top**, as the app draws it: a small round avatar (an
   ellipse with an initial, or a cropped photo with `radius`), the contact's
   first name, and "на линия" or a last-seen line in small grey type. No real
@@ -236,4 +242,5 @@ finish on any of these:
 - a closing full stop or a written form in a typed message;
 - a contact named for a role, or an avatar whose letter is not theirs;
 - a bubble that does not hug its words;
+- a chat not pinned to the top and filled from the bottom of its screen;
 - a chat over a photograph with no screen under it.
