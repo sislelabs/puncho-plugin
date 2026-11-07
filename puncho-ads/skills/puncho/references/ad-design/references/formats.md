@@ -154,7 +154,11 @@ short way, in this order:
    two, and the green screen is fitted by itself (its "Phone screen" layer and
    the message size come back in the build's note). Never a phone cut out and
    laid on a scene made without it: the preview holds it.
-4. Set the chat inside the "Phone screen" box, above it in the stack.
+4. set_chat with the conversation: the contact's first name, three to six
+   messages (who sends each, typed the way people text) and which one is the
+   hook, or none when the headline stands beside the phone. It lays the
+   messenger out in code at both sizes. Never build a chat by hand from boxes
+   and lines: that is where bubbles ran off the screen.
 5. derive_story_version fits the screen again at 9:16 and carries the chat.
    Never build_scene again at 9:16 for a phone ad: each build draws a new
    phone and jar at new sizes. Move and resize the words and the logo there,
@@ -221,7 +225,7 @@ The chat, in both:
     mark stays.
   - Spoken forms (Bulgarian "оня", not "онзи").
   - A reply often split into two short bubbles.
-  - An emoji only where the brand's own posts use them.
+  - No emoji: no face draws one, and set_chat takes them out.
   - The product named the way a person would ("оня мед"), never with its
     weight.
 

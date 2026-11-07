@@ -73,9 +73,9 @@ message at a glance, and a written one looks staged.
 - **Short and broken across bubbles.** A real reply is often two messages:
   "има" / "ела довечера". One long, perfect sentence is a press release in a
   bubble.
-- **An emoji where a person would put one**, at most one or two in the whole
-  exchange, and only if the brand's posts use them. 😄 and 🙈 are how people
-  type here; 🚀 and ✨ are how ads type.
+- **No emoji on the image.** People use them, but no face the ads are set in
+  draws one: it comes out as a blank circle. Say the feeling in words
+  ("ела довечера" carries it), and keep emoji for the primary text.
 - **Names are first names, often shortened**: "Мими", "Ники", "мамо". Never a
   full name. Never a customer: the conversation is a moment, not a review.
 - **The other person sounds like a friend or family**: they tease, they ask
@@ -85,7 +85,7 @@ message at a glance, and a written one looks staged.
 | Written | Texted |
 |---|---|
 | "Имаш ли още от онзи хляб?" | "имаш ли още от оня хляб" |
-| "Има. Ела." | "има" / "ела довечера 😄" |
+| "Има. Ела." | "има" / "ела довечера" |
 | "Кафето е готово." | "кафето е готово, слизай" |
 | "Благодаря за подаръка!" | "мерси ма, страшно е" |
 
