@@ -139,31 +139,37 @@ Two ways, both real-looking. The chat itself, its header, bubbles and words,
 is built the same way in both.
 
 **A phone in a real moment.** A photograph of a phone propped up on the
-counter or held in a hand beside the product, with our chat on its screen. The
-short way, in this order:
-1. generate_design_part the phone, cut out: whole, upright, straight to the
-   camera (screen square to the lens, not turned), its screen lit pure
-   #00FF00 with nothing on it. **Match the product's camera:** a store's
-   packshot is shot from the front at the product's height, so the phone
-   faces the camera at the same height. Never lying flat seen from above
-   beside a jar seen from the side: the jar floats.
-2. Place the phone and the real product (cut_out_image) at their final sizes,
-   side by side or overlapping a little. The phone is big: its screen at least
-   half the frame's height.
-3. build_scene with **both** in `layerIds`: the photograph is made round the
-   two, and the green screen is fitted by itself (its "Phone screen" layer and
-   the message size come back in the build's note). Never a phone cut out and
-   laid on a scene made without it: the preview holds it.
-4. set_chat with the conversation: the contact's first name, three to six
-   messages (who sends each, typed the way people text) and which one is the
-   hook, or none when the headline stands beside the phone. It lays the
-   messenger out in code at both sizes. Never build a chat by hand from boxes
-   and lines: that is where bubbles ran off the screen.
-5. derive_story_version fits the screen again at 9:16 and carries the chat.
-   Never build_scene again at 9:16 for a phone ad: each build draws a new
-   phone and jar at new sizes. Move and resize the words and the logo there,
-   nothing else.
-   When a preview says screen green shows, run fit_screen again.
+counter or held in a hand beside the product, with our chat on its screen.
+The phone and its chat are drawn by the image model, the words written on the
+screen itself: a flat screen of layers on a photographed phone never looked
+real (no glass, no glow, square to the camera in a scene that was not). In
+this order:
+1. draw_screen with the conversation (the contact's first name, the status
+   bar's time, three to six messages typed the way people text, who sends
+   each), `phone` (how it stands: "upright, screen to the camera") and `at`,
+   the phone's box in the frame: big, its screen at least half the frame's
+   height. The model draws the phone alone with the chat written big on its
+   screen, read back blind word for word; it is cut out and stood in `at`.
+   One draw a call, three a design request: a failure is paid for and comes
+   back to you. Change what made it fail before another (shorter messages, a
+   bigger box), never draw again for layout.
+2. Place the real product (cut_out_image) at its final size beside the phone.
+3. build_scene method around, settle: true, with the phone first and the
+   product after it in `layerIds`: the scene is built round both, and the
+   settle gives each its shadow and light. Each is found and fitted on its
+   own; their own pixels, words and label are kept. Describe the place, the
+   surface and the light; leave room for the headline.
+4. The headline stays a text layer beside the phone. Never cover the screen
+   with a text layer or a shape: to change a word, draw the screen again.
+5. derive_story_version makes the 9:16 from it: the feed's scene continued
+   above and below (about a credit), the phone and the product at their feed
+   size on their own shadows, the words and the logo laid out clear of them.
+   draw_screen refuses a second phone there. Adjust the words with edit_design
+   only where the preview asks; never build_scene again at 9:16.
+
+The green screen (a phone generated with a pure #00FF00 screen, built into the
+scene, then fit_screen and set_chat) is the older way, kept for designs built
+with it.
 
 **With a phone, the ad can carry a headline beside it.** The phone holds the
 conversation; the ad round it can say the hook in the brand's display face,
@@ -234,15 +240,16 @@ The chat, in both:
 
 Never draw a phone from shapes, and never lay bubbles straight on a
 photograph: both read as a mock-up, and the preview holds it twice ("Reads as
-real"). The chat always stands on a screen: the fitted "Phone screen", or the
-chat's own ground filling the frame.
+real"). The chat always stands on a screen: a phone drawn with draw_screen, the
+fitted "Phone screen", or the chat's own ground filling the frame.
 
 **Never:**
 - a phone cut out and laid over a scene;
 - a phone drawn from shapes;
 - a phone bigger than the frame, or turned away from the camera;
 - a product floating over the screen;
-- a model asked to draw the chat or its words;
+- a model asked for the chat's words any other way than draw_screen, which
+  reads them back;
 - message boxes with headline-size type and no chat around them.
 
 The preview reports a cut-out running off the frame and a large one laid over
