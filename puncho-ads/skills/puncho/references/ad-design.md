@@ -160,12 +160,42 @@ shadow or tone fixes that. So the order is reversed:
    sunlit grass and moss does not get a dusk street or a studio grey, however
    well the headline fits it. Pass two or three of them as `lookFrom` to
    `build_scene`, so the model shoots the scene the way the brand does.
+   **When the request has a `structure`, build to it.** It is the measured
+   geometry of the ad the concept borrowed its shape from: the hero's box and
+   crops, each prop's place, size and depth, the blocks of words. Place the
+   product at the hero's box, describe each prop in the scene prompt where
+   and how big the structure puts it, and set the words in its text boxes.
+   Its proportions are what made that ad work, and a layout invented fresh
+   came out as two objects side by side under a dead band. The scene, the
+   light, the props themselves and the type stay this concept's.
 1. **Place the real product first**: the cut-out, straight, where it should
    stand and a little larger than you want it, because it comes back up to a
    quarter smaller or larger. Anything stuck to it (a tag, a ribbon, a
    label) is its own layer on it, and goes in `layerIds` after the
    product so the scene is made around both.
-2. **`build_scene`, method `around`**: an image model makes the whole
+2. **`build_scene`, method `plate`** for a product that stands (a pack, a
+   bottle, a carton, a jar): the model draws the scene empty, the real
+   product is laid on it, and the model shades that picture (contact and
+   cast shadows, the scene's light and warmth on the product, light through
+   glass). Only its light is kept, so no ghost of its drawing is left round
+   the product. Describe the scene as for `around`, with the camera height
+   the product photo was shot from ("eye level", "from slightly above"), the
+   area for the headline as what it is ("the top third is the table in
+   shadow", not "clean wood", which came back a pale wall), and what must not
+   be there ("no cups, no drinks"). Pass `subject`: the product in a word or
+   two ("carton", "glass bottle").
+   **Whatever stands beside the product is built with it, never pasted after.**
+   A glass of the drink, a cup, a bowl: say it in the prompt, or place its
+   part before `build_scene` and pass its layer in `layerIds` after the
+   product, so the scene lights and shadows both. A glass generated and laid
+   beside a built carton came back small and stuck on. Give a prop its size
+   against the product ("a glass about half the carton's height"): left out,
+   the model drew a glass as big as the carton beside it.
+   **After the scene is built, the product stays where it is**, at its size.
+   The scene's shadows were made for that place; moved, it stands off them.
+   To move it, place it and build again.
+   **Method `around`** when the product is worn or held, or `plate` came back
+   wrong: an image model makes the whole
    photograph round the product, agreeing with its view and its light.
    Describe the place, the surface it stands on, what else is in the scene
    (the food, the props, the hand), the light, and that the top area is clean
