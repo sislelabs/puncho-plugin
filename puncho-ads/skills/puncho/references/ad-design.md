@@ -173,7 +173,30 @@ shadow or tone fixes that. So the order is reversed:
    quarter smaller or larger. Anything stuck to it (a tag, a ribbon, a
    label) is its own layer on it, and goes in `layerIds` after the
    product so the scene is made around both.
-2. **`build_scene`, method `plate`** for a product that stands (a pack, a
+2. **`build_scene`, method `photo`, first.** The model draws the whole
+   photograph with the product in it, from its photos (the layers you placed),
+   so the light, the camera and the scale are one shoot. A packshot pasted into
+   a photographed place keeps its own studio light, camera height and size, and
+   it read as pasted every time, whatever was done to it after. The label is
+   not left to trust: each drawing is read back blind and held to the
+   product's own photo, and one with a word added or changed (an invented
+   "110" on a pouch), the name missing, an extra product, or a product standing
+   where the words are set is not kept. Two are drawn and the best that passes
+   is kept; if none passes in two rounds nothing is placed and it says why.
+   So: set the words first (their places are kept calm and clear), place the
+   products about where and as big as they should stand, then describe the
+   photograph in `prompt` like a photographer (the place, the surface, what
+   else is there and how big against the product: "a glass about half the
+   carton's height", the light, the camera height), with `lookFrom` two of the
+   brand's photographs and `wornBy` for a hand with it (no face). The product
+   layers become the picture; the concept is marked as having a drawn product,
+   and whoever approves it is told. Look at the product at full size in the
+   preview against its photo before finishing. Use it for every photograph:
+   a room, a table, a shelf, a studio light, a flat lay seen from above (the
+   model draws the product from above too, which a front packshot laid flat
+   never was).
+   **Method `plate`** when `photo` could not keep the label (it says so) or the
+   product's small print must be the photo's own pixels: for a product that stands (a pack, a
    bottle, a carton, a jar): the model draws the scene empty, the real
    product is laid on it, and the model shades that picture (contact and
    cast shadows, the scene's light and warmth on the product, light through
@@ -207,7 +230,7 @@ shadow or tone fixes that. So the order is reversed:
    reflection and light. Over a backdrop generated for this ad it is
    refused: that backdrop was made without the product, and lighting the
    product on it leaves it pasted. Never generate a backdrop first.
-3. The model redraws the product while it works: bigger or smaller, a little
+3. With `plate` and `around`, the model redraws the product while it works: bigger or smaller, a little
    squashed, its small print garbled, sometimes its colour changed. That
    drawing is found and thrown away; the real layers are moved to where it
    stood and take its light. Look at the preview at full size for anything

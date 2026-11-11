@@ -27,9 +27,12 @@ set by hand. Work the same way:
    toned. Place the cut-out first, a little larger than you want it (it comes
    back up to a quarter smaller or larger), straight, where it should stand,
    with anything stuck to it (a blank note, a tag) as its own layers. Then
-   method `around` (the model builds the whole scene round it; add `settle`
-   for a hard or directional light on it), or `settle` when the scene is
-   already in the design and the product stands on its surface. The real
+   method `photo` first: the model draws the whole photograph with the
+   product in it from its photos, and each drawing's label is read back and
+   held to the product's own, so a changed word is never kept (the ad-design
+   skill, "Build the photograph around the product"). Method `plate` or
+   `around` when `photo` could not keep the label, or `settle` when the scene
+   is already in the design and the product stands on its surface. The real
    pixels go back where the model's version stood, with its light. Put any
    words that belong on the product back on it after, and preview at full
    size: look for a second, drawn product behind the real one.
