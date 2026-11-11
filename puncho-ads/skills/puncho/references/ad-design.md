@@ -406,6 +406,46 @@ can also be the idea (one object, a calm field), and then the note says so.
 How the strongest statics place their words. Pick one arrangement per ad, by
 what the words are, and build it whole.
 
+### Type layouts: `set_type`
+
+An ad is not a photograph with a title above it. Strong statics compose the
+words and the picture together, and they do it in a handful of layouts, again
+and again. `set_type` sets every word and the logo in one of them, at both
+sizes, measured: run it once the picture is built and the 9:16 made, then
+preview. Choose the layout by the picture and the hook, and give a brief's
+designs different layouts.
+
+| Layout | Use it when |
+|---|---|
+| `TOP_STACK` | A calm top to the picture and the product low: eyebrow, headline, sub-line, the call to action in a free lower corner |
+| `CENTRED_STACK` | A centred product on a calm ground: the logo small on top, everything centred, the call to action at the foot. Calm, premium, food |
+| `SIDE_COLUMN` | The product stands to one side and leaves the other empty: the words in a column there (pass `side`, or it takes the empty one) |
+| `GIANT_WORD` | The hook is one word or a number ("3 PM", "14+", "MEGA"): it fills the width and the product stands in front of it. Pass `subject` (the product in a word); it is cut out of its own photo |
+| `FOOT_CAPTION` | The photograph does the work: a small centred headline low on a calm area |
+| `STAT_BAR` | The argument is facts: two to four short `COLUMN_LINE`s set in a row with dividers at the foot |
+| `OFFER_TAG` | The ad sells on a real offer: it is printed on a tag hanging on the product (the brief's offer, never invented) |
+
+What it adds, and what you choose:
+
+- **An eyebrow** (`eyebrow`): a few words in small letter-spaced capitals above
+  the headline: what the product is, "New", the brand. It tells a stranger
+  what they are looking at before they read the line.
+- **One accent in the headline** (`accent`, `accentStyle`): words set apart in
+  the brand's accent, as a colour or a marker behind them. The words that
+  carry the argument ("20% off.", "It's still cold."), once.
+- **A call to action** (`cta`): a short line with an arrow ("Shop the 12-pack →"),
+  set as an underlined link. Never a pill or a button drawn as a box: the
+  preview reads that as a template plate.
+- Each line takes the palette's dark or light, whichever reads against the
+  picture behind it; the headline is set as big as the room above the product
+  allows, in two lines where it can.
+
+A layout that does not fit the picture is refused with why, and nothing
+changes: choose another, or pass `storyLayout` when only the 9:16 cannot take
+it (a stat bar or a caption at the foot sits under Stories' reply bar). The
+words stay ordinary text layers: adjust them with `edit_design` after, and run
+`set_type` again only to change the layout, which replaces what it set.
+
 - **The frame is planned in zones, by share.** "Top 15%: the headline. Middle
   55%: the photo. Bottom 25%: three benefits." Decide the zones before the
   first part is generated. Set the text layers where they go before

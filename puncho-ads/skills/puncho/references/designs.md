@@ -87,6 +87,11 @@ set by hand. Work the same way:
    Never put a word in a generated part; the part is blank and the word is a
    layer on it.
    Lay `add_grain` over a photographic composite last.
+   **Then set the words with `set_type`** (the ad-design skill, "Type
+   layouts"), once the picture is built and the 9:16 made with
+   `derive_story_version`: it lays out every word and the logo at both sizes,
+   with an eyebrow, one accent in the headline and an underlined call to
+   action. Running `derive_story_version` after it scatters the words again.
 6. **Look, and judge.** `preview_design` returns the PNGs, `findings` (what
    code can measure: contrast, size, safe band, cut-outs standing on nothing)
    and `critique` (what only your eye can answer). Open the images with
