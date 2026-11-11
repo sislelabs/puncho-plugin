@@ -89,9 +89,11 @@ set by hand. Work the same way:
    Lay `add_grain` over a photographic composite last.
    **Then set the words with `set_type`** (the ad-design skill, "Type
    layouts"), once the picture is built and the 9:16 made with
-   `derive_story_version`: it lays out every word and the logo at both sizes,
-   with an eyebrow, one accent in the headline and an underlined call to
-   action. Running `derive_story_version` after it scatters the words again.
+   `derive_story_version`: it lays out every word and the logo at both sizes.
+   An eyebrow, an accent, a call to action and labels are options, not
+   defaults: give each ad on a brief its own layout and its own trick, never
+   the same treatment on every one. Running `derive_story_version` after it
+   scatters the words again.
 6. **Look, and judge.** `preview_design` returns the PNGs, `findings` (what
    code can measure: contrast, size, safe band, cut-outs standing on nothing)
    and `critique` (what only your eye can answer). Open the images with

@@ -415,6 +415,14 @@ sizes, measured: run it once the picture is built and the 9:16 made, then
 preview. Choose the layout by the picture and the hook, and give a brief's
 designs different layouts.
 
+**A batch is not one template.** Seven ads each with an eyebrow, one orange
+phrase and an underlined call to action, stacked top-left over a photo, are
+one ad seven times, however good each looks alone. Before setting a brief's
+type, decide each ad's one trick and write it down: one giant word, the words
+naming things in the picture, a tag on the pack, a quiet caption, a centred
+stack. No two ads on a brief share a layout, and the preview holds a finish
+that does (BATCH, "the same layout as").
+
 | Layout | Use it when |
 |---|---|
 | `TOP_STACK` | A calm top to the picture and the product low: eyebrow, headline, sub-line, the call to action in a free lower corner |
@@ -425,7 +433,8 @@ designs different layouts.
 | `STAT_BAR` | The argument is facts: two to four short `COLUMN_LINE`s set in a row with dividers at the foot |
 | `OFFER_TAG` | The ad sells on a real offer: it is printed on a tag hanging on the product (the brief's offer, never invented) |
 
-What it adds, and what you choose:
+What it adds, and what you choose. Each is an option for the ad that needs
+it, not a default: most ads use one or two of them, never all.
 
 - **An eyebrow** (`eyebrow`): a few words in small letter-spaced capitals above
   the headline: what the product is, "New", the brand. It tells a stranger
@@ -435,7 +444,15 @@ What it adds, and what you choose:
   carry the argument ("20% off.", "It's still cold."), once.
 - **A call to action** (`cta`): a short line with an arrow ("Shop the 12-pack →"),
   set as an underlined link. Never a pill or a button drawn as a box: the
-  preview reads that as a template plate.
+  preview reads that as a template plate. Meta puts its own button under every
+  ad, so leave it off where the picture needs the room.
+- **Labels** (`labels`): one or two words standing just above things in the
+  picture: "Water", "Oat milk", "Tonic" over three glasses, a name over each
+  product. The words point at the picture, so the picture is read with them,
+  and they are often the best idea an ad has. Give each label the box of what
+  it names (`over`, in the feed's frame, read off the preview); left out,
+  labels go on the recorded products, left to right. A label whose words are
+  already a line of the concept moves that line.
 - Each line takes the palette's dark or light, whichever reads against the
   picture behind it; the headline is set as big as the room above the product
   allows, in two lines where it can.
