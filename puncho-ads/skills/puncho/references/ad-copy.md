@@ -168,6 +168,21 @@ than a hook.
 | "It's free. The rest isn't." | "It's free, but the rest of… what?" | **Fake.** Nothing survives the paraphrase. |
 | "Nothing ever happens here. Until now." | "There is finally something happening here." | **Real,** if it is true and the brand would say it. |
 
+### A caption is not a hook
+
+Cover the picture and read the headline alone. If it names a time, a place, a
+number, a weather or the product, and claims nothing about any of them ("Sunday,
+7 AM.", "Twelve hours.", "Out in the rain."), it is a caption:
+it labels the photograph instead of saying something the photograph cannot.
+Captions came out of batch after batch looking finished, because the picture
+under them was good and lent them a meaning they did not have. The paraphrase
+gives them away: "it is seven on a Sunday" is not a reason to do anything.
+Real ones, with what they were missing: `references/anti-examples.md`.
+
+A number or a moment can carry a hook, joined to its "so what": not "twelve
+hours" but what twelve hours does that ten minutes cannot, in words the
+reader would use.
+
 Watch the two-beat reversal especially — "X. Not Y.", "X. The rest isn't." It is
 the easiest shape to generate and the easiest to fill with nothing, because the
 rhythm supplies a feeling of insight that the words do not. If a batch contains
@@ -473,6 +488,73 @@ Show the human a sample of pass 1 as well, five or so of the wildest lines,
 even the ones you would not run: a human often sees the ad in a line the
 editor would have dropped.
 
+**Pass 3, promote the strongest line.** Write each surviving concept out
+whole: the hook, the kicker, the first sentence of the body text, the Meta
+headline. Then read the four against each other and ask which one you would
+stop for. In batch after batch it was not the hook: the body opened on the
+sharp observation (a moment every reader has had, a comparison with a food
+everyone knows) while the headline above it was a caption. When
+another line is stronger, it becomes the hook, and the old hook goes or takes
+that line's place if it does that place's job. Then rewrite the rest of the
+ad around the new hook: the image's words and the body text are no longer the
+same ad.
+
+The strongest line is the one a reader stops for, which is rarely the
+product's spec. Promoting the specs made a batch of fact hooks: the brew time
+led three hooks of seven, and was in six.
+
+### The brief wins, and each idea has its own moment
+
+**Every concept answers its own brief.** Before drafting, write the brief's one
+claim in a sentence ("brewed slowly, in Sofia"). Every concept on the brief
+carries it, through its own idea. An idea that answers another brief (a
+concentrate ad on a brief about where the latte is made) is not written here,
+however good: a batch drifted that way once the rules pushed it off facts, and
+the brief about origin got an office joke and another brief's product.
+
+**One idea each, and the moment it shows.** `moment` is the situation the ad
+shows (at work, a shared fridge, the commute, home in the morning, outdoors,
+an occasion, where it is made, or the product alone): record the one it
+really shows, because the results compare them. Two ideas worded differently
+are one idea when they show one situation with one joke or one argument: the
+same office-fridge theft carried a concept in every batch for a day. An
+editor who did not write the batch reads it against the brief and the brand's
+live concepts before it is stored, and sends back an idea that repeats one or
+misses the brief. Rewrite the idea, not its label: a relabelled repeat is
+sent back again.
+
+**The brand's story is material.** Facts and lines the brief gives as the
+brand's story (how it started, where it is made, how long it takes) may be
+used in more than one ad, and a brief about one of them may lead its hooks
+with it.
+
+### Hooks lead with the reader, not the spec
+
+**Unless the brief is about the fact.** A brief whose claim is a fact (where it
+is made, how long it takes, what is in it) may lead its hooks with that fact,
+because then the fact is the reason to buy. Everywhere else:
+
+A product fact (a duration, a weight, a count, a volume) is proof. It makes a
+hook believable once the reader wants the thing; it rarely makes them want it.
+So in a batch:
+
+- **At most one hook leads with a product fact,** and only one hook on a brief
+  leads with any one fact: `store_specs` refuses a second, whatever the
+  wording ("steeped 18 hours", "18-hour cold brew" and "18 hours of steeping"
+  are one fact). The others lead with a moment, a feeling, a
+  person, a tension or a claim about the reader, and the fact goes where it
+  makes that hook true: the kicker, a line, the body.
+- **A fact is in a few of the ads, not all of them.** A brief's batch where one
+  fact is in most of the concepts is the product's description reworded.
+- **A comparison's other side is a fact too.** "Not 18 seconds" says
+  something about cafés that nobody checked. A comparison names a number for
+  the other side only when it is true and known; otherwise it compares
+  without one.
+- **Never another concept's ad.** The same ad built on the same facts, on any
+  brief, is refused at `store_specs`. A line another concept already says is
+  pointed out, not refused, since the brand's own story may recur; anything
+  else, write fresh. Earlier concepts are evidence of what was tried.
+
 ## Spread the survivors across families
 
 Across both passes, spread the lines over at least five of these families:
@@ -543,7 +625,33 @@ fields that are routinely got wrong:
 
 - **`hook`** — the line rendered INTO the image. Short enough to read at a glance
   on a phone. This is the ad.
-- **`primaryText`** — Meta truncates around 125 characters. Write for the truncation.
+
+**Four places for words, four jobs.** An ad is read in the order the feed
+shows it, and each place is there to do what the others cannot. Batches kept
+saying one thing four times: the hook, a kicker of the product's name and
+specs, body text of the name, the specs and the price, and a Meta headline
+repeating the hook. `lintCopy` flags a Meta headline that repeats the hook and
+a phrase said in three places on one ad; `store_specs` warns when a brief's
+concepts share one phrase. Neither is a reason to reword the phrase: give the
+place its own job.
+
+| Place | Its job | Never |
+|---|---|---|
+| `hook` (the image's headline) | stops the scroll with a claim | a caption of the picture |
+| KICKER | names the product and answers what the hook set up, so the two read as one thought | the product's name and a list of specs |
+| `primaryText` | opens on the reader's moment or the claim, gives the one fact that makes the hook true, ends on why now | the hook again, or a fact the image already said |
+| `headline` (Meta's, under the picture) | the offer, what they get, or the next step | the hook again |
+
+A fact lives in one place on an ad: the one where it makes the hook true,
+usually the kicker or the body, rarely the hook itself. The rest of a brief's
+ads stand on other things entirely: the moment, the reader, another fact. The product's description pasted into every ad (one store's
+five-word product line in thirteen concepts of thirteen) is read by someone
+who scrolls past three of them as one ad shown three times.
+
+- **`primaryText`** — Meta truncates around 125 characters. Write for the
+  truncation: the first line is all most people read.
+- **`headline`** — about 40 characters, set bold beside the button. It may
+  rightly be the same across a campaign's ads when the offer is.
 - **`lead`** — which of the brief's leads this concept sells on (OFFER, FEELING,
   PROOF, PRODUCT, PROBLEM, NEW). One the brief names; spread a batch across all
   of them. It decides the words beside the headline (`leadPlan` in the
@@ -554,8 +662,8 @@ fields that are routinely got wrong:
   Exactly one HEADLINE, and it is the hook. **On a designed frame the headline
   is usually not the only one.** A cold reader sees the image before the
   primary text, often instead of it, so the image itself says what the thing
-  is and why it is better: a KICKER that names the product with its one reason,
-  a few short facts (COLUMN_LINE or KICKER, a few words each), a BADGE with a
+  is and why it is better: a KICKER that names the product and answers the
+  hook (the table above), a few short facts (COLUMN_LINE or KICKER, a few words each), a BADGE with a
   real offer or rating. A price
   only when it is the argument (an offer, a comparison, "less than you
   think"): a bare price is a catalogue line, not a reason. How many words go

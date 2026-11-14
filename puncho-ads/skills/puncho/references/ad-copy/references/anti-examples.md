@@ -4,7 +4,7 @@ Real output from this pipeline, rejected by the client on sight. Every line was
 produced by a model that had just been told to be specific and avoid clichés —
 which is the point. The bans are not sufficient; the tests are.
 
-The copy comes from two brands, described here and not named. The lines belong
+The copy comes from several brands, described here and not named. The lines belong
 to their brand, so never reuse one. The reasons apply to every brand.
 
 Read these before drafting.
@@ -135,3 +135,78 @@ Two further tells in that batch:
 The cause was a rule in this skill. "Every hook needs something to push against"
 made the reader the nearest antagonist three times running. The fix is the
 section "The reader is never the antagonist".
+
+---
+
+# Captions, and one line said four times (four product brands)
+
+Found reading the words on forty-five designed ads for an iced coffee, a
+protein topping, a snack maker and a shoe brand, in Bulgarian and English. The
+pictures were good, and the words were the reason the ads read as generic.
+
+## Headlines that label the picture
+
+- "3 AM"
+- "18 hours."
+- "Still out in the snow."
+- "Sneakers for the first snow."
+- "Вземи ги и тръгвай."
+
+Each names a time, a number, a weather or the product, and claims nothing.
+Over its photograph each looks finished; covered, each says nothing a reader
+could act on. "18 hours" is the brew time, a real fact with no "so what":
+what does eighteen hours do that ten minutes does not, for the reader? That
+sentence was the hook, and nobody wrote it.
+
+## The best line was in the body
+
+- Headline: "Answer all of them. It's still cold." Body text's first line:
+  "Hot coffee goes cold while you answer one email."
+- Headline: "Поне 20 g протеин в обяда, без да печеш още пилешко". Caption on
+  the same ad: "почти колкото протеина в 100 g пилешко филе".
+
+In both, the body or the caption holds the line a reader would stop for: a
+moment everyone has had, a comparison with a food everyone knows. The headline
+above it was a summary. Pass 3 of the skill, promote the strongest line, is
+the fix.
+
+## One fact, every place, every ad
+
+- "Handles snow and wet weather": the store's product line, in all thirteen
+  concepts of one brief, in the kicker, the body text and the badge, often
+  twice on one ad.
+- "Cold brew steeped 18 hours, real oat milk, 4 g sugar": in nearly every ad of
+  another brand, as kicker, body text and Meta headline at once.
+- Four hooks on one brief that were one line: "Christmas market at noon.
+  Dinner at eight." with "One pair." or "Same pair." added or left off.
+- A Meta headline that repeats the image's headline on forty of a hundred and
+  seventeen concepts.
+
+None of it is false, and none of it trips the tension warning: the tensions
+differed while the words did not. A reader scrolling past three of these ads
+has seen one ad three times. Each place on an ad has its own job (the skill's
+"Four places for words, four jobs"), and a fact lives in the one place where
+it makes the hook true.
+
+---
+
+# A stock idea: "it's mine, hands off" (three brands, one day)
+
+Written in every concept run for a day, on brands that share nothing:
+
+- an iced coffee: "Who took my oat latte?", "Whoever took it, get your own.",
+  "Whose is this one?", "Not yours. I'm serious.", "Hands off, this one's
+  mine." (one office-fridge theft, five ways, across four batches);
+- a chocolate snack, in Bulgarian: "Розовите са мои." over a chat that ends
+  "Не.";
+- relabelled by the writer, when refused, as a "shared space", then "home,
+  morning", then "family", the same words each time.
+
+Each one alone is a real moment with real tension, which is why it keeps
+coming back: it is the model's nearest idea for "a product people want",
+for any product. That is what makes it a stock idea. On a brand's board it is
+used once at most, and only when it says something only this product could
+(why this one is the one people take). A second, in any words, on any brief, is
+the same ad. When it comes to mind first, take it as the sign to look for the
+idea that belongs to this product: what it does, where it is used, what it
+replaces.

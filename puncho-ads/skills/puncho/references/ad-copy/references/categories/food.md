@@ -77,6 +77,10 @@ rather than softening a line until it says nothing.
   out. Say what is in the product and let the reader conclude.
 - **Nutrition claims** ("no added sugar", "high in protein") have legal
   thresholds. Use one only if the client confirms the product meets it.
+  Naming a nutrient as a benefit is one too: "all nine essential amino
+  acids", "rich in vitamins", "a source of fibre". A number from the label
+  ("20 g protein a serving") is not: prefer it. Lines with these words are
+  flagged for whoever approves.
 - **Don't advertise what every product has** (Reg. 1169/2011, Art. 7): "no
   preservatives" on a product that never needs them is misleading.
 - **"Bio" / organic** (Reg. 2018/848) only for certified products, and only as
