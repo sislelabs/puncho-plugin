@@ -28,6 +28,7 @@ Read a stage's topic before you work on it, once in a conversation:
 - `ad-design/references/formats`: the playbook for each ad format.
 - `ad-design/references/prompting`: how to prompt for a design's parts.
 - `ad-design/references/examples`: five strong statics in words: the level to reach, never a layout to copy.
+- `ad-design/references/type-ideas`: what an ad's words do (a number as the picture, words on an object, pointing...): one idea an ad, never twice on a brief. Read before setting any type.
 
 # Running the ads loop
 
