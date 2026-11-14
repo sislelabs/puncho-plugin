@@ -128,6 +128,11 @@ it can look like a real person who never agreed to be in an ad.
 - What an image model may draw freely is the **contents**: the spread, the
   crackers, the chocolate, crumbs, drips, the hand holding them. Food has no
   label to misspell. Generate it in the product's own light.
+- **Clear glass or plastic is drawn in, never cut out.** A bottle or jar shot
+  on white keeps that white inside its glass, in its own solid pixels: on any
+  other ground the neck reads as milky plastic, and no edge cleaning reaches
+  it. Build it with `build_scene` method `photo`, which draws it from its photo
+  with the scene seen through the glass and reads its label back blind.
 - Check the product shot at the size you will use it. A soft, oversharpened or
   haloed shot shows at full screen; use it smaller in a wider scene, or say plainly
   that a better photo is needed (verdict BLOCKED). No composite hides a bad
@@ -350,7 +355,7 @@ can also be the idea (one object, a calm field), and then the note says so.
   whether it is doing something. Quiet around one thing is a choice; leftover
   space is not.
 - **The second level follows what the ad sells on** (the concept's `lead`). A
-  feeling: the product's name and one line, and the picture carries the rest.
+  feeling: one line, and the picture carries the rest.
   Proof: a real review as its card, the rating. The product: three or four
   facts as callouts or a stat bar. An offer: the deal as a badge or sticker,
   the price when it is the argument. A problem: the problem in the reader's
@@ -360,7 +365,7 @@ can also be the idea (one object, a calm field), and then the note says so.
   words beyond the headline: a KICKER or a BADGE. A format whose idea is one
   thing (a phone screen, a note, a person's words, one huge number) does not:
   its words are inside the object, and the preview does not ask for more.
-  When a designed frame has only a headline, add what the evidence gives: the product's name, its one
+  When a designed frame has only a headline, add what the evidence gives: its one
   reason, a detail from `productShots` or the product page (a price only when
   the concept is about price or an offer), and
   say in your note what you added. Never invent a claim, a rating, a discount
@@ -437,11 +442,15 @@ What it adds, and what you choose. Each is an option for the ad that needs
 it, not a default: most ads use one or two of them, never all.
 
 - **An eyebrow** (`eyebrow`): a few words in small letter-spaced capitals above
-  the headline: what the product is, "New", the brand. It tells a stranger
-  what they are looking at before they read the line.
+  the headline that tell a stranger what kind of thing this is, in words the
+  picture does not say: "Protein you sprinkle on dinner", "New this winter".
+  Never the product's name, its label or the brand alone: the pack and the
+  logo already say those, and `preview_design` reports a line that only
+  names the product.
 - **One accent in the headline** (`accent`, `accentStyle`): words set apart in
-  the brand's accent, as a colour or a marker behind them. The words that
-  carry the argument ("20% off.", "It's still cold."), once.
+  the brand's accent, as a colour or a marker behind them, or in its accent
+  face (`face`, when its type style names one). The words that carry the
+  argument ("20% off.", "It's still cold."), once.
 - **A call to action** (`cta`): a short line with an arrow ("Shop the 12-pack →"),
   set as an underlined link. Never a pill or a button drawn as a box: the
   preview reads that as a template plate. Meta puts its own button under every
@@ -558,6 +567,16 @@ composite last.
 
 ## Type
 
+**Choose the ad's type idea first: `references/type-ideas.md`.** What the
+words do in this ad (a number as the picture, a photo inside the letters,
+words on a ribbon in the scene, lines pointing at the product, poster
+capitals, an editorial page) is decided before any line is set, from the
+hook and the picture. No two ads on a brief share one: `get_design` lists the
+ones taken (`typeIdeasTaken`), and `finish_design` records this ad's and
+refuses a repeat without a reason. The headline stacked over the photograph
+is one idea among them, used once a brief at most. Everything below is how to
+set the words well once the idea is chosen.
+
 - **Three levels.** One clearly biggest (the headline, at least 1.6x the
   next), one second, the rest small. Headline at least 90px on the 1080 frame;
   in the strongest ads it fills half the width or more. Five or six words.
@@ -575,6 +594,24 @@ composite last.
   format it reads as the same trick again. Each ad in a batch gets its own
   carrier, or none; the preview flags a second ad with the one another
   already uses.
+- **Every line says what the picture cannot.** A line that only names the
+  product (a shoe's model and colour, "the latest" and its model, the jar's
+  own label set again under the headline) tells a reader nothing the
+  photograph has not: cut it, or make it the reason, the offer or the moment.
+  The name goes on the ad only beside something that needs it (the model and
+  its price, in an ad about the price). `preview_design` reports a line that only names a product.
+- **Words in a few places, with an order.** The headline and its supporting
+  lines read as one block; a callout stands next to the one thing it names;
+  the logo sits with the last line or on the words' margin. Words in every
+  corner of the frame (the headline top, a callout right, another
+  bottom-left, the logo bottom-right) leave the eye no path. `preview_design`
+  reports words that take all four corners.
+- **No banner in the photograph.** When a scene leaves the words a place,
+  make it an open part of the scene (a wall, the sky, a table seen from
+  above), not a dark shelf or a strip with a straight edge across the whole
+  frame under the words: that reads as a band laid behind them, the same as a
+  drawn one. `preview_design` reports a hard edge across the frame beside the
+  headline's block.
 - **Depth.** The headline behind the product: the cut-out sits above the
   letters in the stack and breaks through them.
 - **Devices** (`icon` layers): hand-drawn arrows and rings from a fact to the
@@ -587,11 +624,17 @@ composite last.
   depth or a carrier instead. Ask of every device: would the ad still work
   with it removed? If yes, remove it. `preview_design` reports a second ad in
   the batch that uses them.
+  **An arrow points at what its words are about.** A claim about the
+  product ("doesn't separate", "roasted longer") points at the product, never
+  at a prop beside it (the glass, the spoon, the banana); a line about the
+  prop points at the prop. Read each callout with its arrow before you
+  finish: if the words would be true of the thing it hits, it stays.
   Arrows keep their proportions whatever their box: give one a square box at
   the size you want and aim it with `rotation`. A stretched box only leaves
   empty space around it.
-- **Emphasis** with `marks`: one word in the accent colour, or a marker
-  highlight. One per ad.
+- **Emphasis** with `marks`: one word in the accent colour, a marker
+  highlight, the brand's accent face, italic against the line, or struck
+  through. One per ad.
 - No glow, no outline, no gradient on type unless the idea is about it. No
   emoji in the image. An outline reaches the preview as a finding: it is
   contrast bought on the letters, and the picture should give it instead.
@@ -600,6 +643,16 @@ composite last.
   quieter, lighter or darker area, or use the brand's other version of it.
 
 ### Setting it
+
+**Start from the brand's type style.** `get_design` and `list_design_requests`
+return `brandFonts`: the heading and body faces, and how the brand sets its
+headlines (`style`: weight, capitals, italic, spacing, labels in capitals, an
+accent face), with a sentence of it in `says`. A new design's headline and
+`set_type` already follow it. It is a person's choice, read from the brand's
+website or set on the board: keep it on every ad of the batch, and spend the
+variety on treatments, never on changing how the brand's headlines are set.
+When `says` reports it unset, say so in your finish note; never set it
+yourself.
 
 The same face looks twice as good set the way a designer sets it:
 
@@ -619,10 +672,17 @@ The same face looks twice as good set the way a designer sets it:
 - **Type as a picture.** A word so big the frame crops it; one word per line
   stacked into a block the width of the frame; a number a quarter of the frame.
 - **Weight contrast within a line** only through `marks`, once.
-- **Faces.** Display face for the headline, body face for the rest, handwriting
-  only for something a hand wrote (a note, a tag). Never a third face. Use the
-  brand's (`brandFonts`); suggest a better one to the human with `list_fonts`,
+- **Faces.** Display face for the headline, body face for the rest, the brand's
+  accent face (`brandFonts.accent`) only for words set apart inside a line,
+  handwriting only for something a hand wrote (a note, a tag). Never a face the
+  brand did not choose. Suggest a better one to the human with `list_fonts`,
   never install or switch on your own.
+- **Italic and capitals are drawn, never typed.** `italic` sets a layer in its
+  family's own italic, offered only where one is installed (`italics` in
+  `get_design`, `list_fonts`); there is no fake slant. `caps` draws the words
+  in capitals while the concept keeps them as written: never type a line in
+  capitals yourself, or the approved words change. Capitals want open spacing
+  (`charSpacing` +60 to +120 small, 0 to +40 large), never tight.
 
 ### Treatments: choose one per ad
 
@@ -651,6 +711,15 @@ and use a different one from the other ads in the batch.
   `highlight` in a pack or palette colour at about 60% strength behind ink
   type). *When:* the line answers a question or makes a promise. *Ruins it:*
   a highlight on the whole line.
+- **Struck through.** What the line says no to set with `strike`, the answer
+  beside it in the headline's weight or the accent face: the old price beside
+  the new, the habit beside the product. *When:* the struck-through past or a
+  real offer. *Ruins it:* a strike on words the reader needs to read; an
+  invented old price.
+- **Spaced capitals.** A short headline of two to four words in `caps` with
+  open spacing, as a sign or a label is set. *When:* the brand sets its
+  headlines in capitals, or the hook is a name, a place or a time. *Ruins it:*
+  a long sentence in capitals; capitals tracked tight.
 - **Weight contrast in one line.** The headline's key words at 900 and the
   rest of the line at 400 in the same face (`marks` with `fontWeight`).
   *When:* a two-part hook where one part is the point ("Без захар. **Само мед**."). *Ruins it:* more than one switch.
