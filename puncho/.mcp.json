@@ -2,7 +2,7 @@
   "mcpServers": {
     "puncho": {
       "type": "http",
-      "url": "${user_config.address}",
+      "url": "https://app.puncho.app/api/mcp",
       "headers": { "Authorization": "Bearer ${user_config.token}" }
     }
   }
