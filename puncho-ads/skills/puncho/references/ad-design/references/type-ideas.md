@@ -163,8 +163,8 @@ the product placed, almost nothing else.
   headline; yoghurt's texture filling the frame under a cream serif headline;
   peppers on a board with the headline in a green serif low on the wood.
 - **Build:** the brand's heading face when it has character (a serif, a
-  rounded display, a slab); if it is a system face, say so to the person and
-  use this idea only when they chose a face. Headline 80-120px, leading 1.0,
+  rounded display, a slab); if the brand has only a system face, choose a
+  serif or a display face with character for this ad (`set_type`'s `face`). Headline 80-120px, leading 1.0,
   in a palette colour lifted from the photograph. One supporting line at
   most. The photograph is the best you can make.
 - **When:** appetite, craft, origin: the feeling of the thing.

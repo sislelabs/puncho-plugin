@@ -6,9 +6,20 @@ files, and the design as it stands. It starts as a **blank canvas** in the
 brand's paper colour, holding the concept's words as text layers stacked in
 the top-left corner. Nothing about its layout is decided. That is your job.
 
+**Build each design with `compose_ad` first.** Make the ad-design skill's
+recipe decisions (the photography style, one moment of action on a set
+coloured like the pack, the product's inside from its details, where the words
+go, the headline's treatment, one short line) and pass them in one call. It
+places the brand's pack, sets the words, draws the photograph with the product
+in it (its label read back), colours the words, adds the logo and the 9:16,
+and shows you both sizes with the findings. Fix what they ask in one
+`edit_design`, or call it again with another plan, then `finish_design`. A
+few calls an ad, not thirty. The steps below are for revisions and for what
+compose_ad does not make (a chat on a phone, callouts with arrows).
+
 Nobody at an agency asks a model for the finished ad. They generate the pieces
 and assemble them in Figma with the real product, the real logo and type they
-set by hand. Work the same way:
+set by hand. When you build step by step, work the same way:
 
 0. **Read the pack.** `product_colours` on the product shot: the field, the
    type and the accents come from it. Check the shot at the size you will use
@@ -30,10 +41,12 @@ set by hand. Work the same way:
    method `photo` first: the model draws the whole photograph with the
    product in it from its photos, and each drawing's label is read back and
    held to the product's own, so a changed word is never kept (the ad-design
-   skill, "Build the photograph around the product"). Method `plate` or
-   `around` when `photo` could not keep the label, or `settle` when the scene
-   is already in the design and the product stands on its surface. The real
-   pixels go back where the model's version stood, with its light. Put any
+   skill, "Build the photograph around the product"). When `photo` refuses,
+   read why, fix it (a simpler scene, the product clear of the words) and
+   build with `photo` again; it asks for the size it learned. If it still
+   cannot, stop and say why. `plate`, `around` and `settle` are refused for
+   the brand's product: they leave the model's own copy of it round the real
+   one as a smudge. Put any
    words that belong on the product back on it after, and preview at full
    size: look for a second, drawn product behind the real one.
 3. **Generate the parts that do not exist yet,** one at a time, with
@@ -94,12 +107,14 @@ set by hand. Work the same way:
    defaults: give each ad on a brief its own layout and its own trick, never
    the same treatment on every one. Running `derive_story_version` after it
    scatters the words again.
-6. **Look, and judge.** `preview_design` returns the PNGs, `findings` (what
-   code can measure: contrast, size, safe band, cut-outs standing on nothing)
-   and `critique` (what only your eye can answer). Open the images with
-   `view_image`. Fix every finding. Answer every critique question honestly against
-   the picture; any "no" is a change, not a note. Two or three rounds is normal;
-   stop when you would put your name to it.
+6. **Look, and judge.** `preview_design` returns the pictures with its
+   `findings` (what code can measure: contrast, size, safe band, cut-outs
+   standing on nothing) and `critique` (what only your eye can answer). Fix
+   every finding. Answer every critique question honestly against the picture;
+   any "no" is a change, not a note. Make every fix in one `edit_design`, look
+   once more, and finish: never a preview after each small change. Follow the
+   ad-design skill's recipe (the photo brief, the headline treatment, one
+   short line) from the start, and one round of fixes is normal.
 
    No two ads in a batch share a layout. No headline band across the top and no
    product line at the foot unless the idea needs them: those are habits.

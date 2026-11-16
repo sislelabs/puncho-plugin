@@ -10,6 +10,85 @@ Read `references/formats.md` before choosing a format,
 level to reach, never a layout), and `references/prompting.md` before writing
 any part prompt.
 
+## The recipe: start here
+
+The strongest food and product statics this pipeline has made came from the
+same five moves, made in this order. Everything below refines them; none of
+it replaces them.
+
+**`compose_ad` makes them in one call.** Its `photography` is move 1's
+light (BOLD, FLASH, MIDDAY_SUN, WINDOW_STEAM, LAMP_NIGHT, COLOUR_BLOCK), its
+`scene` and `inside` the rest of the brief, `wordsAt` the empty part,
+`treatment` move 2 (STACKED_CAPS, STRUCK_WORD with `struck`, ITALIC_SERIF,
+SCALE_JUMP: one word half as big again, MIXED_FACE: one word in an italic
+serif; `accent` picks the word), `line` move 3. Never the same treatment as
+the brief's other ads (`typeIdeasTaken`). `line` and `note` are the
+concept's own planned lines, word for word; the build never writes copy. `note`
+sets the concept's CAPTION (two to four words) handwritten under the words with
+a drawn arrow down to the product: use it whenever the concept planned one. `finish` (its type idea) hands the ad over in the same
+call when the checks pass. Build with it first; the step tools are for
+revisions. It carries a headline, one line and a note, so a concept planning
+more (a list of steps, CALLOUTS' facts) is built with the step tools: it
+refuses rather than delete a planned line. Keep the words' part of the scene
+bare: nothing standing there, not even the food. A photograph that puts
+something under the headline is not handed over. STRUCK_WORD strikes only
+words the ad argues against (a claim it refutes, the word it corrects): struck
+words read as "not this", and striking what the concept holds true is refused.
+Detail lines that belong on a thing in the photograph (steps on a note by the
+jar, a line on a recipe card) are written by the model, not laid on it:
+`build_scene` method `photo` with `writeOn` (the thing, as the prompt names
+it) and `writeLines` (those text layers). It writes them in big marker, reads
+them back blind letter for letter, and keeps none that is wrong. Type laid as a
+layer over a drawn note never follows its tilt or light and reads as a sticker,
+so never ask the scene for a blank card to lay layers on. The headline, a price
+and an offer always stay layers, on the plain ground. A
+list's items (steps, numbered or bulleted lines) are one rank: one size, the
+same air between each, whatever the visual idea says.
+
+1. **The photo brief has four lines** (`build_scene` method `photo`, its
+   `prompt`):
+   - **Photography:** one line naming the light and the look, chosen for the
+     moment: "bold, saturated food photography, hard light from the upper
+     right, deep shadows, glossy textures"; "casual direct-flash food
+     photography, high contrast, a little grain, the look of a late-night
+     snack"; "hard midday sun, crisp shadows, saturated colours"; "warm
+     documentary kitchen photography, morning window light, steam catching
+     the light"; "one warm lamp in a dark room". Never soft daylight or a
+     calm room alone: that is the beige that reads as stock.
+   - **Scene:** one moment of action with the product. A spoon lifting a
+     ribbon that drips, a hand dipping, squeezing, snapping, pouring, a bite
+     taken, steam rising. The food big and close, the product large beside
+     it. The set coloured like the pack: a table and wall in the label's
+     colour, or the colour it stands out on.
+   - **The product's real look:** when it is opened, cut, broken or poured,
+     describe its inside and its texture from the product's own details
+     (`productShots` details, the product page), never from a guess, as one
+     solid texture (never loose grains: they read as worms). Often the
+     whole product is better than a cut one. A
+     chocolate ball whose inside was guessed as "puffed rice" came out as
+     loose grains that read as worms; "one airy crisp core, like the inside
+     of a rice cake" came out right.
+   - **Empty:** where the words go, said as what it is ("the top third is the
+     plain pink wall, with nothing on it").
+2. **The headline is 2 to 6 words, set huge, with one treatment:**
+   - stacked capitals in a condensed face (`set_type` `face` Oswald; `caps`
+     on the layer), the last word in a second colour (`marks` fill);
+   - a struck-through word, then the answer (`marks` with `strike` on the
+     first word: "~~Филия.~~ Соленка.");
+   - an italic serif in the pack's colour (`face` Playfair Display, `italic`
+     on the layer);
+   - the words on an object in the photograph, or one giant word.
+   The colour comes from the pack or the photograph, never grey.
+3. **One short line under it, or none:** the reason, the moment or the
+   offer. Never the product's name, its weight or a list; a list is its own
+   format (CALLOUTS, US_VS_THEM).
+4. **The logo small in a corner.** Nothing else on the image.
+5. **Look once, fix once, finish.** `preview_design` returns the pictures
+   with its findings. Look, make every fix in one `edit_design`, preview
+   again, then `derive_story_version`, preview the 9:16 and finish. Never a
+   preview after each small change: a design took 27 to 44 steps when it
+   did, and most of them were looks between nudges.
+
 ## Rules are defaults; the idea decides
 
 Everything below describes what has worked in strong statics. Almost none of
@@ -186,8 +265,9 @@ shadow or tone fixes that. So the order is reversed:
    not left to trust: each drawing is read back blind and held to the
    product's own photo, and one with a word added or changed (an invented
    "110" on a pouch), the name missing, an extra product, or a product standing
-   where the words are set is not kept. Two are drawn and the best that passes
-   is kept; if none passes in two rounds nothing is placed and it says why.
+   where the words are set is not kept. Four are drawn a round and the best
+   that passes is kept; if none passes in three rounds nothing is placed and
+   it says why.
    So: set the words first (their places are kept calm and clear), place the
    products about where and as big as they should stand, then describe the
    photograph in `prompt` like a photographer (the place, the surface, what
@@ -200,18 +280,16 @@ shadow or tone fixes that. So the order is reversed:
    a room, a table, a shelf, a studio light, a flat lay seen from above (the
    model draws the product from above too, which a front packshot laid flat
    never was).
-   **Method `plate`** when `photo` could not keep the label (it says so) or the
-   product's small print must be the photo's own pixels: for a product that stands (a pack, a
-   bottle, a carton, a jar): the model draws the scene empty, the real
-   product is laid on it, and the model shades that picture (contact and
-   cast shadows, the scene's light and warmth on the product, light through
-   glass). Only its light is kept, so no ghost of its drawing is left round
-   the product. Describe the scene as for `around`, with the camera height
-   the product photo was shot from ("eye level", "from slightly above"), the
-   area for the headline as what it is ("the top third is the table in
-   shadow", not "clean wood", which came back a pale wall), and what must not
-   be there ("no cups, no drinks"). Pass `subject`: the product in a word or
-   two ("carton", "glass bottle").
+   **`photo` is the only way a product gets into a photograph.** When it
+   refuses (a changed label, the product over the words, too big), it says
+   why and keeps the drawings to look at: read them, fix what it names (a
+   simpler scene, fewer props, the product clear of the words) and build
+   with `photo` again. It learns the size the model draws the product at
+   and asks for less next time. If it still cannot, stop and say why in your
+   reply. `plate`, `around` and `settle` lay the real cut-out on a scene
+   and paint light round it, and `around` leaves the model's own copy of
+   the product behind it as a smudge: they are refused for any ad that shows
+   its product, and stay only for props in an ad with no product (NO_PACK).
    **Whatever stands beside the product is built with it, never pasted after.**
    A glass of the drink, a cup, a bowl: say it in the prompt, or place its
    part before `build_scene` and pass its layer in `layerIds` after the
@@ -222,25 +300,10 @@ shadow or tone fixes that. So the order is reversed:
    **After the scene is built, the product stays where it is**, at its size.
    The scene's shadows were made for that place; moved, it stands off them.
    To move it, place it and build again.
-   **Method `around`** when the product is worn or held, or `plate` came back
-   wrong: an image model makes the whole
-   photograph round the product, agreeing with its view and its light.
-   Describe the place, the surface it stands on, what else is in the scene
-   (the food, the props, the hand), the light, and that the top area is clean
-   where the headline goes. Add `settle: true` when the light is hard or
-   directional and should fall on the product (sun through leaves, a lamp).
-   **Method `settle`** only when the photograph under the product is real:
-   one of the brand's own (a key visual, an organic post) or a scene
-   `build_scene` already made. It adds the contact shadow, cast shadow,
-   reflection and light. Over a backdrop generated for this ad it is
-   refused: that backdrop was made without the product, and lighting the
-   product on it leaves it pasted. Never generate a backdrop first.
-3. With `plate` and `around`, the model redraws the product while it works: bigger or smaller, a little
-   squashed, its small print garbled, sometimes its colour changed. That
-   drawing is found and thrown away; the real layers are moved to where it
-   stood and take its light. Look at the preview at full size for anything
-   left of it: a second edge behind the real one.
-   **The weather on the product** (`dress_product`): when the scene has snow,
+   **A hand holding the product** is `photo` with `wornBy` ("a hand
+   round the pack, from the right edge, no face"): the model draws the hand
+   and the product together.
+3. **The weather on the product** (`dress_product`): when the scene has snow,
    rain, sand or dust, the product should carry a little of it, or it reads
    as placed. Ask for a little and say where ("a light dusting of fresh snow
    on the toe and along the laces"). Only what the model added is kept, as a
@@ -344,7 +407,9 @@ chosen because the idea is the facts, not a baseline for every ad.
 Saying too little fails too. One line over a product on an empty wall often
 reads as a mood board, and a stranger scrolling past learns nothing: not what
 the thing is, not why it is better. The one supporting level is what fixes
-that: the product's name and its one reason, or the offer as a badge. Quiet
+that: the product's one reason, or the offer as a badge. The pack in the
+picture already names the product: never set its name and weight again as a
+line. Quiet
 can also be the idea (one object, a calm field), and then the note says so.
 
 - **Empty space is there on purpose, or it goes.** A wall of nothing left
@@ -419,6 +484,25 @@ and again. `set_type` sets every word and the logo in one of them, at both
 sizes, measured: run it once the picture is built and the 9:16 made, then
 preview. Choose the layout by the picture and the hook, and give a brief's
 designs different layouts.
+
+**Choose the arrangement before you build the picture.** The words go where
+the idea puts them, and the photograph is built for that: set the words first,
+where they will stand, and `build_scene` keeps that spot calm. Placing the
+headline at the top by habit is what makes every ad "text above, product
+below". Pick one of these for each ad, and a different one for each ad of a
+batch (the preview holds a headline in the same third as half the batch):
+
+- **Behind the product:** the headline huge across the middle, the product
+  standing in front of the letters (`set_type` GIANT_WORD).
+- **On the scene:** the words on an object the photograph holds (a board, a
+  window, a napkin, a label), turned with it.
+- **At the foot:** the picture fills the top two thirds, the headline sits on
+  the calm surface at the bottom.
+- **Beside it:** the product on one side, the words in a column on the other,
+  the picture built with that side quiet.
+- **The product huge and cropped**, with a short headline small in a corner.
+- **Top headline:** at most once a batch, and only when the idea is a
+  statement read before the picture.
 
 **A batch is not one template.** Seven ads each with an eyebrow, one orange
 phrase and an underlined call to action, stacked top-left over a photo, are
@@ -584,9 +668,9 @@ set the words well once the idea is chosen.
   dark slate, sky: generate the photo with that area empty ("the upper third
   is clean empty wall"). Never over wood grain, crumbs or a busy shelf without
   a carrier.
-- **Words on objects.** Generate the blank carrier and set the real words on
-  it as a layer, turned and slanted (`rotation`, `skewX`) with the object.
-  Choose the carrier from where the product lives: a recipe card or the pack's
+- **Words on objects.** Detail lines on a thing in the photograph are written
+  by the model (`build_scene` method `photo`, `writeOn` and `writeLines`),
+  read back letter for letter; the headline stays a layer. Choose the carrier from where the product lives: a recipe card or the pack's
   own cooking instructions for food, a till receipt or price tag for a shop, a
   chalk menu board for a café, a gift tag for a present, a phone notification
   for an app, a label on a jar, a luggage tag, a ticket stub. A sticky note is
@@ -602,7 +686,8 @@ set the words well once the idea is chosen.
   its price, in an ad about the price). `preview_design` reports a line that only names a product.
 - **Words in a few places, with an order.** The headline and its supporting
   lines read as one block; a callout stands next to the one thing it names;
-  the logo sits with the last line or on the words' margin. Words in every
+  the logo signs from a corner of the frame on the words' margin (a bottom
+  corner, or the top), never hanging under the headline mid-frame. Words in every
   corner of the frame (the headline top, a callout right, another
   bottom-left, the logo bottom-right) leave the eye no path. `preview_design`
   reports words that take all four corners.
@@ -614,9 +699,17 @@ set the words well once the idea is chosen.
   headline's block.
 - **Depth.** The headline behind the product: the cut-out sits above the
   letters in the stack and breaks through them.
-- **Devices** (`icon` layers): hand-drawn arrows and rings from a fact to the
-  product, ticks and crosses for a comparison, a starburst under a short word,
-  stars for a rating. Crisp vectors; never generate these as pictures.
+- **Devices**: arrows and rings from a fact to the product, ticks and
+  crosses for a comparison, a starburst under a short word, stars for a
+  rating. **Over a photograph, an arrow is hand-drawn** with `draw_arrow`:
+  the model draws one arrow on paper and it is laid in the brand's accent
+  (or the colour you pass) with its tail at `from`, beside the callout's
+  words, and its point at `to`, on the thing they name.
+  A vector arrow (`icon`) laid over a photograph is one even line square to
+  the frame and reads as pasted on; the preview reports it. Set the words
+  first, then draw each arrow from their edge to the thing, at each size.
+  On a flat designed field, the `icon` devices (ticks, crosses, stars, a
+  starburst) stay crisp vectors.
   **At most one ad in a batch uses devices**, and it is the one whose idea is
   about pointing (CALLOUTS, a comparison, a rating). Elsewhere they are the
   cheapest way to make words "belong" to a picture, which is why they turn up
@@ -629,7 +722,7 @@ set the words well once the idea is chosen.
   at a prop beside it (the glass, the spoon, the banana); a line about the
   prop points at the prop. Read each callout with its arrow before you
   finish: if the words would be true of the thing it hits, it stays.
-  Arrows keep their proportions whatever their box: give one a square box at
+  Icon arrows on a flat field keep their proportions whatever their box: give one a square box at
   the size you want and aim it with `rotation`. A stretched box only leaves
   empty space around it.
 - **Emphasis** with `marks`: one word in the accent colour, a marker
@@ -652,7 +745,14 @@ accent face), with a sentence of it in `says`. A new design's headline and
 website or set on the board: keep it on every ad of the batch, and spend the
 variety on treatments, never on changing how the brand's headlines are set.
 When `says` reports it unset, say so in your finish note; never set it
-yourself.
+yourself. **When the brand has no headline face of its own** (its heading
+is a system face such as Roboto or Inter, and `says` tells you so), choose
+one for each ad from the installed faces (`list_fonts`): a face that fits
+that ad's idea and carries its language (Cyrillic for Bulgarian). Pass it
+as `set_type`'s `face`, vary it across the batch (a serif for appetite, a
+condensed grotesk for a bold claim, a rounded display for something
+playful), and name it in your finish note so a person can make one the
+brand's under Fonts. A brand with its own face keeps it on every ad.
 
 The same face looks twice as good set the way a designer sets it:
 
@@ -776,8 +876,8 @@ The headline band across the top, over a photo or a flat field: the header
 strip. It is the first layout a model reaches for, it makes the ad a
 letterhead, and a reference that has one is no reason to use one: three of
 one brief's four designs opened with it. A product line in small grey at the
-foot as an afterthought ("Product, 250 g"): the product's name and its reason
-belong in the design, set as a level of their own. One line and a product on
+foot as an afterthought ("Product, 250 g"): Meta does not ask for it and the
+pack already says it; leave it off. One line and a product on
 an empty field. Everything medium-sized. A small flat illustration floating in a white
 field with the headline under it. A coloured border round a white panel. A
 generated picture dropped in as a square. A warm cream background with a serif and a

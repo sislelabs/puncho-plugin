@@ -100,6 +100,16 @@ name; "натурален" is usually "истински" or a fact; "лиофи�
 true and still belongs in the caption or the pack's facts, not the hook. Keep
 the formal word only where it is the fact being sold.
 
+## Bulgarian, not Russian
+
+The two share an alphabet, and a model drifts into Russian words without
+noticing. A Bulgarian reader stops at every one. Sesame is **сусам**, never
+„кунжут"; само, не „только"; също, не „тоже"; който, не „который"; сега,
+не „сейчас"; мляко, хляб, захар, яйце, не „молоко, хлеб, сахар, яйцо". The
+letters ы, э and ё are not Bulgarian at all. When the brand's own text names
+the thing (its product page, its packs), use its word. `store_specs` refuses
+a line with a known Russian word or one of those letters.
+
 ## Small rules that show
 
 - Sentence case: only the first word and names take a capital. Never Title

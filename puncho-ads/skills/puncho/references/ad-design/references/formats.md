@@ -14,9 +14,9 @@ ruins it.
   light round it in that colour (a pink box on a pink tiled counter, a dark
   pouch on dark slate), with its contents spilled at its foot as part of the
   same photograph. Headline huge, top third, on the scene's quietest plane.
-  Under the headline, a second level: the product's name and its one reason,
-  and two or three short facts or a price sticker, set on the scene or a
-  carrier. The product is big: half the frame's width or more, no wall of
+  Under the headline, a second level: the product's one reason, and two or
+  three short facts or a price sticker, set on the scene or a carrier. Never
+  the product's name and weight: the pack says them. The product is big: half the frame's width or more, no wall of
   nothing between it and the headline. Never the pack cut out onto a flat
   colour with props pasted round it: that is a catalogue page.
 - **Ruins it:** a second claim competing with the first; the pack small; the
@@ -144,7 +144,13 @@ The phone and its chat are drawn by the image model, the words written on the
 screen itself: a flat screen of layers on a photographed phone never looked
 real (no glass, no glow, square to the camera in a scene that was not). In
 this order:
-1. draw_screen with the conversation (the contact's first name, the status
+1. Place the real product (cut_out_image) at its final size beside where
+   the phone will stand, and build the photograph with build_scene method
+   photo: the model draws the product into the place, its label read back.
+   Describe the place, the surface and the light; leave room for the phone
+   and the headline. The phone comes after: photo replaces what is under the
+   product with the photograph.
+2. draw_screen with the conversation (the contact's first name, the status
    bar's time, three to six messages typed the way people text, who sends
    each), `phone` (how it stands: "upright, screen to the camera") and `at`,
    the phone's box in the frame: big, its screen at least half the frame's
@@ -153,12 +159,10 @@ this order:
    One draw a call, three a design request: a failure is paid for and comes
    back to you. Change what made it fail before another (shorter messages, a
    bigger box), never draw again for layout.
-2. Place the real product (cut_out_image) at its final size beside the phone.
-3. build_scene method around, settle: true, with the phone first and the
-   product after it in `layerIds`: the scene is built round both, and the
-   settle gives each its shadow and light. Each is found and fitted on its
-   own; their own pixels, words and label are kept. Describe the place, the
-   surface and the light; leave room for the headline.
+3. Then the phone stands in that photograph: build_scene method settle with
+   the phone alone in `layerIds` gives it its shadow and the scene's light.
+   The product is never settled or built the old way: it is already in the
+   photograph.
 4. The headline stays a text layer beside the phone. Never cover the screen
    with a text layer or a shape: to change a word, draw the screen again.
 5. derive_story_version makes the 9:16 from it: the feed's scene continued

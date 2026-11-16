@@ -27,8 +27,8 @@ secondary), because the colours themselves are always the brand's.
   right, at about a third of the width, slightly behind the toast, in the
   same side light. The logo is on the jar; nothing else signs it.
 - **Type:** a heavy display face, three short lines, tight leading, ink on the
-  signature colour. One supporting line under it at a third of its size: the
-  product's name and what is in it. Nothing else on the image.
+  signature colour. One supporting line under it at a third of its size:
+  what is in it. Nothing else on the image.
 - **Palette roles:** paper is the wall (the pack's signature), ink the type,
   accent unused: the food is the colour.
 - **Why it works:** one thing to look at, and it is the food doing what the
@@ -76,7 +76,7 @@ secondary), because the colours themselves are always the brand's.
   bottom edge. The window's bright band runs along the top third.
 - **Type:** the headline in the top third, set on the bright, plain window
   band, left-aligned. One supporting line under it at a third of its size:
-  the drink's name and its one reason. The logo is on the can; nothing else
+  the drink's one reason. The logo is on the can; nothing else
   signs it.
 - **Palette roles:** paper is the window's light, ink the type, accent unused;
   the can's own colour is the only strong colour in the frame.

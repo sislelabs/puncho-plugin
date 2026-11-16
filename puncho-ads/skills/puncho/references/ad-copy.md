@@ -624,7 +624,10 @@ Every concept is a `CreativeSpec` — see `src/lib/creative/spec.ts`. Notes on t
 fields that are routinely got wrong:
 
 - **`hook`** — the line rendered INTO the image. Short enough to read at a glance
-  on a phone. This is the ad.
+  on a phone: **2 to 6 words**, set huge. This is the ad. The strongest are a
+  turn on what the reader expects ("Eggs, but louder.", "~~Ketchup.~~ Chili
+  crisp.", "This one's for the pan."), said the way this language says it,
+  never a translated rhythm. What it needs explaining goes in `primaryText`.
 
 **Four places for words, four jobs.** An ad is read in the order the feed
 shows it, and each place is there to do what the others cannot. Batches kept
@@ -638,7 +641,8 @@ place its own job.
 | Place | Its job | Never |
 |---|---|---|
 | `hook` (the image's headline) | stops the scroll with a claim | a caption of the picture |
-| KICKER | names the product and answers what the hook set up, so the two read as one thought | the product's name and a list of specs |
+| KICKER | answers what the hook set up (the reason, the moment, the offer), so the two read as one thought | the product's name, its weight or size, or a list of specs: the pack in the picture already says them |
+| CAPTION (optional, about one ad in three) | two to four handwritten words beside the product, an arrow drawn to it: names one thing you can see that makes the hook true ("still dry inside", "до последната лъжица") | the product's name, or the hook again |
 | `primaryText` | opens on the reader's moment or the claim, gives the one fact that makes the hook true, ends on why now | the hook again, or a fact the image already said |
 | `headline` (Meta's, under the picture) | the offer, what they get, or the next step | the hook again |
 
@@ -655,15 +659,18 @@ who scrolls past three of them as one ad shown three times.
 - **`lead`** — which of the brief's leads this concept sells on (OFFER, FEELING,
   PROOF, PRODUCT, PROBLEM, NEW). One the brief names; spread a batch across all
   of them. It decides the words beside the headline (`leadPlan` in the
-  context): a feeling needs the product's name and one line, proof a real
-  review or number, the product its facts, an offer its deal. Price is an
-  offer's alone.
+  context): a feeling needs one line or none, proof a real review or
+  number, the product its facts, an offer its deal. Price is an offer's
+  alone. **Never a line of the product's name and weight** ("Бадемово масло,
+  250 г"): Meta does not ask for it, the pack in the picture already says it,
+  and it is the line a reader skips. A FOOTER is only real fine print: a
+  date, an address, an offer's terms.
 - **`texts`** — every word that will appear on the image, each with its role.
   Exactly one HEADLINE, and it is the hook. **On a designed frame the headline
   is usually not the only one.** A cold reader sees the image before the
   primary text, often instead of it, so the image itself says what the thing
-  is and why it is better: a KICKER that names the product and answers the
-  hook (the table above), a few short facts (COLUMN_LINE or KICKER, a few words each), a BADGE with a
+  is and why it is better: the pack in the picture says what it is, and a
+  KICKER answers the hook with why (the table above), a few short facts (COLUMN_LINE or KICKER, a few words each), a BADGE with a
   real offer or rating. A price
   only when it is the argument (an offer, a comparison, "less than you
   think"): a bare price is a catalogue line, not a reason. How many words go
