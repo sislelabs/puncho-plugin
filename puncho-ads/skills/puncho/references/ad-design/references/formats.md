@@ -152,7 +152,10 @@ this order:
    product with the photograph.
 2. draw_screen with the conversation (the contact's first name, the status
    bar's time, three to six messages typed the way people text, who sends
-   each), `phone` (how it stands: "upright, screen to the camera") and `at`,
+   each), or, for any other screen (an opened email, a notification, an
+   app), with `screen`: what the app shows, its clock, and every line on it
+   top to bottom, exactly. Never lay text layers over a photographed phone:
+   the preview holds it. `phone` (how it stands: "upright, screen to the camera") and `at`,
    the phone's box in the frame: big, its screen at least half the frame's
    height. The model draws the phone alone with the chat written big on its
    screen, read back blind word for word; it is cut out and stood in `at`.
