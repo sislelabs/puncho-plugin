@@ -40,11 +40,14 @@ ruins it.
 - **Proves:** why this one, by contrast with what the reader buys now.
 - **Choose when:** there is a checkable difference (butter vs vegetable fat,
   five ingredients vs a list).
-- **Build:** two columns or a table with heavy rules. Ours: the real pack, warm
-  material or the signature colour. Theirs: a blank generic pack (generated,
-  unbranded, cut out) labelled "обикновени …" — a category, never a named
-  rival. Rows of short lines with a full stop; `tick` and `cross` icons. Make the
-  last row the punchline, a joke instead of a fact.
+- **Build:** one photograph split in two scenes, or two side by side, each made
+  with `build_scene` method `photo`: ours, the real pack drawn into its scene in
+  warm light; theirs, a plain unbranded generic pack in a duller one, labelled
+  "обикновени …" as a line, a category, never a named rival. Props go in each
+  scene's prompt, in that scene's light, never as cut-outs. Rows of short
+  lines with a full stop on the plain part of each side; `tick` and `cross`
+  icons. Make the last row the punchline, a joke instead of a fact. Never two
+  flat colour planes with products cut out onto them: the preview holds it.
 - **Ruins it:** naming a competitor; claims about them you cannot prove; rows
   that are adjectives.
 
@@ -52,11 +55,11 @@ ruins it.
 
 - **Proves:** real ingredients, with motion and appetite on a still image.
 - **Choose when:** the ingredients are visual (nuts, cocoa, berries, herbs).
-- **Build:** pack centre, front-on or slightly turned, on a plain ground from its
-  colours. Generate the ingredients flying outward from a clear centre, same
-  light as the pack's shot, with the centre empty, then add several cut-out
-  pieces as separate parts in front of the pack, at different sizes and with
-  slight blur, for depth. Headline top. `add_grain` last.
+- **Build:** the pack placed centre, front-on or slightly turned, then
+  `build_scene` method `photo`: the scene's prompt asks for the ingredients
+  flying outward round it on a plain ground from its colours, some in front,
+  at different sizes and with slight blur, for depth, all in one light. Never
+  pieces cut out and laid on. Headline top. `add_grain` last.
 - **Ruins it:** ingredients the product does not contain; a cluttered frame
   with no clear centre.
 
@@ -70,8 +73,8 @@ ruins it.
   fridge door, a gift bag) with the food in it and the note's spot visible.
   Generate the blank note as its own part (cut out, same light), place it on the
   object, turn and slant it to sit on the surface, and set the words on it in
-  the handwriting face. A crumb or a piece of the food in the foreground, as
-  another cut-out part, adds depth. Pack: `IN_SCENE`, the real product on
+  the handwriting face. A crumb or a piece of the food in the foreground, asked
+  for in the scene's prompt, adds depth. Pack: `IN_SCENE`, the real product on
   the counter beside the food and built into the scene with `build_scene`, or
   `NO_PACK` with the food recognisable (drawn with `foodFrom`, so it is the
   brand's own food). When the note is stuck on the
@@ -90,8 +93,8 @@ ruins it.
   third, then `build_scene` around it: a hand reaching into the bowl or lifting
   a spoon beside it, the food close, two-plane background (wall and surface)
   in the pack's colours, side light, the top third clean wall for the
-  headline. Add foreground food (a crumb, a drip, a piece mid-fall) as cut-out
-  parts in the same light, with `integrate_image`. Headline huge, chunky,
+  headline. Ask for the foreground food (a crumb, a drip, a piece mid-fall) in
+  the scene's prompt, never as cut-out parts laid on. Headline huge, chunky,
   top-left, the hand reaching into it if possible.
 - **Ruins it:** the hand's anatomy (check the fingers); the pack so big the
   food is lost, or laid over the photo instead of standing in it; the headline

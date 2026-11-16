@@ -150,9 +150,11 @@ will assemble the ad from:
 - The background, the light, the materials, the palette colours by hex.
 - How big the type sits against the picture: "the headline huge across the top
   third, the product filling the lower half".
-- What is **placed** as it is (the product shot by its label, the logo) and what
-  is **generated** as a part ("a hand pressing a cracker into hummus, cut out",
-  "a dark slate surface with crumbs, top-down").
+- The one photograph it is: the product (its shot by its label) standing in a
+  real place, and what else is in that place in the same light ("a hand
+  pressing a cracker into hummus", "a dark slate surface with crumbs,
+  top-down"). Never cut-outs, flat colour planes or parts laid on: the model
+  draws the product into the photograph and its label is read back.
 - Words by role ("the badge, tilted, over the jar's shoulder"), never quoted.
 - **Where the words live in the picture**: on a generated object (a note, a
   tag, a label), behind the product, along a surface. Never "headline at the

@@ -34,6 +34,11 @@ bare: nothing standing there, not even the food. A photograph that puts
 something under the headline is not handed over. STRUCK_WORD strikes only
 words the ad argues against (a claim it refutes, the word it corrects): struck
 words read as "not this", and striking what the concept holds true is refused.
+A visual idea written the old way (products or props cut out onto colour
+planes, parts generated and laid on) is read as the photograph it describes:
+the same things, in one real place, in one light, built with `compose_ad` or
+`build_scene` method `photo`. The preview holds cut-outs on a colour, so
+starting there only costs turns.
 Detail lines that belong on a thing in the photograph (steps on a note by the
 jar, a line on a recipe card) are written by the model, not laid on it:
 `build_scene` method `photo` with `writeOn` (the thing, as the prompt names
