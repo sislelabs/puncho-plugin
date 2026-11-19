@@ -28,8 +28,10 @@ ruins it.
 - **Choose when:** the product has 3–5 concrete facts buyers ask about
   (ingredient, origin, weight, what it lacks).
 - **Build:** pack centre on its colour field. Each fact: a short number or word
-  big, a two-word label small, an `icon` arrow (`arrow-curved` or `arrow-loop`,
-  turned to aim) from the fact to the part of the pack it is about. Headline top,
+  big, a two-word label small, and an arrow from the fact to the part of the
+  pack it is about, drawn into the photograph with `draw_arrow`, its tail
+  from the label (`fromWords`), never an arrow icon: laid over a photo it
+  looks pasted. Headline top,
   short. This is the batch's one ad with devices; no other ad in the batch
   uses arrows or rings.
 - **Ruins it:** more than five callouts; arrows all the same angle; facts the

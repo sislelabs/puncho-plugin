@@ -146,7 +146,8 @@ product, a handwritten note with a drawn arrow, labels standing over things.
   run flat under the words and then bend to the point), `weight` 2-3 px; the
   dot a small ellipse in the accent where the line ends. Labels on both sides
   of the product, never all in one column. A handwritten note uses
-  `arrow-curved` or `arrow-loop` and a handwriting face.
+  a handwriting face, and its arrow is drawn into the photograph with
+  `draw_arrow` from the note (`fromWords`), never an arrow icon.
 - **When:** the hook is about what is in or on the product: features,
   ingredients, the texture, three reasons.
 - **Ruins it:** more than four callouts; lines that cross; lines ending in
