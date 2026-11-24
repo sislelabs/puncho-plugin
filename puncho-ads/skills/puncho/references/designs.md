@@ -31,7 +31,8 @@ set by hand. When you build step by step, work the same way:
    `add_design_image`, at the size and spot the composition needs. A product
    photographed on a background goes through `cut_out_image` when it has to
    stand in a scene. Its pixels are kept exactly.
-   **When the product stands in a photograph** (`IN_SCENE`), build the
+   **When the product stands in a photograph** (`IN_SCENE`, or `STUDIO`, where
+   the scene is seamless paper against the pack's colour), build the
    photograph around it with `build_scene`, never the other way round. A
    scene generated first and a packshot dropped on it disagree on the floor,
    the camera height and the light, and look pasted however well they are
@@ -53,10 +54,11 @@ set by hand. When you build step by step, work the same way:
    `generate_design_part`: a backdrop, a surface, a hand, a splash, a prop, a
    texture, an illustration. Brief each like a photographer or illustrator:
    subject, angle, light, materials, colours. Use `cutout` for anything that
-   stands on the design rather than filling it. Pick the model for the part:
-   Recraft for illustration and clean backdrops, Nano Banana Pro or GPT Image 2
-   for people, hands and photographic scenes, and those or Muse Image (about a
-   credit, no seed) when a part should match a reference. **No words, logos or product packs in a part.** Open every part
+   stands on the design rather than filling it. Leave `model` out: the part is
+   drawn by the install's default image model (Muse Image), which a founder
+   chooses. Name another only when the tools say it is switched on and the
+   part needs what only it does; a model switched off is refused, and asking
+   for it wastes a turn. **No words, logos or product packs in a part.** Open every part
    with `view_image` before using it; regenerate or drop one that is wrong.
    Use as many parts as the idea needs, often one: the hero scene, and only
    where the idea calls for them the carrier the words sit on, foreground

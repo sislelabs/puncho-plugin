@@ -85,6 +85,14 @@ site, the previous edition, local press, their social. Ask specifically:
 - **What is the surprising detail?** The number, the constraint, the mechanic
   that makes someone say "wait, really?"
 
+**Then list the buyer's questions.** Write down five things a person asks
+before buying this from this brand: is it real, who made it, why it costs what
+it does, is it fine for a child, what it tastes or feels like, what happens
+when it does the thing people worry about. At least half a batch's hooks answer
+one of them. The best hook of one batch answered a doubt buyers really have
+(that the product had gone off when it was only doing what the real thing
+does), while the clever lines around it answered nothing anyone asked.
+
 The surprising detail is usually not in the brief, and it is worth more than
 every line written without it. `references/categories/` has a worked example
 per category.
@@ -182,6 +190,22 @@ Real ones, with what they were missing: `references/anti-examples.md`.
 A number or a moment can carry a hook, joined to its "so what": not "twelve
 hours" but what twelve hours does that ten minutes cannot, in words the
 reader would use.
+
+### The stranger test: a reason, not a riddle
+
+Cover the picture and the body text. Read only the words on the image as
+someone scrolling past who has never heard of the brand. Can they say, in one
+sentence, what is sold and why they would want it? If not, the hook fails,
+however good it sounds. Three ways it fails, all seen in one batch:
+
+- **A riddle.** The line only makes sense after the body text explains it
+  ("the name is on the front", meaning the brand puts its name on the jar).
+- **A slogan of the category.** "Honey is not just honey" could run under any
+  honey; "one spoon and the tea is different" is true of any sugar.
+- **A label.** A place, a count, the product's name, with no claim about it.
+
+The fix is a plainer reason, never a cleverer line. The hook an editor sends
+back for this needs to say why to buy; rewording the riddle is sent back again.
 
 Watch the two-beat reversal especially — "X. Not Y.", "X. The rest isn't." It is
 the easiest shape to generate and the easiest to fill with nothing, because the
@@ -546,6 +570,11 @@ So in a batch:
   makes that hook true: the kicker, a line, the body.
 - **A fact is in a few of the ads, not all of them.** A brief's batch where one
   fact is in most of the concepts is the product's description reworded.
+- **The brand's standing proof line is support.** The line a brand puts on
+  everything ("natural, no additives", "handmade", "family business") was on
+  eight ads of twelve in one batch, and every one of them was recorded as the
+  same angle. At most one or two hooks in a batch lead with it; on the rest it
+  goes in the kicker or the body, where it makes another hook true.
 - **A comparison's other side is a fact too.** "Not 18 seconds" says
   something about cafés that nobody checked. A comparison names a number for
   the other side only when it is true and known; otherwise it compares
@@ -616,7 +645,16 @@ exactly the way you are about to.
 Five variations on one angle is one test. The batch exists to find out which
 angle wins, so the angles must actually differ — and the `angle` you record must
 be the one the copy really uses, because that column is what the rollup groups
-by later. Mislabelling it corrupts the only feedback the loop has.
+by later. Mislabelling it corrupts the only feedback the loop has. Twenty-five
+concepts written with no direction were all recorded EDUCATIONAL.
+
+The same holds for how the product is shown (`productMode`). For a brand with a
+packed product, at least a third of a batch of three or more is `STUDIO` (the
+product on seamless paper chosen against its colour, a hard light, the type and
+one graphic piece doing the work: right for a claim, a number, a comparison,
+the range) and at least one `IN_SCENE` moment, in varied light and places. The
+same window light in every scene is one picture five times. The ad-design
+skill's *Shoot a studio* is how it is built.
 
 ## Output contract
 
@@ -628,6 +666,10 @@ fields that are routinely got wrong:
   turn on what the reader expects ("Eggs, but louder.", "~~Ketchup.~~ Chili
   crisp.", "This one's for the pan."), said the way this language says it,
   never a translated rhythm. What it needs explaining goes in `primaryText`.
+  A struck-through word is something the reader believed, did or paid (the
+  habit, the old price, the thing they reach for now). Never a word the line
+  swaps for a better word: "spread it without ~~wondering~~ doubting" corrects
+  the writer, not the reader, and reads as a typo.
 
 **Four places for words, four jobs.** An ad is read in the order the feed
 shows it, and each place is there to do what the others cannot. Batches kept

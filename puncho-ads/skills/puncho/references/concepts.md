@@ -133,8 +133,10 @@ file only says how the tools fit together.
 Every idea carries an `adFormat` and a `productMode` (typed; the rollup
 compares them). Spread a batch across at least three formats: Meta treats ads
 of one format and setting as one creative. A product that is shown stands in
-its scene (`IN_SCENE`, built with `build_scene`), never laid over a photo;
-`NO_PACK` is for an idea better without it. `store_specs` makes you choose one
+its scene (`IN_SCENE`, built with `build_scene`), never laid over a photo, or
+is photographed in a studio (`STUDIO`: `build_scene` method `photo` on seamless
+paper that stands against the pack's colour; the ad-design skill's *Shoot a studio*), one or two
+of a batch; `NO_PACK` is for an idea better without it. `store_specs` makes you choose one
 for every idea.
 
 A concept you store is an **idea**, not an ad yet. Nothing is drawn. It carries

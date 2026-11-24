@@ -19,6 +19,10 @@ ruins it.
   the product's name and weight: the pack says them. The product is big: half the frame's width or more, no wall of
   nothing between it and the headline. Never the pack cut out onto a flat
   colour with props pasted round it: that is a catalogue page.
+- **Or in a studio** (`STUDIO`): the pack big on seamless paper that stands
+  against its colour, one hard light, a crisp shadow; one hero, a pair, or the
+  brand's range in a row with a swatch of each in front of it; the headline calm
+  and centred, the logo as a lockup. See *Shoot a studio* in the skill.
 - **Ruins it:** a second claim competing with the first; the pack small; the
   headline alone over an empty field, which says nothing to a stranger.
 
@@ -27,7 +31,8 @@ ruins it.
 - **Proves:** what is in it, checkably. Reads as information, not promotion.
 - **Choose when:** the product has 3–5 concrete facts buyers ask about
   (ingredient, origin, weight, what it lacks).
-- **Build:** pack centre on its colour field. Each fact: a short number or word
+- **Build:** the pack centre, photographed in a studio (`STUDIO`: seamless
+  paper that stands against its colour) or standing in its scene. Each fact: a short number or word
   big, a two-word label small, and an arrow from the fact to the part of the
   pack it is about, drawn into the photograph with `draw_arrow`, its tail
   from the label (`fromWords`), never an arrow icon: laid over a photo it
@@ -108,8 +113,8 @@ ruins it.
 - **Choose when:** there is one striking, true number (one ingredient, 3
   spoons, 0 added sugar, 250 g of only nuts).
 - **Build:** the number enormous (a quarter of the frame or more), what it
-  means in one small line under it, pack beside it. Flat field from the pack.
-  Nothing else.
+  means in one small line under it, pack beside it, photographed in a studio
+  (`STUDIO`: seamless paper against the pack's colour, one light). Nothing else.
 - **Ruins it:** two numbers; a number that needs an asterisk.
 
 ## PERSON_NOTE — someone's own words

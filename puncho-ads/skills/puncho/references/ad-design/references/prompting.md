@@ -57,6 +57,13 @@ prompt anyway.
 
 ## Which model
 
+**Use the default.** A founder chooses which image models this install has
+switched on, and the default (today Muse Image, for scenes, parts and phone
+screens alike). Leave `model` out and the default draws it. The notes below
+say what each model is good at, for an install that has several on; a model
+that is switched off is refused before anything is paid, so never ask for one
+the tools did not list.
+
 - **Recraft V4.1**: illustration, clean backdrops, graphic textures, flat
   colour grounds, isolated objects for cut-out. A strict palette works ("strict
   two-tone palette: #… and #…"). Do not describe the style when passing a style
@@ -111,9 +118,8 @@ a model shown a product redraws it.
 
 ## When a provider is down
 
-No single model is required. Gemini (Nano Banana Pro) out of credit is not a
-block: use GPT Image 2 for photographic parts and for `relight_product`, and
-Recraft for the rest. Gemini also reads every part back for stray lettering;
+No single model is required. A model that fails or is out of credit is not a
+block when another is switched on: use the one that is. Gemini also reads every part back for stray lettering;
 while it is down that check returns `UNCHECKED` and the part is kept, so open
 each part and look for letters yourself. Report a provider as BLOCKED only when
 no model that can do the job is available.

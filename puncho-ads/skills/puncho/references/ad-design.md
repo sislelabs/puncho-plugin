@@ -16,8 +16,15 @@ The strongest food and product statics this pipeline has made came from the
 same five moves, made in this order. Everything below refines them; none of
 it replaces them.
 
+**When the request has a `structure`** (the concept borrowed a reference's
+layout), build to it with `build_scene` and a page, not `compose_ad`: its own
+layout would replace the one the concept borrowed. Keep the reference's
+hierarchy whole (where the headline sits and how it is aligned, the second
+line, a contents line, a button, the logo), in this brand's type and colours.
+
 **`compose_ad` makes them in one call.** Its `photography` is move 1's
-light (BOLD, FLASH, MIDDAY_SUN, WINDOW_STEAM, LAMP_NIGHT, COLOUR_BLOCK), its
+light (BOLD, FLASH, MIDDAY_SUN, WINDOW_STEAM, LAMP_NIGHT, COLOUR_BLOCK, and
+STUDIO for a `STUDIO` concept and only for one), its
 `scene` and `inside` the rest of the brief, `wordsAt` the empty part,
 `treatment` move 2 (STACKED_CAPS, STRUCK_WORD with `struck`, ITALIC_SERIF,
 SCALE_JUMP: one word half as big again, MIXED_FACE: one word in an italic
@@ -79,13 +86,24 @@ same air between each, whatever the visual idea says.
    - stacked capitals in a condensed face (`set_type` `face` Oswald; `caps`
      on the layer), the last word in a second colour (`marks` fill);
    - a struck-through word, then the answer (`marks` with `strike` on the
-     first word: "~~Филия.~~ Соленка.");
+     first word: "~~Филия.~~ Соленка."), only when the struck word is
+     something the reader believed, did or paid, never a word swapped for a
+     better word;
    - an italic serif in the pack's colour (`face` Playfair Display, `italic`
      on the layer);
    - the words on an object in the photograph, or one giant word.
    The colour comes from the pack or the photograph, never grey.
+   Where it stands is chosen per ad, never by habit: centred over the
+   product like a poster, at the foot under the picture, right-aligned at the
+   top right with the product low on the left, split with the turn at the
+   bottom, huge and alone across the width, in a column beside the product.
+   Flush left at the top is one of these, not the default: a board of ads all
+   set that way looks like one template.
 3. **One short line under it, or none:** the reason, the moment or the
-   offer. Never the product's name, its weight or a list; a list is its own
+   offer. It belongs to the headline's block: close under it (a gap of about
+   a quarter to a half of the headline's size), at about 35 to 50% of its
+   size, on its left edge or its centre. A small line floating a headline's
+   height below, or pushed in from its edge, reads as left behind. Never the product's name, its weight or a list; a list is its own
    format (CALLOUTS, US_VS_THEM).
 4. **The logo small in a corner.** Nothing else on the image.
 5. **Look once, fix once, finish.** `preview_design` returns the pictures
@@ -150,6 +168,12 @@ Everything else is a default.
      with published evidence of higher purchase intent, and a face in it
      lowered that. The real pack is placed where the grip will be, and the
      hand and the place are made round it; never a hand and a pack on white.
+   - `STUDIO` — the pack photographed in a studio, the clean look a brand's
+     own ads have: the tubes on sage paper, the toothbrush on pink, the two
+     bottles on peach. It is a photograph, not `GRAPHIC_FIELD`'s cut-out on a
+     fill, and it is built the same way as `IN_SCENE`: `build_scene` method
+     `photo`, the real pack placed first, its label read back. Only the
+     scene is a studio. See *Shoot a studio* below.
    - `NO_PACK` — the food, the words or the moment carry it; the logo signs it.
      When the brand sells that food, it must be its food: generate it with
      `foodFrom` set to the product shot, so the model sees the real colour,
@@ -337,6 +361,92 @@ product (on the note) do not move with it: set them back on it after.
   under Reels' caption and the feed ad cannot place it higher. A product
   standing low in the feed is the usual cause: where the idea allows, stand
   it in the middle of the feed frame, not on its bottom edge.
+
+## Shoot a studio (`STUDIO`)
+
+The look of a brand's own studio ads: the product big on seamless paper, one
+hard light, a crisp shadow, and around it only what the product's own story
+brings (the herbs or flowers it is made from, a dipper, a comb), placed by
+hand. A bare jar on paper reads as a catalogue page; the best studio ads we
+made had a few of these props, crisp in the same light. There is no place to
+read, so nothing in it says "AI": no golden hour, no steam, no sparkles, no
+blurred kitchen. But a studio shot is only next level when four things are
+true. A jar centred on paper of its own colour, with a big headline over it,
+is a catalogue page; the best brand studio ads are an idea.
+
+**1. Contrast, not a match.** The paper is chosen *against* the product: a
+khaki-green toothbrush on hot pink, green tubes on pale sage, a red and a white
+bottle on peach. Run `product_colours` on each product and pick the paper from
+the brand's palette, or a tint of it, that stands against the product's own
+colour: a gold jar on sage, deep teal, dusty blue or a warm cream; never on
+yellow or amber. `compose_ad` refuses a paper in the product's colour family.
+
+**2. An arrangement, not "the product in the middle".** Choose one, by what the
+concept says:
+
+- `HERO`: one product filling the height, vertical, the hero of a single claim.
+- `PAIR`: two side by side, for a bundle, a choice, "this and this".
+- `ROW`: three in an even row, for a range ("four kinds of honey"), each with
+  its own swatch of what is inside in front of it, a small pour of each honey
+  on the paper, its own colour. One idea, repeated, is what makes the ad.
+- `DIAGONAL`: three rising from front left to back right, with long shadows:
+  the same range with movement.
+
+Use the brand's real products for the others (`also`): its varieties, its
+sizes. One product placed three times is a row of one thing; prefer three
+that differ.
+
+**3. The product is the hero; the type is calm.** `compose_ad` sets a studio's
+headline smaller and centred, in a band at the top or the foot, with one line
+under it as a second tier, and the logo centred as a lockup on the other side.
+Two short lines in the pack's colour or ink read as a brand; a huge headline
+fights the product.
+
+**4. One piece made for a job, when the concept has the words for it.** After
+the build, the page may carry one more thing, from the concept's own planned
+lines and never invented: a pill holding the call to action; a short checklist
+of its claims; an offer burst only when the brief leads with `OFFER` and names
+the offer. Swatches in the photograph often do this job better than a device.
+
+**How to ask for it.** `compose_ad` with `photography` `STUDIO`, `paper`
+(#RRGGBB), `arrangement`, `product` and `also`, `wordsAt` `TOP` or `BOTTOM`.
+The `scene` says only what the arrangement does not: the swatches ("a small
+pour of each honey on the paper in front of its jar, in its own colour"), the
+direction of the light, how long the shadows are. Never a room, a window, a
+table or the time of day. The brand's own photographs are not passed: they
+shoot a place, and a studio has none. Built step by step instead, it is
+`build_scene` method `photo` with the same brief.
+
+**The rules above are the floor; the idea is yours.** What made the brand
+ads it learned from memorable was one decision nobody had to make: three tubes
+each standing in its own colour of balm, a toothbrush lit so its shadow is
+longer than it is. Look for that one decision in the concept: a drip running
+down the paper from a tilted jar, a lid off and resting against it, the raw
+ingredient cut clean in half beside it, two of one range in a light and a dark
+version so the range is the story, a shadow that falls across the words. Name it in the
+`scene` in plain words, as a photographer would brief it. One surprise, never
+three.
+
+**When the photograph will not come.** If `compose_ad` or `build_scene` keeps
+no drawing, open two of the refused ones with `view_image` and read why: a
+label read back wrong, a product drawn far too big, something over the words.
+Then change the brief, not the method: fewer products (a `HERO` before a
+`ROW`), a simpler scene, the light said differently. A studio concept is never
+rebuilt as cut-outs laid on a generated backdrop: that is the catalogue page
+the studio replaces, and it reads as pasted however well it is lit. If it
+still will not come, stop and say in the finish note what the drawings did, so
+a person can decide.
+
+**When the check says the picture is not the idea.** `finish_design` reads the
+finished picture against the concept's visual idea. When it says the picture
+does not show what the idea rests on (a soft light where the idea asked for a
+hard one, a wall where it asked for paper), believe it: that is the difference
+a person sees first. Build again for it. A note to go past it is for one case
+only: the picture became better than the idea, and the note says how.
+
+**Not every ad.** One or two `STUDIO` concepts in a batch of five, among
+`IN_SCENE` and `NO_PACK` ones. Five studio shots are one ad to Meta and to
+the reader.
 
 ## When there is nothing to place
 

@@ -47,6 +47,7 @@ scrolls on before decoding it.
 | Translated | Why it fails | Native |
 |---|---|---|
 | "Кафе. Мляко. Понеделник." | Three fragments in a row: the "X. Y. Z." of American ads | "Понеделник е, но кафето е с мляко." |
+| "Два вкуса. Без добавки." / "Чай. И толкова." | Two fragments that only list or shrug: a catalogue line, or "X. That's it." in Bulgarian words. Two short sentences are fine when each says something ("Бял шоколад. Малина." names what you taste) | "Два меда, и в двата няма нищо друго." |
 | "Отвориш. И ухае." | A verb alone as a sentence. A perfective present ("отвориш", "гризнеш") cannot stand by itself | "Щом отвориш пакета, ухае на хляб." |
 | "Захарта е една." | English "is one". The reader does not know what it means | "Само една захар: тръстикова." / "Без друга захар." |
 | "Опечен е хлябът. Хрупкавостта остава." | The verb pushed first for emphasis, and an abstract noun as subject | "Хлябът е опечен сутринта и още хрупка." |
